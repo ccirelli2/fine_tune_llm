@@ -35,9 +35,6 @@ cursor = client.cursor()
 # Check if table already exists
 table_exists = utils.check_table_exists(cursor, "filing_index", DATABASE)
 
-
-print(cursor)
-
 # Create Table
 if not table_exists:
     try:
@@ -54,5 +51,4 @@ if not table_exists:
         print("table created successfully")
     except Exception as e:
         print("Create table returned an error => {}".format(e))
-
 
