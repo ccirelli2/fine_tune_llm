@@ -34,21 +34,4 @@ cursor = client.cursor()
 
 # Check if table already exists
 table_exists = utils.check_table_exists(cursor, "filing_index", DATABASE)
-
-# Create Table
-if not table_exists:
-    try:
-        client = connections.MysqlClient().get_client(
-            host=HOST,
-            user=USER,
-            password=PASSWORD,
-            port=PORT,
-            database=DATABASE
-        )
-        cursor = client.cursor()
-        cursor.execute(queries.create_mysql_filings_index_table)
-        cursor.close()
-        print("table created successfully")
-    except Exception as e:
-        print("Create table returned an error => {}".format(e))
-
+table_exists = utils.check_table_exists(cursor, "filing_chunks", DATABASE)

@@ -14,7 +14,8 @@ def get_root_directory():
     assert os.path.exists(directory), "Root directory does not exist"
     print(f"Returning root directory as {directory}")
     return directory
-                                                                                   
+
+
 class LoadConfig:                                                                  
     def __init__(self):                                                            
         self.directory = ""                                                        
@@ -38,23 +39,20 @@ def check_table_exists(cursor: CMySQLCursor, table: str, database: str) -> bool:
     Check if table exists in database.                                             
     """                                                                         
     print("Checking if table {} exists in database {}".format(table, database))
-    response = False                                                            
+    exists = False                                                            
     query = """
-        USE {};
-
-        SELECT COUNT(*)                                                            
-        FROM information_schema.tables                                             
-        WHERE TABLE_NAME = '{}';                                                   
-        """.format(database, table)                                                     
+        SELECT COUNT(*) FROM information_schema.tables WHERE TABLE_NAME = 'filing_index';
+        """
     try:                                                                           
-        response = cursor.execute(query)
-        cursor.close()
-        print(f"Tables Found => {response}")
+        cursor.execute(query)
+        response = cursor.fetchall()
+        if len(response[0]) != 0:
+            exists = True
+        print(f"Tables Exists => {exists}")
     except Exception as e:
         print(f"Error occured while check if table exists {e}")
-        response = False
-
-    return True if response else False
+    
+    return exists
 
 
 
