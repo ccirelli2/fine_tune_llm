@@ -56,7 +56,7 @@ collection = conn_chroma.get_or_create_collection(
 )
 
 # Query
-query = 'financials'
+query = 'Ford Motor Company'
 query_embedding = list(embedding_model.embed(query))[0].tolist()
 
 results = collection.query(

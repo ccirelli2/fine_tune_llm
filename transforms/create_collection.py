@@ -83,7 +83,7 @@ for i in range(0, record_cnt, upsert_cnt):
     start = i
     stop = i + upsert_cnt
     records = chunk_df.iloc[start: stop]
-    print("\tUpserting records from {} to {}".format(start, stop))
+    print("\tUpserting records from {} to {} of {}".format(start, stop, record_cnt))
 
     # Create Fields to Upsert
     ids = records['chunk_id'].values.tolist()
