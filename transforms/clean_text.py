@@ -30,12 +30,12 @@ for file in files_local:
     # Clean Text
     clean_text = transforms.CleanText().transform(text=text)
 
-    print("Writing file => {file} to {DIR_TEXT_CLEAN}")
+    print(f"\tWriting file => {file} to {DIR_TEXT_CLEAN}")
     path = os.path.join(DIR_TEXT_CLEAN, file)
     
     with open(path, 'w') as f:
         f.write(clean_text)
-    print("Written successfully \n")
+    print("\tWritten successfully \n")
 
 
 print("Script finished")

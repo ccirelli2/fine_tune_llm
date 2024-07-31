@@ -1,0 +1,17 @@
+EMBEDDING_MODEL:
+  "BAAI/bge-small-en-v1.5"
+
+COLLECTIONS:
+    EDGAR:
+        METADATA:
+            name: 'edgar-filings'
+            description: 'chunks of text associated with edgar sec filings'
+            creator: 'Chris Cirelli'
+            project: 'GSU LLM Fine Tuning'
+    SMOTE_TEST:
+        METADATA:
+            name: 'smote-test'
+            description: 'debug mode for testind and creating collections and data'
+            creator: 'Chris Cirelli'
+            project: 'GSU LLM Fine Tuning'
+

@@ -58,4 +58,30 @@ def insert_into_filing_index_table(cursor, values: tuple):
     
     return None
 
+
+def get_filing_index_join_chunks():
+    """
+    """
+    query = """
+        SELECT
+            fi.id,
+            fi.file_name,
+            fi.file_type,
+            fi.file_date,
+            fi.company_name,
+            fi.cik,
+            fi.irs_number,
+            fc.id AS chunk_id,
+            fc.chunk,
+            fc.character_count,
+            fc.token_count
     
+        FROM filing_index AS fi
+        INNER JOIN filing_chunks fc ON fi.file_name = fc.foreign_id;
+    """
+    return query
+
+
+
+
+
