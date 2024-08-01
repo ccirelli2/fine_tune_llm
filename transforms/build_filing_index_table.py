@@ -50,11 +50,8 @@ indexer = transforms.FilingIndex(
 
 filings_df = indexer.transform()
 
-# Get Cursor
-cursor = client.cursor()
-table_name = "filing_index"
-
 # Insert Rows into MySql DataFrame
+table_name = "filing_index"
 for i in filings_df.iterrows():
     
     row = i[1]
@@ -70,7 +67,7 @@ for i in filings_df.iterrows():
     values = (id_, file_name, file_type, filing_date, company_name, cik, irs_number)
     
     # Make Insertion
-    queries.insert_into_filing_index_table(cursor, values)
+    queries.insert_into_filing_index_table(client, values)
 
 
 

@@ -39,7 +39,7 @@ def create_mysql_chunk_table():
     return slq
 
 
-def insert_into_filing_index_table(cursor, values: tuple):
+def insert_into_filing_index_table(client, values: tuple):
     """
     """
     sql = """                                                                                              
@@ -49,8 +49,9 @@ def insert_into_filing_index_table(cursor, values: tuple):
     print("Inserting row => {}".format(values))
     try:
         print("\tExecuting insertion to table => filing_index")
+        cursor = client.cursor()
         cursor.execute(sql, values)
-        cursor.commit()
+        client.commit()
         print("\tSuccess")
         
     except Exception as e:

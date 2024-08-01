@@ -50,9 +50,13 @@ class FilingIndex:
     def _open_file(self, filename):
         """
         """
-        path = os.path.join(self.directory, filename)
-        with open(path, 'r') as f:
-            text = f.read()
+        try:
+            path = os.path.join(self.directory, filename)
+            with open(path, 'r') as f:
+                text = f.read()
+        except Exception as e:
+            print("Opening file caused error => {}".format(e))
+            text = ""
         return text
 
     def _match_patterns(self, text):
