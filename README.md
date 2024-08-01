@@ -4,6 +4,7 @@ Fine tune llm.  Validate via rag pipeline.
 
 # TOOD
 - Add log handler & log file.  Replace print with logs.
+- Change hardcoded directory & paths to config
 
 # References
 
