@@ -41,16 +41,17 @@ def check_table_exists(cursor: CMySQLCursor, table: str, database: str) -> bool:
     print("Checking if table {} exists in database {}".format(table, database))
     exists = False                                                            
     query = """
-        SELECT COUNT(*) FROM information_schema.tables WHERE TABLE_NAME = 'filing_index';
-        """
+        SELECT COUNT(*) FROM information_schema.tables WHERE TABLE_NAME = '{}';
+        """.format(table)
     try:                                                                           
         cursor.execute(query)
         response = cursor.fetchall()
-        if len(response[0]) != 0:
+        print(f"\tRaw response => {response}")
+        if response[0][0] != 0:
             exists = True
-        print(f"Tables Exists => {exists}")
+        print(f"\tTables Exists => {exists}")
     except Exception as e:
-        print(f"Error occured while check if table exists {e}")
+        print(f"\tError occured while check if table exists {e}")
     
     return exists
 

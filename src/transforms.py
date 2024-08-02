@@ -1,41 +1,29 @@
 """
 Noisy text to inspect
 
-    filename1.pdf
-    begin 644 filename1
-    M)5!$1BTQ+C4*)>+CS],*,2 P(&]B:@H\/"]#;VQO
-    7!E+UA/8FIE8W0O5VED=&@@,30R."],96YG=&@@,S8U+T)I='-097)#
-    M;VUP;VYE;G0@.#X^
-    GI]?5504-$1$1$1$1$+N;M[>WIZ>GAX6&_WS<"Q:]?O^[O
-    M[^.KQW.(\K]__VZJBLJ1,EY>7M0Q1$1$1$1$1&3"Q\<'QA6_?__&K *98K_?
-    MQY;8?A/O#TPX@I>7%X21/%;\C7_3)..&IR8B(B(B(B(B_S1O;V^/CX_5*"(^
-    MQY;GY^?M2@6B1/]YSL>!EY<7O%&R ?O]_N'A(;9??E8B(B(B(B(B\H^#5P@N
-    M(=@\/#P\;+%YB +89F1$B_P<-7Q\?-S?WZ=72)2,HZ2;2=4TL.*H-<>^T8#'
-    MQ\=T5&''V*A'B8B(B(B(B,C_A]?75T)NHCQ@X;#=3>/CXR-V2>&"9"+H%?%W
-    M.8@2J68\/S_'O_O]'AT#[2)VP
-    !?#0T2=<91L)!J("H:(B(B(B(C(#^;]
-    M_?WY^3G5@/O[^SY")I$HTG B"@\=-V(OZOG]^_=R$$.B
-    MGI[8]_'QD:](J)HJ1]0PE% :$0/CD"_I(!$1$1$1$1'Y0WQ\?*1[R*]?O_#=
-    M2-6"H!-1($->D/LC_DW]H:^0;Z,\3B($QXB-B ^Q$5L+CI@UH&/4.MD2Q:))
-    M%(Y*>G4BJN444GA1P1 1$1$1$1'Y ;#DQVB!+![5T +) N.*:@(1GY>B/P2]
-    M]47:9CP^/J8Z42N/FM-X(ZTILL(:^"+M-U(M09T@7FAC&8)9"#$Z5#!$1$1$
-    M1$1$_EUBR1\+_[2UZ(-%O+^_IQD#7T7Y3/-!F=0??O_^W>Q>_4K2CJ*6B?HS
-    MWB9*17R;TD3U#4%4P>XB;3 R: :6&+4\T3!2P6A"@(J(B(B(B(C(WP_!,%GX
-    M-ZI%>HN0G!0)@BWO[^\I%V29S%O:6#ADN,[8Z_[
-    TEXT-EXTRACT
-    2
-
 """
 import os
 import re
 import pandas as pd
 import chardet
+import asyncio
+import aiofiles
 from bs4 import BeautifulSoup
 
 
 # Patterns
 class FilingIndex:
-    def __init__(self, directory: str, patterns: dict, filenames: list = []):
+    """
+    Create Filing Index dataframe.
+    
+    Data is generated from headers in each edgar filings.
+    Essentially, a regex statement is used to extract certain standard key value
+    pairs that appear in every filings.
+    These data attributes constitute the metadata for each file.
+
+    Patterns (example):
+    """
+    def __init__(self, directory: str, patterns: dict = {}, filenames: list = []):
         self.directory = directory
         self.filenames = filenames 
         self.patterns = patterns
@@ -46,10 +34,21 @@ class FilingIndex:
             print("Filenames not provided.  Taking from directory")
             self.filenames = os.listdir(directory)
         print("Total Files => {}".format(len(self.filenames)))
+        
+        if not patterns:
+            patterns = {
+                "CIK": "CENTRAL INDEX KEY:.*\n",                                           
+                "FILING_TYPE": "CONFORMED SUBMISSION TYPE:.*\n",                           
+                "FILING_DATE": "FILED AS OF DATE:.*\n",                                    
+                "COMPANY_NAME": "COMPANY CONFORMED NAME:.*\n",                             
+                "CIK": "CENTRAL INDEX KEY:.*\n",                                           
+                "IRS_NUMBER": "IRS NUMBER:.*\n",   
+            }
+        print(f"Metadata fields to generate from filings => {patterns.keys()}")
         print(f"{__class__} instantiated successfully")
 
     def _open_file(self, filename):
-        """
+        """TODO: add dynamic encoding identification
         """
         try:
             path = os.path.join(self.directory, filename)
@@ -152,28 +151,161 @@ class CleanText:
         self.text = re.sub(pattern, '', self.text)
         return self
 
+    def _get_file_encoding(self, path):                                            
+        with open(path, 'rb') as f:                                                
+            raw_data = f.read(100_000)                                               
+        encoding = chardet.detect(raw_data)['encoding']                            
+        return encoding                                                            
+
+    def _write_file(self, path, txt_obj: str):
+        """
+        """
+        print(f"Writing {path}")
+        with open(path, 'w') as f:
+            f.write(txt_obj)
+            print("Successful")
+        return self
+
     def transform(self, text):
         self._strip_bs4_tags(text)
         self._strip_doctype_tags()
         self._strip_xbrl_tags()
         return self.text
 
+    def transform_from_directory(self, input_dir, output_dir):
+        """
+        Assumes files are of type .txt
+        """
+        # Get Files From Directory
+        files = os.listdir(input_dir)
+        txt_files = [i for i in files if i.endswith('.txt')]
+        print(f"\tTotals Files Found in Directory => {len(txt_files)}")
+
+        # Iterate Files in Directory
+        for tf in txt_files:
+            path = os.path.join(input_dir, tf)
+            encoding = self._get_file_encoding(path)
+            
+            # Open & Clean Text
+            with open(path, mode='r', encoding=encoding) as f:
+                print(f"\t Cleaning text file => {tf}")
+                try:
+                    text = f.read()
+                    text = self.transform(text)
+                except Exception as e:
+                    print(f"ERROR: => {e}")
+                    text = "text clearning resulted in an error"
+                # Write Text to Output Directory
+                path = os.path.join(output_dir, tf)
+                self._write_file(path, text)
+
+        pass
+
+
+class CleanTextAsync:
+    """Class to clean text documents asynchronously."""
+
+    def __init__(self, max_concurrent_files=10):
+        self.bs4_tags = ['img', 'table', 'canvas', 'graphic', 'link', 'a']
+        self.re_tags = ["GRAPHIC", "EXCEL", "ZIP"]
+        self.parser = 'lxml'
+        self.text = ""
+        self.semaphore = asyncio.Semaphore(max_concurrent_files)
+
+        print(f"{__class__} instantiated successfully")
+
+    def _strip_bs4_tags(self, text):
+        """Remove HTML from underlying text using BeautifulSoup."""
+        print(f"\tStripping HTML tags => {self.bs4_tags}")
+
+        # Parse HTML
+        soup = BeautifulSoup(text, self.parser)
+        # Remove specified tags
+        for tag in self.bs4_tags:
+            for element in soup.find_all(tag):
+                element.decompose()
+
+        self.text = soup.get_text(separator="\n", strip=True)
+        return self
+
+    def _strip_doctype_tags(self):
+        """Strip DOCTYPE tags."""
+        print(f"\tStripping RE tags {self.re_tags}")
+        pattern = re.compile('<TYPE>GRAPHIC|EXCEL|ZIP|XML|XBRL.*</DOCUMENT>')
+        self.text = re.sub(pattern, '', self.text)
+        return self
+
+    def _strip_xbrl_tags(self):
+        """Strip XBRL tags."""
+        print(f"\tStripping XBRL tags")
+        pattern = re.compile(r'<XBRL.*</XBRL>|XBRL DOCUMENT.*/DOCUMENT', re.DOTALL)
+        self.text = re.sub(pattern, '', self.text)
+        return self
+
+    async def _get_file_encoding(self, path):
+        async with aiofiles.open(path, 'rb') as f:
+            raw_data = await f.read(100_000)
+        encoding = chardet.detect(raw_data)['encoding']
+        return encoding
+
+    async def _read_file(self, path):
+        encoding = await self._get_file_encoding(path)
+        try:
+            async with aiofiles.open(path, 'r', encoding=encoding) as f:
+                return await f.read()
+        except Exception as e:
+            print("Reading file {} generated error => {}".format(path, e))
+            return "error"
+
+    async def _write_file(self, path, txt_obj):
+        """Write cleaned text to a file."""
+        print(f"Writing {path}")
+        async with aiofiles.open(path, 'w') as f:
+            await f.write(txt_obj)
+            print("Successful")
+
+    async def process_file(self, path, output_dir):
+        """Process a single file and write cleaned text to output directory."""
+        async with self.semaphore:
+            text = await self._read_file(path)
+            self._strip_bs4_tags(text)
+            self._strip_doctype_tags()
+            self._strip_xbrl_tags()
+            cleaned_text = self.text
+            output_path = f"{output_dir}/{path.split('/')[-1]}"
+            await self._write_file(output_path, cleaned_text)
+
+    async def process_files(self, source_dir, output_dir):
+        """Process all files in source_dir asynchronously."""
+        import glob
+        paths = glob.glob(f"{source_dir}/*.txt")
+        tasks = [self.process_file(path, output_dir) for path in paths]
+        await asyncio.gather(*tasks)
 
 
 class ConcatArchives:                                                              
+    """
+    Concat tab separated files located in various archives or sub directories.
+
+    Args:
+        input_dir: directory where archives or sub-folders are located.
+        output_dir: output directory where to write concatenated files.
+        target_files: a list of file names located in archives.
+
+    Return:
+        files written to output directory.
     """                                                                            
-    """                                                                            
-    def __init__(self, archive_dir: str, target_files: list, archive_dir_suffix: str = "/raw"):
-        self.archive_dir = archive_dir                                             
-        self.archive_dir_suffix = archive_dir_suffix                               
+    def __init__(self, input_dir: str, output_dir: str, target_files: list):
+        self.input_dir = input_dir
+        self.output_dir = output_dir
         self.target_files = target_files                                           
-        self.output_dir = archive_dir.replace(archive_dir_suffix, "/clean")        
         self.concat_df = pd.DataFrame({})                                          
-        assert os.path.exists(self.archive_dir)                                    
+        assert os.path.exists(self.input_dir)                                    
         print(f"{__class__} instantiated succesffully")                            
                                                                                    
-    def _create_directory(self):                                                   
-        print("\tCreating output directory => {}".format(self.output_dir))         
+    def _create_directory(self):
+        if not os.path.exists(self.output_dir):
+            print("\tCreating output directory => {}".format(self.output_dir))         
         return self                                                                
                                                                                    
     def _get_file_encoding(self, path):                                            
@@ -183,16 +315,19 @@ class ConcatArchives:
         return encoding                                                            
                                                                                    
     def _concat_archive_file_by_name(self, target_file: str):                      
-        """                                                                        
+        """
+        TODO: Technically these are not archives but sub directories.
+            Maybe we should change to deal with zip files directly.
+        :target_file: file name within archives to extract and concat
         """                                                                        
         print(f"\tConcatanating files for => {target_file}")                       
                                                                                    
-        archives = os.listdir(self.archive_dir)                                    
+        archives = os.listdir(self.input_dir)                                    
                                                                                    
         frames = []                                                                
                                                                                    
         for a in archives:                                                         
-            path = os.path.join(self.archive_dir, a, target_file)                  
+            path = os.path.join(self.input_dir, a, target_file)                  
             if os.path.exists(path):                                               
                 try:                                                               
                     encoding = self._get_file_encoding(path)                       
@@ -206,15 +341,14 @@ class ConcatArchives:
         return self
 
     def _write_dataframe(self, target_file: str):                                  
-        print("\tWriting concatenated file {} to {}".format(target_file, self.output_dir))
+        print("\tWriting concatenated file {} to {}".format(
+            target_file, self.output_dir)
+        )
                                                                                    
-        if not os.path.exists(self.output_dir):                                    
-            self._create_directory()                                            
-                                                                                
+        self._create_directory()                                            
         output_filename = target_file.replace('.txt', '.csv')                   
         path = os.path.join(self.output_dir, output_filename)                   
         self.concat_df.to_csv(path)                                             
-                                                                                
         print("\tWritten successfully")                                         
         return self                                                             
                                                                                 

@@ -1,3 +1,9 @@
+"""
+Edgar financial relational data is saved by quarter in archives and various
+tab delimited files.  This code iterates the archives and extracts the specific
+file, processes and concatentates them into single csv files.  Then writes
+them to the output directory.
+"""
 import os
 import chardet
 import pandas as pd
@@ -15,7 +21,8 @@ file_names = ['tag.txt', 'pre.txt', 'sub.txt', 'num.txt']
 if __name__ == "__main__":
     
     concat_archives = ConcatArchives(
-        archive_dir=DIR_DATA,
+        input_dir=DIR_DATA,
+        output_dir=DIR_OUTPUT,
         target_files=file_names
     ).transform()
     

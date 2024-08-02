@@ -9,80 +9,83 @@ Project service queries (ex: mysql, chromadb
 # embeddings table schema
 
 
-def query_create_mysql_filings_index_table():
+def command_create_mysql_filings_index_table():
     query = """
-    CREATE TABLE filing_index (
-        id varchar(250) NOT NULL,
-        file_name varchar(255),
-        file_type varchar(255),
-        file_date varchar(255),
-        company_name varchar (255),
-        cik varchar(255),
-        irs_number varchar(255),
+        CREATE TABLE filing_index (
+            id varchar(250) NOT NULL,
+            file_name varchar(255),
+            file_type varchar(255),
+            file_date varchar(255),
+            company_name varchar (255),
+            cik varchar(255),
+            irs_number varchar(255),
         PRIMARY KEY (id)
-    );
+        );
     """
     return query
 
 
-def create_mysql_chunk_table():
+def command_create_mysql_chunk_table():
     sql = """
     
     CREATE TABLE filing_chunks (
-        id varchar(250) NOT NULL,
-        text LONGTEXT,
+        id              varchar(250) NOT NULL,
+        text            LONGTEXT,
         character_count varchar(250),
-        token_count varchar(250),
-        foreign_id varchar(250) NOT NULL,
+        token_count     varchar(250),
+        foreign_id      varchar(250) NOT NULL,
     PRIMARY KEY (id)
     );
     """
-    return slq
+    return sql
 
 
-def create_mysql_valiation_num_table():
+def command_create_mysql_validation_num_table():
     sql = """
     
     CREATE TABLE validation_num (
-        adsh varchar(250) NOT NULL,
-        tag varchar(250),
-        version varchar(250),
-        coreg varchar(250),
-        ddate varchar(250),
-        qtrs varchar(250),
-        uom varchar(250),
-        value varchar(250),
-        footnote varchar(500),
-    PRIMARY KEY (adsh)
+        id          INT AUTO_INCREMENT,
+        adsh        varchar(250),
+        tag         varchar(250),
+        version     varchar(250),
+        coreg       varchar(250),
+        ddate       varchar(250),
+        qtrs        varchar(250),
+        uom         varchar(250),
+        value       varchar(250),
+        footnote    varchar(500),
+    PRIMARY KEY (id)
     );
     """
     return sql
 
 
-def create_mysql_validation_pre_table():
+def command_create_mysql_validation_pre_table():
     sql = """
     
     CREATE TABLE validation_pre ( 
-        adsh varchar(250) NOT NULL,
-        report varchar(250),
-        line varchar(250),
-        stmt varchar(250),
-        inpth varchar(250),
-        rfile varchar(250),
-        tag varchar(250),
-        version varchar(250),
-        plabel varchar(250),
-        negating varchar(250)
-        PRIMARY KEY (adsh)
+        id          INT AUTO_INCREMENT,
+        adsh        varchar(250),
+        report      varchar(250),
+        line        varchar(250),
+        stmt        varchar(250),
+        inpth       varchar(250),
+        rfile       varchar(250),
+        tag         varchar(250),
+        version     varchar(250),
+        plabel      varchar(250),
+        negating    varchar(250),
+    PRIMARY KEY (id)
     );
     """
     return sql
 
-def create_mysql_validation_sub_table():
+def command_create_mysql_validation_sub_table():
     sql = """
     
     CREATE TABLE validation_sub (
-        adsh VARCHAR(250) NOT NULL,
+        id INT AUTO_INCREMENT,
+        adsh VARCHAR(250),
         cik VARCHAR(250),
         name VARCHAR(250),
         sic VARCHAR(250),
@@ -118,26 +121,27 @@ def create_mysql_validation_sub_table():
         instance VARCHAR(250),
         nciks VARCHAR(250),
         aciks VARCHAR(250),
-    PRIMARY KEY (adsh)
+    PRIMARY KEY (id)
     );
     """
     return sql
 
 
-def create_mysql_validation_tag_table():
+def command_create_mysql_validation_tag_table():
     sql = """
     
     CREATE TABLE validation_tag (
-        tag VARCHAR(250) NOT NULL,
-        version VARCHAR(250),
-        custom VARCHAR(250),
-        abstract VARCHAR(250),
-        datatype VARCHAR(250),
-        iord VARCHAR(250),
-        crdr VARCHAR(250),
-        tlabel VARCHAR(250),
-        doc VARCHAR(250),
-    PRIMARY KEY (tag)
+        id          INT AUTO_INCREMENT,
+        tag         VARCHAR(250),
+        version     VARCHAR(250),
+        custom      VARCHAR(250),
+        abstract    VARCHAR(250),
+        datatype    VARCHAR(250),
+        iord        VARCHAR(250),
+        crdr        VARCHAR(250),
+        tlabel      VARCHAR(250),
+        doc         VARCHAR(250),
+    PRIMARY KEY (id)
     );
     """
     return sql
@@ -163,8 +167,113 @@ def insert_into_filing_index_table(client, values: tuple):
     return None
 
 
+def insert_into_validation_num(client, values: tuple):
+    """
+    """
+    sql = """                                                                      
+        INSERT INTO validation_num                                                     
+            (adsh, tag, version, coreg, ddate, qtrs, uom, value, footnote)                 
+        VALUES                                                                         
+            (%s, %s, %s, %s, %s, %s, %s, %s, %s);                                          
+    """    
+    print("Inserting row => {}".format(values))
+    try:
+        print("\tExecuting insertion to table => filing_index")
+        cursor = client.cursor()
+        cursor.execute(sql, values)
+        client.commit()
+        print("\tSuccess")
+        
+    except Exception as e:
+        print(f"\tInsertion command generated error => {e}")
+    
+    return None
+
+
+def insert_into_validation_pre(client, values: tuple):
+    """
+    """
+    sql = """                                                                   
+    INSERT INTO validation_pre                                                  
+        (adsh, report, line, stmt, inpth, rfile, tag, version, plabel, negating)    
+    VALUES                                                                      
+        (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s);                                   
+    """        
+
+    print("Inserting row => {}".format(values))
+    try:
+        print("\tExecuting insertion to table => filing_index")
+        cursor = client.cursor()
+        cursor.execute(sql, values)
+        client.commit()
+        print("\tSuccess")
+        
+    except Exception as e:
+        print(f"\tInsertion command generated error => {e}")
+    
+    return None
+
+
+def insert_into_validation_sub(client, values: tuple):
+    """
+    """
+                                                                                    
+    sql = """
+    INSERT INTO validation_sub                                                  
+        (adsh, cik, name, sic, countryba, stprba, cityba, zipba, bas1, bas2, baph,  
+        countryma, stprma, cityma, zipma, mas1, mas2, countryinc, stprinc, ein,     
+        former, changed, afs, wksi,fye, fye, form, period, fy, fp, filed, accepted, 
+        prevrpt, detail, instance, nciks, aciks)                                    
+                                                                                
+    VALUES                                                                      
+        (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s,                                    
+        %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,                                    
+        %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,                                    
+        %s, %s, %s, %s, %s, %s, %s, %s);
+    """  
+
+    print("Inserting row => {}".format(values))
+    try:
+        print("\tExecuting insertion to table => filing_index")
+        cursor = client.cursor()
+        cursor.execute(sql, values)
+        client.commit()
+        print("\tSuccess")
+        
+    except Exception as e:
+        print(f"\tInsertion command generated error => {e}")
+    
+    return None
+
+
+def insert_into_validation_tag(client, values: tuple):
+    """
+    """
+    sql = """
+    INSERT INTO validation_tag
+        (tag, version, custom, abstract, datatype, iord, crdr, tlabel, doc)
+    VALUES
+        (%s, %s, %s, %s, %s, %s, %s, %s, %s);                                        
+    """
+
+    print("Inserting row => {}".format(values))
+    try:
+        print("\tExecuting insertion to table => filing_index")
+        cursor = client.cursor()
+        cursor.execute(sql, values)
+        client.commit()
+        print("\tSuccess")
+        
+    except Exception as e:
+        print(f"\tInsertion command generated error => {e}")
+    
+    return None
+
+
+
 def get_filing_index_join_chunks():
     """
+    TODO: Change name to query_
     """
     query = """
         SELECT
