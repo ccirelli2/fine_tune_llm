@@ -36,7 +36,7 @@ Fine tune llm.  Validate via rag pipeline.
     mysql tables. 
 
 
-# TOOD
+# TODO
 - Add log handler & log file.  Replace print with logs.
 - Change hardcoded directory & paths to config
 
