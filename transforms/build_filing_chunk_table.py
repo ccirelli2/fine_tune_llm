@@ -104,29 +104,3 @@ for series in filing_df.iterrows():
             except Exception as e:
                 print("Insertion failed with exception => {}".format(x))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
