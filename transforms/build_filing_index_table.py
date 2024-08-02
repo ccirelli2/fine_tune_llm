@@ -6,9 +6,10 @@ import pandas as pd
 from src import queries, utils, connections, transforms
 
 # Directories
-DIR_ROOT = utils.get_root_directory()
-DIR_CONFIG = os.path.join(DIR_ROOT, 'configurations')
-DIR_TEXT_RAW = os.path.join(DIR_ROOT, 'data', 'text', 'raw')
+DIR_ROOT = os.getenv("DIR_ROOT")                                                   
+DIR_CONFIG = os.getenv("DIR_CONFIG")                                               
+DIR_DATA = os.getenv("DIR_DATA")   
+DIR_TEXT_RAW = os.path.join(DIR_DATA, 'text', 'raw')
 
 # Load Configuration Files                                                      
 CONFIG_CONN = utils.LoadConfig().load(file_name="connections.yaml", directory=DIR_CONFIG).config

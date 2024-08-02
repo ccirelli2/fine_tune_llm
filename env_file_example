@@ -1,0 +1,5 @@
+DIR_ROOT=/Users/temp-admin/repositories/fine_tune_llm
+DIR_DATA=/Users/temp-admin/repositories/fine_tune_llm/data
+DIR_DATA_TEXT=/Users/temp-admin/repositories/fine_tune_llm/data/text
+DIR_DATA_VAL=/Users/temp-admin/repositories/fine_tune_llm/data/validation
+DIR_CONFIG=/Users/temp-admin/repositories/fine_tune_llm/configurations

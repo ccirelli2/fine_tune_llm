@@ -5,13 +5,17 @@ import os
 import chromadb
 import mysql.connector                                                             
 import pandas as pd                                                                
+from dotenv import load_dotenv
 from fastembed import TextEmbedding
 from src import utils, queries, connections                                        
                                                                                    
-# Directories                                                                      
-DIR_ROOT = utils.get_root_directory()                                              
-DIR_CONFIG = os.path.join(DIR_ROOT, 'configurations')                              
-DIR_TEXT_CLEAN = os.path.join(DIR_ROOT, 'data', 'text', 'clean') 
+# Directories
+load_dotenv()
+DIR_ROOT = os.getenv("DIR_ROOT")
+DIR_CONFIG = os.getenv("DIR_CONFIG")
+DIR_DATA = os.getenv("DIR_DATA")
+DIR_DATA_TEXT = os.getenv("DIR_DATA_TEXT")
+DIR_TEXT_CLEAN = os.path.join(DIR_DATA_TEXT, 'clean') 
 
 # Configurations
 CONFIG_CONN = utils.LoadConfig().load(file_name="connections.yaml", directory=DIR_CONFIG).config

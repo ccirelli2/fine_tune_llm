@@ -7,10 +7,13 @@ them to the output directory.
 import os
 import chardet
 import pandas as pd
+from dotenv import load_dotenv
 from src.transforms import ConcatArchives
 
 # Directories
-DIR_DATA="/Users/temp-admin/repositories/fine_tune_llm/data/validation/raw"
+load_dotenv()
+DIR_DATA_VAL = os.getenv("DIR_DATA_VAL") 
+DIR_DATA = os.path.join(DIR_DATA_VAL, 'raw')
 DIR_OUTPUT = DIR_DATA.replace("/raw", "/clean")
 
 # Archive Names

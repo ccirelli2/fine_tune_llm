@@ -3,6 +3,7 @@
 """
 # Libraries
 import os
+from dotenv import load_dotenv
 import mysql.connector
 import pandas as pd
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -10,9 +11,10 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from src import utils, queries, connections
 
 # Directories                                                                      
-DIR_ROOT = utils.get_root_directory()                                              
-DIR_CONFIG = os.path.join(DIR_ROOT, 'configurations')                              
-DIR_TEXT_CLEAN = os.path.join(DIR_ROOT, 'data', 'text', 'clean')                    
+DIR_ROOT = os.getenv("DIR_ROOT")
+DIR_CONFIG = os.getenv("DIR_CONFIG")
+DIR_DATA = os.getenv("DIR_DATA")
+DIR_TEXT_CLEAN = os.path.join(DIR_DATA, 'text', 'clean')                    
                                                                                 
 # Load Configuration Files                                                      
 CONFIG_CONN = utils.LoadConfig().load(file_name="connections.yaml", directory=DIR_CONFIG).config

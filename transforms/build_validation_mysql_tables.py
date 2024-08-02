@@ -9,13 +9,16 @@ commands: unique table sql insert commands
 import os
 import mysql.connector
 import pandas as pd
+from dotenv import load_dotenv
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 from src import utils, queries, connections
 
-# Directories                                                                      
-DIR_ROOT = utils.get_root_directory()                                              
-DIR_CONFIG = os.path.join(DIR_ROOT, 'configurations')                              
+# Directories                 
+load_dotenv()
+DIR_ROOT = os.getenv("DIR_ROOT")                                                   
+DIR_CONFIG = os.getenv("DIR_CONFIG")                                               
+DIR_DATA = os.getenv("DIR_DATA")
 DIR_DATA = os.path.join(DIR_ROOT, 'data', 'validation', 'clean')
 
 # Load Configuration Files                                                      

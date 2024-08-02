@@ -2,12 +2,14 @@
 Transform to create sql table 
 """
 import os
+from dotenv import load_dotenv
 from mysql.connector.cursor_cext import CMySQLCursor
 from src import queries, utils, connections
 
 # Directories
-DIR_ROOT = utils.get_root_directory()
-DIR_CONFIG = os.path.join(DIR_ROOT, 'configurations')
+load_dotenv()
+DIR_ROOT = os.getenv("DIR_ROOT")                                                   
+DIR_CONFIG = os.getenv("DIR_CONFIG")                                               
 
 # Load Configuration Files
 CONFIG_CONN = utils.LoadConfig().load(file_name="connections.yaml", directory=DIR_CONFIG).config

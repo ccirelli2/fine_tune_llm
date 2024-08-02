@@ -4,12 +4,17 @@ Unpack filing archives from gzip to text
 import os
 import gzip 
 import shutil
+from dotenv import load_dotenv
 from src import queries, utils, connections
+
 # Directories
-DIR_ROOT = utils.get_root_directory()
-DIR_CONFIG = os.path.join(DIR_ROOT, 'master')
-DIR_INPUT = os.path.join(DIR_ROOT, 'data', 'archives')
-DIR_OUTPUT = os.path.join(DIR_ROOT, 'data', 'text', 'raw')
+load_dotenv()
+DIR_ROOT = os.getenv("DIR_ROOT")                                                   
+DIR_CONFIG = os.getenv("DIR_CONFIG")                                               
+DIR_DATA = os.getenv("DIR_DATA")
+DIR_DATA_TEXT = os.getenv("DIR_DATA_TEXT")
+DIR_INPUT = os.path.join(DIR_DATA, 'archives')
+DIR_OUTPUT = os.path.join(DIR_DATA_TEXT, 'raw')
 
 
 def unzip_gz(file_path, output_path):

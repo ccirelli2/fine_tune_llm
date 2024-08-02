@@ -7,14 +7,17 @@ import asyncio
 import mysql.connector
 import pandas as pd
 import chardet
+from dotenv import load_dotenv
 from src import utils, transforms
 from src.transforms import CleanTextAsync
 
-# Directories                                                                      
-DIR_ROOT = utils.get_root_directory()                                              
-DIR_CONFIG = os.path.join(DIR_ROOT, 'configurations')                              
-DIR_TEXT_RAW = os.path.join(DIR_ROOT, 'data', 'text', 'raw')                    
-DIR_TEXT_CLEAN = os.path.join(DIR_ROOT, 'data', 'text', 'clean')
+# Directories                 
+load_dotenv()
+DIR_ROOT = os.getenv("DIR_ROOT")
+DIR_CONFIG = os.getenv("DIR_CONFIG")
+DIR_DATA = os.getenv("DIR_DATA_TEXT")
+DIR_TEXT_RAW = os.path.join(DIR_DATA_TEXT, 'raw')                    
+DIR_TEXT_CLEAN = os.path.join(DIR_DATA_TEXT, 'clean')
 
 # Clean Text
 async def main():
