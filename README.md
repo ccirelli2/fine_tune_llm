@@ -1,5 +1,42 @@
 # fine_tune_llm
-Fine tune llm.  Validate via rag pipeline. 
+
+The purpose of this project is to test whether performing domain
+adaptation on large language models increases their ability to perform certain
+data retrieval tasks.
+
+This project utilizes publically available Edgar SEC filings for the damain
+data.
+
+There are three sections to this project:
+1.) Knowledge Stores
+    - MySql Database: Used to store data on, including, but not limited to
+        i. filing metadata
+        ii. cleaned and chunked filing text.
+    - Chromadb: Used to store and efficiently retrieve the filing metadata,
+        chunked text and text embeddings.
+
+2.) Validation Pipeline
+    - Pipeline that tests the large language models ability to retrieve
+        data attributes from the filings.
+    - Relies on retrieval augmented generation.
+    - Query: utilized to retrieve the most relevant chunks of text from
+        Chromadb.
+    - Prompt: instructions to LLM to extract text from underlying documents.
+    - Prompt + Query: constitutes rag where we send the chunks + prompt to the
+        llm.
+    - Extraction: LLM response.
+    - Validation: compare LLM response to validation dataset.
+    - NOTE:  Validation pipeline will store all data at the extraction level
+        and be structured around experiments & trials.
+
+3.) Domain Adaptation
+    - Fine tuning of large language models on edgar filing data.
+    - This process requires the preprocessing of the edgar filings.
+    - Thereafter, we instantuate a huggingface trainer class and fine tune
+        model.
+    - Weights and checkpoints for each fine tuned model will be saved to
+        the local drive and metadata about the training run will be saved to
+        a table in the MySql Database.
 
 # Transformation Pipeline (see: fine_tune_llm/transforms)
 - create-base-sql-tables:
@@ -35,6 +72,16 @@ Fine tune llm.  Validate via rag pipeline.
     Code that automates the insertion of validation data into the validation
     mysql tables. 
 
+# Validation Datast
+- The validation dataset for this project is financial statement data obtained
+    from the edgar web page.  The data is made availabe in bulk in tab delimited
+    files and archived by year and fiscal quarter.
+- This data is ideal for this type of project as the data that we will attempt
+    to retrieve from the edgar sec filings should be the same as the
+    data (ex: annual revenues for Ford Motor Company for 2022) edgar makes
+    available in these bulk documents.
+- https://www.sec.gov/about/dera_financial-statement-data-set
+- data dictionary: https://www.sec.gov/files/aqfs.pdf
 
 # TODO
 - Add log handler & log file.  Replace print with logs.
@@ -48,6 +95,4 @@ Accession Number: uniuqe ID given to each filing.
     It combines the CIK id
 
 ### Validation Dataset
-- https://www.sec.gov/about/dera_financial-statement-data-set
-- data dictionary: https://www.sec.gov/files/aqfs.pdf
 
