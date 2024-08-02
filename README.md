@@ -1,7 +1,7 @@
 # fine_tune_llm
 Fine tune llm.  Validate via rag pipeline. 
 
-# Scripts
+# Transformation Pipeline (see: fine_tune_llm/transforms)
 - create-base-sql-tables:
     script to programatically build the required mysql tables.
 - unpack-filing-archives:
