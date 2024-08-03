@@ -41,7 +41,12 @@ tables_2_create = {
     "validation_num": queries.command_create_mysql_validation_num_table(),
     "validation_pre": queries.command_create_mysql_validation_pre_table(),
     "validation_sub": queries.command_create_mysql_validation_sub_table(),
-    "validation_tag": queries.command_create_mysql_validation_tag_table()
+    "validation_tag": queries.command_create_mysql_validation_tag_table(),
+    "experiments": queries.command_create_mysql_experiments_table(),
+    "trials": queries.command_create_mysql_trials_table(),
+    "trial_parameters": queries.command_create_mysql_trial_parameters_table(),
+    "trial_extraction": queries.command_create_mysql_trial_extraction_table(),
+    "trial_results": queries.command_create_mysql_trial_results_table(),
 }
 
 # Create Tables

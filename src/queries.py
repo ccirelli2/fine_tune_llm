@@ -1,12 +1,7 @@
 """
 Project service queries (ex: mysql, chromadb
 """
-
-# Create MySql Tables
-# index table schema
-# text table schema
-# chunk table schema
-# embeddings table schema
+import pandas as pd
 
 
 def command_create_mysql_filings_index_table():
@@ -146,12 +141,164 @@ def command_create_mysql_validation_tag_table():
     """
     return sql
 
+
+def command_create_mysql_experiments_table():
+    """
+    Args:
+        id:
+        name:
+        description:
+        author:
+    """
+    sql = """
+    CREATE TABLE experiments (
+        id              varchar(250),
+        name            varchar(250),
+        description     LONGTEXT,
+        author          varchar(250),
+        created         TIMESTAMP,
+    PRIMARY KEY (id)
+    );
+    """
+    return sql
+
+
+def command_create_mysql_trials_table():
+    """
+    Args
+        id: the primary key for the trials.  Each trial is unique.
+        name: the name associated with the trials.
+        description: description of trial.  Should include objective of test.
+        outcome: the expected outcome of the trials.
+        author: name of individual {last-name, first-name}
+        experiment_id: used to link trials to experiments.
+    """
+    sql = """
+    CREATE TABLE trials (
+        id                  varchar(250),,
+        name                varchar(250),
+        description         LONGTEXT,
+        outcome             LONGTEXT,
+        author              LONGTEXT,
+        created             TIMESTAMP,
+        experiment_id       varchar(250),
+    PRIMARY KEY (id)
+    );
+    """
+    return sql
+
+
+def command_create_mysql_trial_parameters_table():
+    """
+    Key value pairs associated with the parameters and values of a trial.
+    The objective is to have a table that captures the environment used to
+    validate a model.
+    
+    Examples:
+        model name, description, checkpoint, source
+        validation data source
+        validation data config (ex: decisions related to chunk size, etc.)
+        model temperature
+        model fine tuning config (ex: decisions related to fine tuning).
+        query, prompt, version numbers.
+    
+    Args:
+        id:
+        name: parameter name
+        value: parameter value
+        datatype: parameter data type (used for data conversion)
+        trial_id: foreign key to link back to trial table.
+    """
+    sql = """
+    CREATE TABLE trial_parameters (
+        id              varchar(250),
+        name            varchar(250),
+        value           varchar(250),
+        datatype        varchar(250),
+        trial_id        varchar(250),
+    PRIMARY KEY (id)
+    );
+    """
+    return sql
+
+
+def command_create_mysql_models_table():
+    """
+    List of models and metadata from which to select for experiments and 
+    trials.
+    """
+    sql = """
+    CREATE TABLE models (
+        id              varchar(250),
+        name            varchar(250),
+        checkpoint      varchar(250),
+        version_no      varchar(250),
+        description     varchar(250),
+        source          varchar(250),
+        created         varchar(250),
+    PRIMARY KEY (id)
+    );
+    """
+    return sql
+
+
+def command_create_mysql_trial_extraction_table():
+    """
+    Capture output from extractions
+    Args:
+        id:
+        gt_variable_name: name of variable in ground truth dataset.
+        gt_datatype: datatype of ground truth value.
+        extracted_value: value extracted.
+        gt_id:  foreign key to link to validation table ground truth values.
+        trial_id:
+    """
+    sql = """
+    CREATE TABLE trial_extraction (
+        id                  INT AUTO_INCREMENT,
+        gt_variable_name    varchar(250),
+        extracted_value     varchar(250),
+        gt_id               varchar(250),
+        trial_id            varchar(250),
+
+    PRIMARY KEY(id)
+    );
+    """
+    return sql
+
+
+def command_create_mysql_trial_results_table():
+    """
+    """
+    sql = """
+    CREATE TABLE trial_results (
+        id                      varchar(250),
+        gt_variable_name        varchar(250),
+        gt_variable_value       varchar(250),
+        gt_variable_dtype       varchar(250),
+        extracted_value         varchar(250),
+        is_absolute_match       boolean,
+        is_fuzzy_match          boolean,
+        fuzzy_match_threshold   float,
+        gt_id                   INT,
+        trial_id                INT,
+        created                 TIMESTAMP,
+    PRIMARY KEY (id)
+
+    );
+    """
+    return sql
+
+
 def insert_into_filing_index_table(client, values: tuple):
     """
     """
-    sql = """                                                                                              
-        INSERT INTO filing_index (id, file_name, file_type, file_date, company_name, cik, irs_number)
-        VALUES (%s, %s, %s, %s, %s, %s, %s)                                        
+    sql = """
+    INSERT INTO
+        filing_index
+        (id, file_name, file_type, file_date, company_name, cik, irs_number)
+    VALUES
+        (%s, %s, %s, %s, %s, %s, %s);
     """             
     print("Inserting row => {}".format(values))
     try:
@@ -295,6 +442,110 @@ def get_filing_index_join_chunks():
     return query
 
 
+def query_get_current_experiments(client):
+    """
+    """
+    sql = """
+    SELECT *
+    FROM experiments;
+    """
+    df = pd.DataFrame({})
+    status = False
+    error = "None"
 
+    try:
+        df = pd.read_sql(sql, client) 
+        status = True
+    except Exception as e:
+        df = pd.DataFrame({})
+        error = e
+    return df, status, error
+
+
+def insert_into_experiments(client, values: tuple):
+    """
+    """
+    sql = """
+    INSERT INTO experiments
+        (id, name, description, author, created)
+    VALUES
+        (%s, %s, %s, %s, %s);                                        
+    """
+    status = False
+    error = "None"
+    try:
+        print("\tExecuting insertion")
+        cursor = client.cursor()
+        cursor.execute(sql, values)
+        client.commit()
+        status = True 
+    except Exception as e:
+        status = False
+        error = e
+    return status, error
+
+
+def query_get_current_trials(client):
+    """
+    """
+    sql = """
+    SELECT *
+    FROM trials;
+    """
+    df = pd.DataFrame({})
+    status = False
+    error = "None"
+
+    try:
+        df = pd.read_sql(sql, client) 
+        status = True
+    except Exception as e:
+        df = pd.DataFrame({})
+        error = e
+    return df, status, error
+
+
+def insert_into_trials(client, values: tuple):
+    """
+    """
+    sql = """
+    INSERT INTO trials
+        (id, name, description, outcome, author, experiment_id, created)
+    VALUES
+        (%s, %s, %s, %s, %s, %s, %s);
+    """
+    status = False
+    error = "None"
+    try:
+        print("\tExecuting insertion")
+        cursor = client.cursor()
+        cursor.execute(sql, values)
+        client.commit()
+        status = True
+    except Exception as e:
+        status = False
+        error = e
+    return status, error
+
+
+def get_filing_index_companies(client):
+    """
+    Return unique set of company names from filing_index table. 
+    """
+    sql = """
+    SELECT DISTINCT company_name, cik
+    FROM filing_index;
+    """
+    df = pd.DataFrame({})
+    status = False
+    error = "None"
+
+    try:
+        df = pd.read_sql(sql, client) 
+        status = True
+    except Exception as e:
+        df = pd.DataFrame({})
+        error = e
+    return df, status, error
 
 

@@ -1,0 +1,7 @@
+TRIAL:
+  NAME: test
+  DESCRIPTION: test pipeline.
+  OUTCOME: get pipeline running successfully.
+  AUTHOR: Christopher Cirelli
+
+
