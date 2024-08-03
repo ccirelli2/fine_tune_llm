@@ -48,7 +48,7 @@ def command_create_mysql_validation_num_table():
         qtrs        varchar(250),
         uom         varchar(250),
         value       varchar(250),
-        footnote    varchar(500),
+        footnote    LONGTEXT,
     PRIMARY KEY (id)
     );
     """
@@ -68,7 +68,7 @@ def command_create_mysql_validation_pre_table():
         rfile       varchar(250),
         tag         varchar(250),
         version     varchar(250),
-        plabel      varchar(250),
+        plabel      LONGTEXT,
         negating    varchar(250),
     PRIMARY KEY (id)
     );
@@ -134,8 +134,8 @@ def command_create_mysql_validation_tag_table():
         datatype    VARCHAR(250),
         iord        VARCHAR(250),
         crdr        VARCHAR(250),
-        tlabel      VARCHAR(250),
-        doc         VARCHAR(250),
+        tlabel      LONGTEXT,
+        doc         LONGTEXT,
     PRIMARY KEY (id)
     );
     """
@@ -206,6 +206,7 @@ def command_create_mysql_trial_parameters_table():
         id:
         name: parameter name
         value: parameter value
+        category: category of field.  Optional.
         datatype: parameter data type (used for data conversion)
         trial_id: foreign key to link back to trial table.
     """
@@ -214,6 +215,7 @@ def command_create_mysql_trial_parameters_table():
         id              varchar(250),
         name            varchar(250),
         value           varchar(250),
+        category        varchar(250),
         datatype        varchar(250),
         trial_id        varchar(250),
     PRIMARY KEY (id)

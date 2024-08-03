@@ -96,6 +96,7 @@ There are three sections to this project:
     these words in our prompts, which means we will need to know how to separate
     them.
     - Suggestion: We have a finite list of currated validation fields.
+    - Validation-Sub: Appears to be empty.  Run insertion for for this dataset.
 
 # References
 

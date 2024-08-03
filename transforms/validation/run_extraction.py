@@ -1,4 +1,8 @@
 """
+TODO: Switch to using langchain for rag orchestration
+TODO: Our validation results table will need to have both the raw & normalized
+    names for the financial metrics.
+
 Dependencies
     Connection to MySql
     Connection to ChromadB
@@ -16,14 +20,14 @@ import pandas as pd
 import ollama
 import mysql.connector
 import chromadb
+from dotenv import load_dotenv
 from fastembed import TextEmbedding
+from src import utils, rag, connections
 
 # Directories
+load_dotenv()
 DIR_ROOT = os.getenv("DIR_ROOT")                                                   
 DIR_CONFIG = os.getenv("DIR_CONFIG")                                               
-DIR_DATA = os.getenv("DIR_DATA_TEXT")                                              
-DIR_TEXT_RAW = os.path.join(DIR_DATA_TEXT, 'raw')
-DIR_TEXT_CLEAN = os.path.join(DIR_DATA_TEXT, 'clean')  
 
 # Config Files
 CONFIG_MYSQL = utils.LoadConfig().load(file_name="connections.yaml", directory=DIR_CONFIG).config
@@ -47,7 +51,7 @@ cursor_mysql = conn_mysql.cursor()
 
 # ChromaDb - Connection
 COLLECTION_KEY = "EDGAR"
-COLLECTION_METADATA = CONFIG_CHROMA['COLLECTIONS']['COLLECTION_KEY']['METADATA']
+COLLECTION_METADATA = CONFIG_CHROMA['COLLECTIONS'][COLLECTION_KEY]['METADATA']
 COLLECTION_NAME = COLLECTION_METADATA['name']
 EMBED_MODEL = CONFIG_CHROMA['EMBEDDING_MODEL']
 
@@ -58,32 +62,55 @@ conn_chroma = chromadb.HttpClient(
 # Embedding Model
 embedding_model = TextEmbedding(EMBED_MODEL) 
 
-# Load Query Template Functions
-
-# Load Prompt Template Functions
-
 
 ###############################################################################
-# Parameters
+# Temporary Configurations (Will Switch to MySql Trials Table)
 ###############################################################################
 
 # Get Company Names
 
 
 # Get Financial Metrics
+fields = {
+    0: {"name_val": "NetIncomeLoss", "name_norm": "Net Income Loss"},
+    1: {}
+}
+conditions = {"year": 2021}
+company_name = "3D SYSTEMS CORP"
 
+company_cik = ""
 
-# Iterate Company Name (CIK) + Financial Metric
 
 ###############################################################################
 # Retreival
 ###############################################################################
 
 # Construct Queries
+query = rag.query_single_attribute(
+    name=fields[0]["name_norm"],
+    conditions=conditions
+)
+print("Query => {}".format(query))
 
+# Get Collection
+print("Obtaining collection => {}".format(COLLECTION_NAME))
+collection = conn_chroma.get_or_create_collection(name=COLLECTION_NAME)
 
-# Retrieve Chunks / Text
+# Embed Query
+print("Embedding query")
+query_embedding = list(embedding_model.embed(query))[0].tolist()
 
+# Retrieving Chunks
+"""
+NOTE: WE NEED TO ADD METADATA: EX CIK + YEAR
+"""
+
+context = collection.query(
+    query_embeddings=query_embedding,
+    n_results=5
+)
+
+print(context)
 
 
 ###############################################################################
@@ -94,8 +121,17 @@ embedding_model = TextEmbedding(EMBED_MODEL)
 
 
 # Execute Extraction
-
-
+"""
+messages = [{'role': role, 'content': prompt}]                                  
+                                                                                
+response = ollama.generate(                                                     
+        model='llama3.1',                                                       
+        prompt=prompt,                                                          
+)                                                                               
+content = response['response']                                                  
+                                                                                
+print(content)    
+"""
 
 ###############################################################################
 # Write Results to MySql Trial Results Table
