@@ -86,7 +86,16 @@ There are three sections to this project:
 # TODO
 - Add log handler & log file.  Replace print with logs.
 - Change hardcoded directory & paths to config
-
+- Validation Dataset
+    - Each company may have a different name for a given variable.
+        For example, not all filings may use NetIncomeLoss.  This will cause
+        issues for programatically validating runs if we don't know the correct
+        mapping
+    - It appears that the naming convention in the validation dataset is a
+    concatenation of words.  Example "NetIncomeLoss".  We may need to separate
+    these words in our prompts, which means we will need to know how to separate
+    them.
+    - Suggestion: We have a finite list of currated validation fields.
 
 # References
 
