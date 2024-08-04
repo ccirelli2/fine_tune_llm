@@ -3,6 +3,7 @@
 import os
 import re
 import pandas as pd
+from dotenv import load_dotenv
 from src import queries, utils, connections, transforms
 
 # Directories
@@ -17,10 +18,11 @@ CONFIG_CONN = utils.LoadConfig().load(file_name="connections.yaml", directory=DI
 # Get List of Files
 files = os.listdir(DIR_TEXT_RAW)
                                                                                 
-# Connection Configurations                                                     
+# Connection Configurations
+load_dotenv()
 HOST = CONFIG_CONN['MYSQL']['HOST']                                             
 USER = CONFIG_CONN['MYSQL']['USER']                                             
-PASSWORD = CONFIG_CONN['MYSQL']['PASSWORD']                                     
+PASSWORD = os.getenv('MYSQL_PASSWORD')                                     
 PORT = CONFIG_CONN['MYSQL']['PORT']                                             
 DATABASE = CONFIG_CONN['MYSQL']['DATABASE']                                     
                                                                                 

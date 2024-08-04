@@ -20,7 +20,7 @@ CONFIG_MYSQL = utils.LoadConfig().load(file_name="connections.yaml", directory=D
 # MySQL - Connection                                                               
 HOST = CONFIG_MYSQL['MYSQL']['HOST']                                               
 USER = CONFIG_MYSQL['MYSQL']['USER']                                               
-PASSWORD = CONFIG_MYSQL['MYSQL']['PASSWORD']                                       
+PASSWORD = os.getenv("MYSQL_PASSWORD")                                       
 PORT = CONFIG_MYSQL['MYSQL']['PORT']                                               
 DATABASE = CONFIG_MYSQL['MYSQL']['DATABASE']
 TABLE = "validation_sub"

@@ -22,7 +22,6 @@ load_dotenv()
 DIR_ROOT = os.getenv("DIR_ROOT")
 DIR_CONFIG = os.getenv("DIR_CONFIG")
 DIR_DATA = os.getenv("DIR_DATA")
-print("DIR", DIR_DATA)
 DIR_TEXT_CLEAN = os.path.join(DIR_DATA, 'text', 'clean')                    
                                                                                 
 # Load Configuration Files                                                      
@@ -31,7 +30,7 @@ CONFIG_CONN = utils.LoadConfig().load(file_name="connections.yaml", directory=DI
 # Connection Configurations                                                     
 HOST = CONFIG_CONN['MYSQL']['HOST']                                             
 USER = CONFIG_CONN['MYSQL']['USER']                                             
-PASSWORD = CONFIG_CONN['MYSQL']['PASSWORD']                                     
+PASSWORD = os.getenv("MYSQL_PASSWORD")                                     
 PORT = CONFIG_CONN['MYSQL']['PORT']                                             
 DATABASE = CONFIG_CONN['MYSQL']['DATABASE']                                     
                                                                                 

@@ -19,7 +19,6 @@ load_dotenv()
 DIR_ROOT = os.getenv("DIR_ROOT")
 DIR_CONFIG = os.getenv("DIR_CONFIG")
 DIR_DATA = os.getenv("DIR_DATA")
-print("DIR", DIR_DATA)
 DIR_TEXT_CLEAN = os.path.join(DIR_DATA, 'text', 'clean')                    
                                                                                 
 # Load Configuration Files                                                      
