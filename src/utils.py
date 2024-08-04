@@ -2,6 +2,7 @@ import logging
 import os
 import git                                                                         
 import yaml                                                                        
+import pandas as pd
 from mysql.connector.cursor_cext import CMySQLCursor 
 
 logging.basicConfig(level=logging.INFO)                                            
@@ -56,6 +57,28 @@ def check_table_exists(cursor: CMySQLCursor, table: str, database: str) -> bool:
     return exists
 
 
+class TrialParamAccumulator:                                                       
+    """                                                                            
+    """                                                                            
+    def __init__(self, trial_id: str):
+        self.trial_id = trial_id
+        self.parameters = {}                                                                
+        self.index = 0                                                                      
+        print(f"{__class__} instantiated successfully")                            
+                                                                                   
+    def get_dataframe(self):                                                       
+        return pd.DataFrame(self.parameters).transpose()                           
+                                                                                   
+    def log(self, name: str, value: str, category: str = "",        
+            dtype: str = "string"):                                                
+        """                                                                        
+        """                        
+        self.parameters[self.index] = {                                            
+            "name": name, "value": value, "trial_id": self.trial_id,                    
+            "category": category, "datatype": dtype                                
+        }                                                                          
+        self.index += 1                                                            
+        return self
 
 
 

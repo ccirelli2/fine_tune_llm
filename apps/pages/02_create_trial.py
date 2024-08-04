@@ -30,8 +30,13 @@ client = connections.MysqlClient().get_client(
     database=DATABASE                                                           
 )
 
-# Accumulator for Elections
-accumulator = {}
+client_alchemy = connections.MySqlAlchemyClient().get_client(
+    host=HOST,
+    port=PORT,
+    user=USER,
+    password=PASSWORD,
+    database=DATABASE
+)
 
 ###############################################################################
 # APPLICATION
@@ -82,22 +87,33 @@ st.write("")
 # Select an Experiment
 st.header("Select An Experiment")
 exp_names = exp_df['name'].values.tolist()
-checkbox_states = {item: st.checkbox(item) for item in exp_names}
-exp_name_elected = [item for item, is_checked in checkbox_states.items() if is_checked]
-accumulator['experiment_name'] = exp_name_elected
+#checkbox_states = {item: st.checkbox(item) for item in exp_names}
+exp_name_elected = st.selectbox("Select Experiment Name", exp_names)
+#[item for item, is_checked in checkbox_states.items() if is_checked]
+
+
 
 if exp_name_elected:
     st.write('Selected options:\t', exp_name_elected[0])
 
     # Get Experiment ID
     exp_id = exp_df[exp_df['name'] == exp_name_elected]['id'].values.tolist()[0]
-    accumulator['experinment_id'] = exp_id
     st.write("Experiment id => {}".format(exp_id))
     st.write("")
     st.write("")
 
     # Create Trial
     st.header("Trial Elections")
+    
+    # Create Trial id
+    trial_id = f"{exp_id}-{str(uuid4())[:8]}"
+
+    # Instantiate Trial Parameter Accumulator
+    accumulator = utils.TrialParamAccumulator(trial_id=trial_id)
+
+    # Accumulate
+    accumulator.log('experinment_id', exp_id, "experiment")
+    accumulator.log('experiment_name', exp_name_elected, "experiment")
 
     # Create Tabs
     tabs = ['basic', 'model', 'companies', 'extraction']
@@ -109,11 +125,11 @@ if exp_name_elected:
         trial_outcome = st.text_input("Enter outcome expected from trial")
         trial_author = st.text_input("Enter your name here")
         trial_created = datetime.now()
-        accumulator['trial_name'] = trial_name
-        accumulator['trial_desc'] = trial_desc
-        accumulator['trial_outcome'] = trial_outcome
-        accumulator['trial_author'] = trial_author
-        accumulator['trial_created'] = trial_created
+        accumulator.log('trial_name', trial_name, "trial")
+        accumulator.log('trial_desc', trial_desc, "trial")
+        accumulator.log('trial_outcome', trial_outcome, "trial")
+        accumulator.log('trial_author', trial_author, "trial")
+        accumulator.log('trial_created', trial_created, "trial")
 
         if not all([trial_name, trial_desc, trial_outcome, trial_author,
                     trial_created]
@@ -122,8 +138,8 @@ if exp_name_elected:
 
     with tab_models:
         st.caption("TODO: Add query to models table")
-        model_election = st.multiselect("Select model", ["llama3", "llama3.1"])
-        accumulator['model'] = model_election
+        model_election = st.selectbox("Select model", ["llama3", "llama3.1"])
+        accumulator.log("model_name", model_election, "model")
 
     with tab_companies:
         st.subheader("Companies From Filing Index")
@@ -133,7 +149,7 @@ if exp_name_elected:
         else:
             st.dataframe(companies_df)
             company_list = companies_df['company_name'].values.tolist()
-
+        
             # Make Selections
             st.subheader("Company Selection")
             
@@ -142,24 +158,36 @@ if exp_name_elected:
             tab_all, tab_individual = st.tabs(tabs)
             with tab_all:
                 if st.button("Confirm selection"):
-                    company_elections = companies_df['cik'].values.tolist()
-                    accumulator['companies'] = company_elections
+                    company_cik = companies_df['cik'].values.tolist()
+                    company_elections = companies_df['company_name'].values.tolist()
+                    
+                    for i in range(len(company_elections)):
+                        cik = company_cik[i]
+                        company_name = company_elections[i]
+                        # TODO: add another generic field to capture things like company name
+                        accumulator.log("cik", cik, "companies")
+                    
                     st.write("Company count => {}".format(len(company_elections)))
 
-            with tab_individual: 
-                selected_options = st.multiselect('Select options:', company_list)
-                
-                if st.button("Confirm Selection"):
-                    st.write(f"Company Count => {len(selected_options)}")
-                    
-                    companies_elections = (
+            with tab_individual:
+                company_elections = st.multiselect('Select options:', company_list)
+                if len(company_elections) == 0:
+                    st.warning("You must select at least one company")
+            
+                if company_elections:
+                    st.write(f"Adding {len(company_elections)} companies")
+                 
+                    company_cik = (
                         companies_df[
-                            companies_df['company_name'].isin(selected_options)
+                            companies_df['company_name'].isin(company_elections)
                             ]['cik']
                         .values
                         .tolist()
                     )
-                    accumulator['companies'] = company_elections
+                    for i in range(len(company_elections)):
+                        cik = company_cik[i]
+                        company_name = company_elections[i]
+                        accumulator.log("cik", cik, "companies")
 
     with tab_extract:
         st.caption("Select which financial metrics to extract")
@@ -177,70 +205,79 @@ if exp_name_elected:
                 "NetCashProvidedByUsedInOperatingActivities"
         ]
         financial_elections = st.multiselect("Financial Variables", options)
-        accumulator['financial_metrics'] = financial_elections
+        
+        for f in financial_elections:
+            accumulator.log("financial-metric", f, "financial_metrics")
 
-st.write("")
-st.write("")
+    st.write("")
+    st.write("")
 
 ###############################################################################
 # Create Trial
 ###############################################################################
-st.header("Proceed to Create Trial")
+    st.header("Proceed to Create Trial")
 
 
-tab_create, tab_accounting = st.tabs(['create trial', 'selection accounting'])
+    tab_create, tab_accounting = st.tabs(['create trial', 'selection accounting'])
 
-with tab_accounting:
-    st.write("")
-    st.write("")
+    with tab_accounting:
+        st.write("")
+        st.write("")
+        accumulator_df = accumulator.get_dataframe()
+        st.dataframe(accumulator_df, width=1_000)
 
-    st.write(accumulator)
+    with tab_create:
+        st.write("")
+        st.write("")
 
-with tab_create:
-    st.write("")
-    st.write("")
+        if st.button("Create Trial"):
+                
+            # Validate Uniqueness
+            st.write("\tValidating uniqueness of trial name")
+            trial_names_exist = trial_df['name'].values.tolist()
 
-    if st.button("Create Trial"):
-            
-        # Validate Uniqueness
-        st.write("\tValidating uniqueness of trial name")
-        trial_names_exist = trial_df['name'].values.tolist()
-
-        if trial_name in trial_names_exist:
-            msg = "Trial name is not unique.  Please change"
-            st.markdown(
-                "<p style='color: red; font-weight: bold;'></p>".format(msg),
-                unsafe_allow_html=True
-            )
-        else:
-            st.write("\t\t Trial name is unique")
-            
-            # Create Trial id
-            trial_id = f"{exp_id}-{str(uuid4())[:8]}"
-            st.write("\tGenerating trial id => {}".format(trial_id))
-
-            # Other Elections
-            tabs = ['model', 'validation-type']
-            st.tabs(tabs)
-
-
-            # Write to Trial
-            st.write("\tCreating Trial")
-
-            values = (
-                trial_id, trial_name, trial_desc, trial_outcome, trial_author,
-                exp_id, trial_created
-            )
-            response, error = queries.insert_into_trials(client, values)
-            
-            if not response:
-                msg = "Trial creation failed with error => {}".format(error)
+            if trial_name in trial_names_exist:
+                msg = "Trial name is not unique.  Please change"
                 st.markdown(
-                    "<p style='color: red; font-weight: bold;'>{}</p>".format(msg),
+                    "<p style='color: red; font-weight: bold;'></p>".format(msg),
                     unsafe_allow_html=True
                 )
             else:
-                st.write("\t\tTrial created successfully")
+                st.write("\t\t Trial name is unique")
+                
+                # Create Trial id
+                st.write("\tGenerating trial id => {}".format(trial_id))
 
+                # Write to Trial
+                st.write("\tCreating Trial")
+
+                values = (
+                    trial_id, trial_name, trial_desc, trial_outcome, trial_author,
+                    exp_id, trial_created
+                )
+                response, error = queries.insert_into_trials(client, values)
+                
+                if not response:
+                    msg = "Trial creation failed with error => {}".format(error)
+                    st.markdown(
+                        "<p style='color: red; font-weight: bold;'>{}</p>".format(msg),
+                        unsafe_allow_html=True
+                    )
+                else:
+                    st.write("\t\tTrial created successfully")
+
+
+                # Write to Trial Parameters table
+                st.write("Writing trial parameters to trial_parameters mysql table")
+                status, error = queries.insert_into_trial_parameters_table(
+                    client=client_alchemy,
+                    df=accumulator_df
+                )
+                if not status:
+                    st.write("Insertion failed with error => {}".format(error))
+                else:
+                    st.write("Writing successfull")
+
+                
 
 

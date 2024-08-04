@@ -3,7 +3,6 @@ Project service queries (ex: mysql, chromadb
 """
 import pandas as pd
 
-
 def command_create_mysql_filings_index_table():
     query = """
         CREATE TABLE filing_index (
@@ -212,7 +211,7 @@ def command_create_mysql_trial_parameters_table():
     """
     sql = """
     CREATE TABLE trial_parameters (
-        id              varchar(250),
+        id              INT AUTO_INCREMENT,
         name            varchar(250),
         value           varchar(250),
         category        varchar(250),
@@ -550,4 +549,20 @@ def get_filing_index_companies(client):
         error = e
     return df, status, error
 
+
+def insert_into_trial_parameters_table(client, df: pd.DataFrame):
+    """
+    """
+    table = "trial_parameters"
+    status = False
+    error = "None"
+    try:
+        print(f"Inserting {df.shape[0]} rows into {table}")
+        df.to_sql(table, con=client, if_exists='append', index=False)
+        print("Insertion successfull")
+        status = True
+    except Exception as e:
+        error = e
+        print(f"Insertion failed with exception => {e}")
+    return status, error
 

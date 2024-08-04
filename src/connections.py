@@ -2,7 +2,22 @@
 Standard functions for connecting to projects various services
 """
 import mysql.connector
-                                                                                   
+from sqlalchemy import create_engine
+
+
+class MySqlAlchemyClient:
+    def __init__(self):
+        print(f"{__class__} instantiated successfully")
+
+    @staticmethod                                                                  
+    def get_client(host: str, user: str, password: str, port: int, database: str):
+        # Create an SQLAlchemy engine
+        client = create_engine('mysql+mysqlconnector://{}:{}@{}:{}/{}'.format(
+            user, password, host, port, database)
+        )
+        return client
+
+
 class MysqlClient:                                                                 
     """                                                                            
     Connect to mysql database.                                               
@@ -10,12 +25,11 @@ class MysqlClient:
     def __init__(self):                                                            
         """                                                                        
         Instantiate class.                                                         
-        """                                                                        
-                                                                                   
-        print("{} class instantiated successfully".format(__class__))              
-                                                                                   
-    @staticmethod                                                                  
-    def get_client(host: str, user: str, password: str, port: int, database: str):                                                
+        """
+        print("{} class instantiated successfully".format(__class__))                   
+    
+    @staticmethod
+    def get_client(host: str, user: str, password: str, port: int, database: str):
         """                                                                        
         ::host: ip address of service.                                             
         ::user:                                                                    
