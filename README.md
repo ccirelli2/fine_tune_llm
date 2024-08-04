@@ -55,7 +55,7 @@ There are four sections to this project:
 ![Landing Page](images/app-main.png)
 
 
-![Create Experiment](images/app-create_experiment.png)
+![Create Experiment](images/app-create-experiment.png)
 
 
 ![Create Trial](images/app-create-trial.png)        
