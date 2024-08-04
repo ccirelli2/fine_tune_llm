@@ -18,7 +18,6 @@ There are four sections to this project:
 
 ![Data Preprocessing Diagram](images/diagram-data-preprocessing-pipeline.png)
 
-
 2.) RAG & Validation Pipeline
     - Pipeline that tests the large language models ability to retrieve
         data attributes from the filings.
@@ -34,7 +33,6 @@ There are four sections to this project:
         and be structured around experiments & trials.
 
 ![RAG Diagram](images/rag-diagram.png)
-
 
 3.) Domain Adaptation
     - Fine tuning of large language models on edgar filing data.
@@ -55,9 +53,12 @@ There are four sections to this project:
           experiment & trial configurations.
 
 ![Landing Page](images/app-main.png)
-![Create Experiment](images/app-create_experiment.png)
-![Create Trial](images/app-create-trial.png)        
 
+
+![Create Experiment](images/app-create_experiment.png)
+
+
+![Create Trial](images/app-create-trial.png)        
 
 # Transformation Pipeline (see: fine_tune_llm/transforms)
 - create-base-sql-tables:
