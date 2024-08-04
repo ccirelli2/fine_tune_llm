@@ -8,6 +8,7 @@ This project utilizes publically available Edgar SEC filings for the damain
 data.
 
 There are three sections to this project:
+
 1.) Knowledge Stores
     - MySql Database: Used to store data on, including, but not limited to
         i. filing metadata
