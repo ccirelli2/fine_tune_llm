@@ -19,7 +19,7 @@ There are three sections to this project:
 ![Data Preprocessing Diagram](documentation/diagram-data-preprocessing-pipeline.png)
 
 
-2.) Validation Pipeline
+2.) RAG & Validation Pipeline
     - Pipeline that tests the large language models ability to retrieve
         data attributes from the filings.
     - Relies on retrieval augmented generation.
@@ -32,6 +32,9 @@ There are three sections to this project:
     - Validation: compare LLM response to validation dataset.
     - NOTE:  Validation pipeline will store all data at the extraction level
         and be structured around experiments & trials.
+
+![RAG Diagram](documentation/rag-digram.png)
+
 
 3.) Domain Adaptation
     - Fine tuning of large language models on edgar filing data.
