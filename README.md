@@ -15,7 +15,7 @@ There are three sections to this project:
     - Chromadb: Used to store and efficiently retrieve the filing metadata,
         chunked text and text embeddings.
 
-    ![Alt text](/Users/temp-admin/repositories/fine_tune_llm/documentation/diagram-data-preprocessing-pipeline.png)
+    ![Data Preprocessing Diagram](documentation/diagram-data-preprocessing-pipeline.png)
 
 
 2.) Validation Pipeline
