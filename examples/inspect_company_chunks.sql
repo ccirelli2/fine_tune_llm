@@ -6,6 +6,6 @@ FROM filing_index as fi
 JOIN filing_chunks as fc ON fi.file_name = fc.foreign_id
 WHERE
 	fi.cik = @cik AND
-	fi.file_type = '10-K' AND
+	fi.file_type = '8-K' AND
     fc.chunk LIKE '%Net Income%'
 LIMIT 10;

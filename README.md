@@ -106,19 +106,29 @@ There are four sections to this project:
 - data dictionary: https://www.sec.gov/files/aqfs.pdf
 
 # TODO
-- Add log handler & log file.  Replace print with logs.
-- Change hardcoded directory & paths to config
-- Validation Dataset
-    - Each company may have a different name for a given variable.
-        For example, not all filings may use NetIncomeLoss.  This will cause
-        issues for programatically validating runs if we don't know the correct
-        mapping
+- Build query & prompt validation datasets.
+    - Ex: 10 companies, 10 financial attributes.
+    - Validate which chunks contain Attribute.
+    - Validate attribute value matches validation dataset.
+    - Create small validaiton dataset (company feature intersection + chunk-id).
+    - Create query validation pipeline.
+    - Create query + prompt validation pipeline.
+    - Validation financial metric name for each company.  (ex; fin vs industrial).
     - It appears that the naming convention in the validation dataset is a
     concatenation of words.  Example "NetIncomeLoss".  We may need to separate
     these words in our prompts, which means we will need to know how to separate
     them.
+
+- MySql Tables
+    - Create trial_chunks table + chunk used.
+    - Create a table for models to store names, versions, source, directory path.
+        - Create Streamlit page to register new models.
+- Models
+    - Test way to serve larger models using compute cluster and potentially
+        via containers and apis.
+- Add log handler & log file.  Replace print with logs.
     - Suggestion: We have a finite list of currated validation fields.
-    - Validation-Sub: Appears to be empty.  Run insertion for for this dataset.
+
 
 # References
 

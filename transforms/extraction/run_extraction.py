@@ -27,6 +27,7 @@ import pandas as pd
 import ollama
 import mysql.connector
 import chromadb
+from dotenv import load_dotenv
 from datetime import datetime
 from dotenv import load_dotenv
 from fastembed import TextEmbedding
@@ -45,7 +46,7 @@ CONFIG_CHROMA = utils.LoadConfig().load(file_name="chroma.yaml", directory=DIR_C
 # MySQL - Connection
 HOST = CONFIG_MYSQL['MYSQL']['HOST']                                             
 USER = CONFIG_MYSQL['MYSQL']['USER']                                             
-PASSWORD = CONFIG_MYSQL['MYSQL']['PASSWORD']                                     
+PASSWORD = os.getenv('MYSQL_PASSWORD')                                     
 PORT = CONFIG_MYSQL['MYSQL']['PORT']                                             
 DATABASE = CONFIG_MYSQL['MYSQL']['DATABASE']                                     
                                                                                 
@@ -135,6 +136,8 @@ chroma_response = collection.query(
 )
 print("Chunks Returned")
 context = chroma_response['documents'][0]
+print(f"Number of chunks returned => {len(context)}")
+
 
 ###############################################################################
 # Construct Prompts
@@ -162,8 +165,8 @@ role = "user"
 messages = [{'role': role, 'content': prompt}]                                  
                                                                                 
 response = ollama.generate(                                                     
-        model='llama3.1',                                                       
-        prompt=prompt,                                                          
+    model='llama3.1:70b',
+    prompt=prompt,                                                          
 )                                                                               
 model = response['model']
 extraction_response = response['response']                                                  
@@ -172,7 +175,6 @@ tokenizer = LlamaTokenizer.from_pretrained("llama3.1")
 extraction_context_decoded = tokenizer 
 
 print("LLM Response => {}".format(content))
-
 print("LLM Raw Response => \n\n {}".format(response))
 
 
