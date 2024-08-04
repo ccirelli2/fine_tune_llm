@@ -2,6 +2,9 @@
 TODO: Switch to using langchain for rag orchestration
 TODO: Our validation results table will need to have both the raw & normalized
     names for the financial metrics.
+TODO: I think we need to have a table whether in memory or in mysql where we
+construct the inputs to the prompt constructor.
+TODO: We need to add a metadata field for year to our collection.
 
 Dependencies
     Connection to MySql
@@ -12,6 +15,10 @@ Dependencies
     Query Experiment & Trial parameters from mysql tables.
     Write extraction to mysql.
 
+
+References
+- chromadb filters: https://cookbook.chromadb.dev/core/filters/#metadata-filters
+
 """
 
 # Libraries
@@ -20,8 +27,10 @@ import pandas as pd
 import ollama
 import mysql.connector
 import chromadb
+from datetime import datetime
 from dotenv import load_dotenv
 from fastembed import TextEmbedding
+from transformers import LlamaTokenizer
 from src import utils, rag, connections
 
 # Directories
@@ -72,23 +81,32 @@ embedding_model = TextEmbedding(EMBED_MODEL)
 
 # Get Financial Metrics
 fields = {
-    0: {"name_val": "NetIncomeLoss", "name_norm": "Net Income Loss"},
-    1: {}
-}
-conditions = {"year": 2021}
-company_name = "3D SYSTEMS CORP"
+    0: {
+        "name_source": "NetIncomeLoss",
+        "name_normalized": "Net Income Loss",
+        "conditions": {"year": 2021}
+    },
 
-company_cik = ""
+    1: {
+        "name_source": "EarningsPerShareDiluted",
+        "name_normalized": "Earnings Per Share Diluted",
+        "conditions": {"year": 2021}
+    }
+}
+company_name = {
+        0: {"name": "ServiceNow, Inc.", "cik": "0001373715"},
+        1: {"name": "EDISON INTERNATIONAL", "cik": "0000827052"}
+}
 
 
 ###############################################################################
 # Retreival
 ###############################################################################
 
-# Construct Queries
+# Construct Query
 query = rag.query_single_attribute(
-    name=fields[0]["name_norm"],
-    conditions=conditions
+    name=fields[0]["name_normalized"],
+    conditions=fields[0]['conditions']
 )
 print("Query => {}".format(query))
 
@@ -104,34 +122,60 @@ query_embedding = list(embedding_model.embed(query))[0].tolist()
 """
 NOTE: WE NEED TO ADD METADATA: EX CIK + YEAR
 """
-
-context = collection.query(
+print("Obtaining data from collection")
+file_type = ["8-K"]   # 10-Q, 10-K
+chroma_response = collection.query(
     query_embeddings=query_embedding,
-    n_results=5
+    where={"$and": 
+           [{"cik": "0001373715"},
+            {"file_type": {"$in": ["8-K"]}},
+        ]
+    },
+    n_results=10
 )
-
-print(context)
-
+print("Chunks Returned")
+context = chroma_response['documents'][0]
 
 ###############################################################################
-# Extraction
-###############################################################################
-
 # Construct Prompts
+###############################################################################
 
+
+# Construct Task
+print("Construct Task")
+date = datetime.today().strftime("%B %d, %Y")
+task = rag.task_single_attribute(
+    name=fields[0]['name_normalized'],
+    conditions=fields[0]['conditions']
+)
+print("\t Task => {}".format(task))
+
+# Construct Prompt
+print("Building prompt")
+context = "\n".join(context)
+example = {"key": "value"}
+prompt = rag.ConstructPromptWithRational(context=context, task=task, example=example).build()
+print("Prompt completed")
 
 # Execute Extraction
-"""
+role = "user"
 messages = [{'role': role, 'content': prompt}]                                  
                                                                                 
 response = ollama.generate(                                                     
         model='llama3.1',                                                       
         prompt=prompt,                                                          
 )                                                                               
-content = response['response']                                                  
-                                                                                
-print(content)    
-"""
+model = response['model']
+extraction_response = response['response']                                                  
+extraction_context = response['context']
+tokenizer = LlamaTokenizer.from_pretrained("llama3.1")
+extraction_context_decoded = tokenizer 
+
+print("LLM Response => {}".format(content))
+
+print("LLM Raw Response => \n\n {}".format(response))
+
+
 
 ###############################################################################
 # Write Results to MySql Trial Results Table

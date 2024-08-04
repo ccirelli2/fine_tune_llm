@@ -2,5 +2,4 @@ MYSQL:
   HOST: localhost
   PORT: 3306
   USER: root
-  PASSWORD: Gsu2021!
   DATABASE: edgar

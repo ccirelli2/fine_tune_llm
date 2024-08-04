@@ -15,6 +15,9 @@ There are three sections to this project:
     - Chromadb: Used to store and efficiently retrieve the filing metadata,
         chunked text and text embeddings.
 
+    ![Alt text](/Users/temp-admin/repositories/fine_tune_llm/documentation/diagram-data-preprocessing-pipeline.png)
+
+
 2.) Validation Pipeline
     - Pipeline that tests the large language models ability to retrieve
         data attributes from the filings.
@@ -37,6 +40,10 @@ There are three sections to this project:
     - Weights and checkpoints for each fine tuned model will be saved to
         the local drive and metadata about the training run will be saved to
         a table in the MySql Database.
+
+
+
+
 
 # Transformation Pipeline (see: fine_tune_llm/transforms)
 - create-base-sql-tables:

@@ -7,6 +7,9 @@ but not in the mysql filing_index table?
 """
 # Libraries
 import os
+import asyncio
+import aiofiles
+import aiomysql
 from dotenv import load_dotenv
 import mysql.connector
 import pandas as pd
@@ -57,6 +60,12 @@ filing_common = set(files_local).intersection(files_db)
 print("Total filings found => {}".format(len(filing_common)))
 print("Total filings not in database => {}".format(len(filing_diff)))
 
+# Instantiate Splitter
+splitter = RecursiveCharacterTextSplitter(
+    chunk_size=5_000,
+    chunk_overlap=500,
+    length_function=len,
+)
 
 # Instantiate Splitter
 splitter = RecursiveCharacterTextSplitter(
@@ -65,49 +74,71 @@ splitter = RecursiveCharacterTextSplitter(
     length_function=len,
 )
 
-# SQL Statement
-sql = """
-    INSERT INTO filing_chunks
-        (id, chunk, character_count, token_count, foreign_id)
-        VALUES
-        (%s, %s, %s, %s, %s);
-    """
+async def get_db_connection():
+    return await aiomysql.connect(**DATABASE_CONFIG)
 
-# Iterate Filing DataFrame
-for series in filing_df.iterrows():
-    
-    # Extract File Name (Foreign Key)
-    row = series[1]
-    file_name = row.file_name
-    if file_name in filing_common:
-    
-        # Read Text
-        path = os.path.join(DIR_TEXT_CLEAN, file_name)
-        os.path.exists(path)
+async def process_file(file_name, connection):
+    path = os.path.join(DIR_TEXT_CLEAN, file_name)
 
-        with open(path, 'r') as f:
-            text = f.read()
+    # TODO: Need to add auto rec coding.
+    async with aiofiles.open(path, 'r') as f:
+        text = await f.read()
 
-        # Chunk Text
-        chunks = list(splitter.split_text(text))
+    # Chunk Text
+    chunks = list(splitter.split_text(text))
 
-        # Insert Chunks into filing_chunk table
+    async with connection.cursor() as cursor:
+        sql = """
+            INSERT INTO filing_chunks
+                (id, chunk, character_count, token_count, foreign_id)
+                VALUES
+                (%s, %s, %s, %s, %s);
+        """
         count = 0
         for c in chunks:
-            
-            # Create Insertion Values
             id_ = "{}-{}".format(file_name, count)
             count += 1
             char_cnt = len(c)
             token_cnt = len(c.split(" "))
             foreign_id = file_name
             values = (id_, c, char_cnt, token_cnt, foreign_id)
-            
-            # Insert
+
             try:
-                print("Inserting Values for {}-{}".format(id_, foreign_id))
-                cursor.execute(sql, values)
-                client.commit()
-                print("Successfull")
+                await cursor.execute(sql, values)
+                await connection.commit()
+                print(f"Inserting Values for {id_}-{foreign_id} - Success")
             except Exception as e:
-                print("Insertion failed with exception => {}".format(e))
+                print(f"Insertion failed with exception => {e}")
+
+async def main():
+    # Get DB Connection
+    connection = await get_db_connection()
+
+    try:
+        # Query Data From Filing Index
+        query = "SELECT * FROM filing_index;"
+        async with connection.cursor() as cursor:
+            await cursor.execute(query)
+            rows = await cursor.fetchall()
+
+        # TODO: We should just have pandas read the sql.
+        filing_df = pd.DataFrame(rows, columns=[desc[0] for desc in cursor.description])
+
+        # Get All Files in Directory
+        files_local = os.listdir(DIR_TEXT_CLEAN)
+        files_db = filing_df['file_name'].tolist()
+        filing_diff = set(files_local).difference(files_db)
+        filing_common = set(files_local).intersection(files_db)
+
+        print(f"Total filings found => {len(filing_common)}")
+        print(f"Total filings not in database => {len(filing_diff)}")
+
+        # Process Files
+        tasks = [process_file(file_name, connection) for file_name in filing_common]
+        await asyncio.gather(*tasks)
+
+    finally:
+        connection.close()
+
+# Run the main function
+asyncio.run(main())

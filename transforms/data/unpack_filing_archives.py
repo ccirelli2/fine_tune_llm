@@ -1,5 +1,11 @@
 """
-Unpack filing archives from gzip to text
+Filing archives contain filing text.
+
+They are located in zip archives that are themselves located in a sub directory
+of data/archives.
+
+This code iterates through the sub directories, extracts the desired text files
+and writes them to a new raw directory.
 """
 import os
 import gzip 
