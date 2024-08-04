@@ -7,7 +7,7 @@ data retrieval tasks.
 This project utilizes publically available Edgar SEC filings for the damain
 data.
 
-There are three sections to this project:
+There are four sections to this project:
 
 1.) Knowledge Stores
     - MySql Database: Used to store data on, including, but not limited to
@@ -16,7 +16,7 @@ There are three sections to this project:
     - Chromadb: Used to store and efficiently retrieve the filing metadata,
         chunked text and text embeddings.
 
-![Data Preprocessing Diagram](documentation/diagram-data-preprocessing-pipeline.png)
+![Data Preprocessing Diagram](images/diagram-data-preprocessing-pipeline.png)
 
 
 2.) RAG & Validation Pipeline
@@ -33,7 +33,7 @@ There are three sections to this project:
     - NOTE:  Validation pipeline will store all data at the extraction level
         and be structured around experiments & trials.
 
-![RAG Diagram](documentation/rag-diagram.png)
+![RAG Diagram](images/rag-diagram.png)
 
 
 3.) Domain Adaptation
@@ -46,7 +46,17 @@ There are three sections to this project:
         a table in the MySql Database.
 
 
+4.) Streamlit Application.
+    - Here we create a gui interface for the user to
+        - define experiments
+        - define trial configurations
+        - save these configurations to the MySql database.
+        - kick off an extraction and validation run utilizing as input the
+          experiment & trial configurations.
 
+![Landing Page](images/app-main.png)
+![Create Experiment](images/app-create_experiment.png)
+![Create Trial](images/app-create-trial.png)        
 
 
 # Transformation Pipeline (see: fine_tune_llm/transforms)
