@@ -33,7 +33,7 @@ There are three sections to this project:
     - NOTE:  Validation pipeline will store all data at the extraction level
         and be structured around experiments & trials.
 
-![RAG Diagram](documentation/rag-digram.png)
+![RAG Diagram](documentation/rag-diagram.png)
 
 
 3.) Domain Adaptation
