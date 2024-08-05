@@ -15,9 +15,10 @@ DIR_CONFIG = os.getenv("DIR_CONFIG")
 CONFIG_CONN = utils.LoadConfig().load(file_name="connections.yaml", directory=DIR_CONFIG).config
                                                                                 
 # Connection Configurations                                                     
+load_dotenv()
 HOST = CONFIG_CONN['MYSQL']['HOST']                                             
 USER = CONFIG_CONN['MYSQL']['USER']                                             
-PASSWORD = CONFIG_CONN['MYSQL']['PASSWORD']                                     
+PASSWORD = os.getenv("MYSQL_PASSWORD")                                     
 PORT = CONFIG_CONN['MYSQL']['PORT']                                             
 DATABASE = CONFIG_CONN['MYSQL']['DATABASE']                                     
                                                                                 

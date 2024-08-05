@@ -118,19 +118,42 @@ There are four sections to this project:
     concatenation of words.  Example "NetIncomeLoss".  We may need to separate
     these words in our prompts, which means we will need to know how to separate
     them.
-
+- Streamlit Application
+    - Trial / Model: need to load in the model mysql table.  Ultimately, we need
+        to capture the model str in trial parameters to be used in the
+        extraction script.
+    - Add run extraction to create trial page?
+    - Validation page.
 - MySql Tables
     - Create trial_chunks table + chunk used.
     - Create a table for models to store names, versions, source, directory path.
         - Create Streamlit page to register new models.
+    - Create rag query & rag prompt tables.
+        - Note: we would need to add a column with the parameters so that we
+            know how how to insert strings.
 - Models
     - Test way to serve larger models using compute cluster and potentially
         via containers and apis.
 - Add log handler & log file.  Replace print with logs.
     - Suggestion: We have a finite list of currated validation fields.
+- Extractions
+    - Switch to using langchain for rag orchestration.
+    - Hybrid key word + semantic search.  Key word may be better for the types
+        of financial metrics we are extracting.
+    - Table extraction as chunk
+        - May be required for type of data being extracted.
+    - Save queries & prompt templtes in mysql table.
+    - Smaller validation dataset (10-20 companies, 10 fin variables.
+        - Human validated attributes.
+        - Human validated chunk-id to be used to optimize query. 
+- Chromadb Collection
+    - Add metadata field for year for filtering.
+
 
 
 # References
+- chromadb filters: https://cookbook.chromadb.dev/core/filters/#metadata-filters
+
 
 ### Filing Definitions
 Accession Number: uniuqe ID given to each filing.

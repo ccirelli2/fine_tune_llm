@@ -1,23 +1,4 @@
 """
-TODO: Switch to using langchain for rag orchestration
-TODO: Our validation results table will need to have both the raw & normalized
-    names for the financial metrics.
-TODO: I think we need to have a table whether in memory or in mysql where we
-construct the inputs to the prompt constructor.
-TODO: We need to add a metadata field for year to our collection.
-
-Dependencies
-    Connection to MySql
-    Connection to ChromadB
-    Prompt Template(s)
-    Query Template(s)
-    Ollama
-    Query Experiment & Trial parameters from mysql tables.
-    Write extraction to mysql.
-
-
-References
-- chromadb filters: https://cookbook.chromadb.dev/core/filters/#metadata-filters
 
 """
 
@@ -72,6 +53,18 @@ conn_chroma = chromadb.HttpClient(
 # Embedding Model
 embedding_model = TextEmbedding(EMBED_MODEL) 
 
+###############################################################################
+# LOAD TRIAL CONFIGURATION
+###############################################################################
+
+trial_id = "1234"  # replace with argparse variable so that we can call this
+                   # script from streamlit application.
+
+# Trial Table
+
+# Trial Parameters Table
+
+# Expose Attributes
 
 ###############################################################################
 # Temporary Configurations (Will Switch to MySql Trials Table)
@@ -124,7 +117,7 @@ query_embedding = list(embedding_model.embed(query))[0].tolist()
 NOTE: WE NEED TO ADD METADATA: EX CIK + YEAR
 """
 print("Obtaining data from collection")
-file_type = ["8-K"]   # 10-Q, 10-K
+file_type = ["8-K", "10-Q", "10-K"]
 chroma_response = collection.query(
     query_embeddings=query_embedding,
     where={"$and": 
@@ -163,11 +156,13 @@ print("Prompt completed")
 # Execute Extraction
 role = "user"
 messages = [{'role': role, 'content': prompt}]                                  
-                                                                                
+print("Generation")
+start = datetime.now()
 response = ollama.generate(                                                     
     model='llama3.1:70b',
     prompt=prompt,                                                          
 )                                                                               
+"""
 model = response['model']
 extraction_response = response['response']                                                  
 extraction_context = response['context']
@@ -176,7 +171,10 @@ extraction_context_decoded = tokenizer
 
 print("LLM Response => {}".format(content))
 print("LLM Raw Response => \n\n {}".format(response))
-
+"""
+print("LLM Reponse => {}".format(response))
+duration = datetime.now() - start
+print("Duration => {}".format(duration))
 
 
 ###############################################################################

@@ -35,7 +35,7 @@ client = connections.MysqlClient().get_client(
 ###############################################################################
 
 st.markdown("---")
-st.title("EXPERIMENTS")
+st.title("EXPERIMENT BUILDER")
 st.markdown("---")
 
 # Current Experiments

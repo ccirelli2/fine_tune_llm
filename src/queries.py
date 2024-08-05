@@ -4,7 +4,7 @@ Project service queries (ex: mysql, chromadb
 import pandas as pd
 
 def command_create_mysql_filings_index_table():
-    query = """
+    sql = """
         CREATE TABLE filing_index (
             id varchar(250) NOT NULL,
             file_name varchar(255),
@@ -16,8 +16,33 @@ def command_create_mysql_filings_index_table():
         PRIMARY KEY (id)
         );
     """
-    return query
+    return sql
 
+def command_create_mysql_rag_queries_table():
+    sql = """
+        CREATE TABLE rag_query (
+            id INT AUTO_INCREMENT,
+            query_name varchar(250),
+            query_category varchar(250),
+            query_string varchar(500),
+            query_attributes varchar(500),
+        PRIMARY KEY (id)
+    );
+    """
+    return sql
+
+def command_create_mysql_rag_prompt_table():
+    sql = """
+        CREATE TABLE rag_prompt (
+            id INT AUTO_INCREMENT,
+            prompt_name varchar(250),
+            prompt_category varchar(250),
+            prompt_string varchar(500),
+            prompt_attributes varchar(500),
+            prompt_version varchar(250),
+        PRIMARY KEY (id)
+    );"""
+    return sql
 
 def command_create_mysql_chunk_table():
     sql = """
@@ -565,4 +590,27 @@ def insert_into_trial_parameters_table(client, df: pd.DataFrame):
         error = e
         print(f"Insertion failed with exception => {e}")
     return status, error
+
+
+def query_get_all_records_from_models(client):
+    sql = """
+        SELECT * FROM models;
+    """
+    df = pd.DataFrame({})
+    status = False
+    error = "None"
+
+    try:
+        df = pd.read_sql(sql, client) 
+        status = True
+    except Exception as e:
+        df = pd.DataFrame({})
+        error = e
+    return df, status, error
+
+
+
+
+
+
 

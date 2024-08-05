@@ -39,11 +39,25 @@ client_alchemy = connections.MySqlAlchemyClient().get_client(
 )
 
 ###############################################################################
+# DATA ARTIFACTS
+###############################################################################
+
+# MySql Experiments Table
+exp_df, exp_status, exp_error = queries.query_get_current_experiments(client)
+
+# MySql Trials Table
+trial_df, trial_status, trial_error = queries.query_get_current_trials(client)
+
+# MySql Models Table
+models_df, models_status, models_error = queries.query_get_all_records_from_models(client)
+
+
+###############################################################################
 # APPLICATION
 ###############################################################################
 
 st.markdown("---")
-st.title("TRIALS")
+st.title("TRIAL BUILDER")
 st.markdown("---")
 
 # Instructions
@@ -58,8 +72,7 @@ st.write("")
 
 # Current Experiments
 st.header("Existing Experiments")
-exp_df, status, error = queries.query_get_current_experiments(client)
-if not status:
+if not exp_status:
     st.write("Query failed with error => {}".format(error))
 else:
     st.markdown(
@@ -72,8 +85,7 @@ st.write("")
 
 # Current Trials
 st.header("Existing Trials")
-trial_df, status, error = queries.query_get_current_trials(client)
-if not status:
+if not trial_status:
     st.write("Query failed with error => {}".format(error))
 else:
     st.markdown(
@@ -87,11 +99,7 @@ st.write("")
 # Select an Experiment
 st.header("Select An Experiment")
 exp_names = exp_df['name'].values.tolist()
-#checkbox_states = {item: st.checkbox(item) for item in exp_names}
 exp_name_elected = st.selectbox("Select Experiment Name", exp_names)
-#[item for item, is_checked in checkbox_states.items() if is_checked]
-
-
 
 if exp_name_elected:
     st.write('Selected options:\t', exp_name_elected[0])
@@ -103,8 +111,9 @@ if exp_name_elected:
     st.write("")
 
     # Create Trial
-    st.header("Trial Elections")
-    
+    st.header("Trial Parameters")
+    st.caption("Please visit each tab to construct the parameters for your trail")
+
     # Create Trial id
     trial_id = f"{exp_id}-{str(uuid4())[:8]}"
 
@@ -137,9 +146,18 @@ if exp_name_elected:
             st.warning("WARNING: All basic information must be filled in")
 
     with tab_models:
-        st.caption("TODO: Add query to models table")
-        model_election = st.selectbox("Select model", ["llama3", "llama3.1"])
-        accumulator.log("model_name", model_election, "model")
+        if not exp_status:
+            st.write("Load table failed with error => {}".format(error))
+        else:
+            st.markdown(
+                "<small>Query successfull.</small>",
+                unsafe_allow_html=True
+            )
+            st.dataframe(models_df, use_container_width=True)
+        
+        models = models_df['model_str'].values.tolist()
+        model_election = st.selectbox("Select model", models)
+        accumulator.log("model_str", model_election, "model")
 
     with tab_companies:
         st.subheader("Companies From Filing Index")
@@ -218,7 +236,7 @@ if exp_name_elected:
     st.header("Proceed to Create Trial")
 
 
-    tab_create, tab_accounting = st.tabs(['create trial', 'selection accounting'])
+    tab_create, tab_accounting = st.tabs(['create trial', 'inspect selections'])
 
     with tab_accounting:
         st.write("")
