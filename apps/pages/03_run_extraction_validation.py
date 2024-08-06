@@ -32,6 +32,13 @@ client = connections.MysqlClient().get_client(
 )
 
 ###############################################################################
+# DATA ASSETS
+###############################################################################
+exp_df, exp_status, exp_error = queries.query_get_current_experiments(client)
+trial_df, trial_status, trial_error = queries.query_get_current_trials(client)
+trial_params = 
+
+###############################################################################
 # APPLICATION
 ###############################################################################
 
@@ -46,10 +53,9 @@ This constitutes first electing a trial, and by extention its parameters.
 Once executed the 
 """)
 
-# Current Experiments
+# Experiment Table
 st.subheader("Existing Experiments")
-exp_df, status, error = queries.query_get_current_experiments(client)
-if not status:
+if not exp_status:
     st.write("Query failed with error => {}".format(error))
 else:
     st.markdown(
@@ -58,10 +64,9 @@ else:
     )
     st.dataframe(exp_df, use_container_width=True)
 
-# Current Trials
+# Trials Table
 st.subheader("Existing Trials")
-trial_df, status, error = queries.query_get_current_trials(client)
-if not status:
+if not trial_status:
     st.write("Query failed with error => {}".format(error))
 else:
     st.markdown(
@@ -69,6 +74,11 @@ else:
         unsafe_allow_html=True
     )
     st.dataframe(trial_df, use_container_width=True)
+
+
+# Trials Parameter Table
+
+
 
 # Select an Experiment
 st.subheader("Select An Experiment")

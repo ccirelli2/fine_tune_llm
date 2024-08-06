@@ -56,9 +56,12 @@ class ConstructPromptSimple:
             <|begin_of_text|><|start_header_id|>system<|end_header_id|>                        
             Today Date: {{{self.today}}}
 
-            You are a helpful Assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>
+            You are a helpful assistant tasked with extracting data from SEC Edgar filings.
+            You will be given one or more pieces of text from company filings
+            from which you need to extract a given financial attribute.
+            <|eot_id|><|start_header_id|>user<|end_header_id|>
 
-            Here is a body of text {{{self.context}}}.
+            Here is the body of text {{{self.context}}}.
 
             Please {{{self.task}}}.                                                        
             
@@ -92,16 +95,26 @@ class ConstructPromptWithRational:
             <|begin_of_text|><|start_header_id|>system<|end_header_id|>                        
             Today Date: {{{self.today}}}
 
-            You are a helpful Assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>
+            You are a helpful assistant tasked with extracting data from SEC Edgar filings.
+            You will be given one or more pieces of text from company filings
+            from which you need to extract a given financial metric.
+            Please include the units (e.g. thousands, millions, billions of USD.
+            <|eot_id|><|start_header_id|>user<|end_header_id|>
 
-            Here is a body of text {{{self.context}}}.
+            Here is the body of text {{{self.context}}}.
 
             Please {{{self.task}}}.                                                        
             
             Return your answer in json format.                                              
             
             Here is an example of the expected response format
-                {{financial-field: financial-value, rational: your-explanation}}.
+                {{
+                financial-field: field-name,
+                financial-value: value,
+                explanation: your-explanation,
+                units: unit-value,
+                location: where you found the information,
+            }}.
         
             <|eot_id|><|start_header_id|>assistant<|end_header_id|>                         
         """

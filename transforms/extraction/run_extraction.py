@@ -1,5 +1,6 @@
 """
-
+LlamaIndex + Ollama
+- https://docs.llamaindex.ai/en/stable/examples/llm/ollama/
 """
 
 # Libraries
@@ -159,7 +160,7 @@ messages = [{'role': role, 'content': prompt}]
 print("Generation")
 start = datetime.now()
 response = ollama.generate(                                                     
-    model='llama3.1:70b',
+    model='llama3.1:latest',
     prompt=prompt,                                                          
 )                                                                               
 """
