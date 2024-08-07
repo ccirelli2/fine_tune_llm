@@ -607,7 +607,7 @@ def query_get_all_records_from_models(client):
         error = e
     return df, status, error
 
-
+# TODO: Change name to a more generic retrieval function
 class ExtractTrialData:
     def __init__(self, client):
         self.client = client
@@ -617,15 +617,19 @@ class ExtractTrialData:
         self.error = "None"
         print(f"{__class__} instantiated correctly")
 
-    def _create_base_query(self, table_name, trial_id):
+    def _create_base_query(self, table_name, trial_id: str):
         print("\tBuilding base query using table {} and trial-id {}".format(
             table_name, trial_id)
         )
-        self.query = """
-            SELECT *
-            FROM {}
-            WHERE trial_id = '{}';
-        """.format(table_name, trial_id)
+        if trial_id:
+            self.query = """
+                SELECT *
+                FROM {}
+                WHERE trial_id = '{}';
+            """.format(table_name, trial_id)
+        
+        else:
+            self.query = "SELECT * FROM {}".format(table_name)
         return self
 
     def _execute_query(self):
@@ -641,7 +645,7 @@ class ExtractTrialData:
             print(f"\t\tQuery failed with error => {e}")
         return self
 
-    def fetch_data(self, table_name: str, trial_id: str):
+    def fetch_data(self, table_name: str, trial_id: str = None):
         """
         """
         self._create_base_query(table_name, trial_id)
