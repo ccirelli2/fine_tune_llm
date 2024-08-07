@@ -199,7 +199,7 @@ def command_create_mysql_trials_table():
     """
     sql = """
     CREATE TABLE trials (
-        id                  varchar(250),,
+        trial_id                  varchar(250),,
         name                varchar(250),
         description         LONGTEXT,
         outcome             LONGTEXT,
@@ -271,23 +271,22 @@ def command_create_mysql_models_table():
 def command_create_mysql_trial_extraction_table():
     """
     Capture output from extractions
-    Args:
-        id:
-        gt_variable_name: name of variable in ground truth dataset.
-        gt_datatype: datatype of ground truth value.
-        extracted_value: value extracted.
-        gt_id:  foreign key to link to validation table ground truth values.
-        trial_id:
     """
     sql = """
-    CREATE TABLE trial_extraction (
-        id                  INT AUTO_INCREMENT,
-        gt_variable_name    varchar(250),
-        extracted_value     varchar(250),
-        gt_id               varchar(250),
-        trial_id            varchar(250),
-
-    PRIMARY KEY(id)
+        CREATE TABLE trial_extractions(                                            
+            call_id varchar(250),                                                  
+            trial_id varchar(250),                                                 
+            cik varchar(250),                                                      
+            company_name varchar(250),                                             
+            financial_metric_name_requested varchar(250),                          
+            financial_metric_year_requested INT,                                   
+            financial_metric_name_extracted varchar(250),                          
+            financial_metric_value_extracted varchar(250),                         
+            units varchar(250),
+            chunk_used LONGTEXT,
+            llm_logic LONGTEXT,                                                    
+            pay_load LONGTEXT,                                                 
+        PRIMARY KEY (call_id)    
     );
     """
     return sql
@@ -536,7 +535,7 @@ def insert_into_trials(client, values: tuple):
     """
     sql = """
     INSERT INTO trials
-        (id, name, description, outcome, author, experiment_id, created)
+        (trial_id, name, description, outcome, author, experiment_id, created)
     VALUES
         (%s, %s, %s, %s, %s, %s, %s);
     """
@@ -609,8 +608,83 @@ def query_get_all_records_from_models(client):
     return df, status, error
 
 
+class ExtractTrialData:
+    def __init__(self, client):
+        self.client = client
+        self.query = ""
+        self.data = pd.DataFrame({})
+        self.status = False
+        self.error = "None"
+        print(f"{__class__} instantiated correctly")
+
+    def _create_base_query(self, table_name, trial_id):
+        print("\tBuilding base query using table {} and trial-id {}".format(
+            table_name, trial_id)
+        )
+        self.query = """
+            SELECT *
+            FROM {}
+            WHERE trial_id = '{}';
+        """.format(table_name, trial_id)
+        return self
+
+    def _execute_query(self):
+        """
+        """
+        print("\tExecuting query")
+        try:
+            self.data = pd.read_sql(self.query, self.client) 
+            self.status = True
+            print("\t\tQuery successfull")
+        except Exception as e:
+            self.error = e
+            print(f"\t\tQuery failed with error => {e}")
+        return self
+
+    def fetch_data(self, table_name: str, trial_id: str):
+        """
+        """
+        self._create_base_query(table_name, trial_id)
+        self._execute_query()
+        return self.data
 
 
+def insert_into_trial_extraction_table(client, values):
+    """
+    """
+    status = False
+    error = "None"
 
-
-
+    sql = """
+        INSERT INTO trial_extractions (
+            call_id,
+            trial_id,
+            cik,
+            company_name,
+            financial_metric_name_requested,
+            financial_metric_year_requested,
+            financial_metric_name_extracted,
+            financial_metric_value_extracted,
+            units,
+            chunk_used,
+            llm_logic,
+            pay_load
+            )
+        VALUES (
+            %s, %s, %s, %s, %s, %s,
+            %s, %s, %s, %s, %s, %s
+        );
+    """
+    print("Inserting row => {}".format(values))
+    try:
+        print("\tExecuting insertion to table => filing_index")
+        cursor = client.cursor()
+        cursor.execute(sql, values)
+        client.commit()
+        print("\tSuccess")
+        status = True
+        
+    except Exception as e:
+        print(f"\tInsertion command generated error => {e}")
+        error = e
+    return status, error

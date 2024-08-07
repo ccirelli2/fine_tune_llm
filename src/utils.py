@@ -1,4 +1,5 @@
 import logging                                                                     
+import re
 import os
 import git                                                                         
 import yaml                                                                        
@@ -81,5 +82,22 @@ class TrialParamAccumulator:
         return self
 
 
+def normalize_financial_metric_names(name: str):                                   
+    """                                                                            
+    Validation dataset financial metric names are concatenated strings.            
+    We need to maintain the original names so that we can join the ground truth 
+    data.                                                                          
+    For the LLM we need to split the names on capital Letters.                     
+                                                                                   
+    Example:                                                                       
+        NetIncome => Net Income                                                    
+                                                                                   
+    Regex:                                                                         
+        replace any capital letter with a space and then the same capital letter
+    """                                                                            
+    print("Normalizing financial Parameter => {}".format(name))                                           
+    name = re.sub(r'([A-Z])', r' \1', name)                                        
+    print("Result => {}".format(name))                                             
+    return name     
 
 

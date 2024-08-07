@@ -58,14 +58,19 @@ embedding_model = TextEmbedding(EMBED_MODEL)
 # LOAD TRIAL CONFIGURATION
 ###############################################################################
 
-trial_id = "1234"  # replace with argparse variable so that we can call this
-                   # script from streamlit application.
+experiment_id = "bc70" # replace with argparse variable.
+trial_id = "1234"  # replace with argparse variable.
 
-# Trial Table
 
-# Trial Parameters Table
+# Load Experiment Table
 
-# Expose Attributes
+
+# Load Trial Table
+
+
+# Load Trial Parameters
+
+
 
 ###############################################################################
 # Temporary Configurations (Will Switch to MySql Trials Table)

@@ -51,6 +51,23 @@ trial_df, trial_status, trial_error = queries.query_get_current_trials(client)
 # MySql Models Table
 models_df, models_status, models_error = queries.query_get_all_records_from_models(client)
 
+# Financial Metrics
+fin_metrics = [
+                "StockholdersEquity",
+                "NetIncomeLoss",
+                "CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents",
+                "OperatingIncomeLoss",
+                "EarningsPerShareBasic",
+                "WeightedAverageNumberOfSharesOutstandingBasic",
+                "IncomeTaxExpenseBenefit",
+                "EarningsPerShareDiluted",
+                "Assets",
+                "NetCashProvidedByUsedInOperatingActivities"
+]
+
+# Financial Metric Years
+fin_metric_yrs = list(range(datetime.today().year, 1999, -1))
+
 
 ###############################################################################
 # APPLICATION
@@ -207,25 +224,21 @@ if exp_name_elected:
                         company_name = company_elections[i]
                         accumulator.log("cik", cik, "companies")
 
+    # Financial Metrics & Year
     with tab_extract:
         st.caption("Select which financial metrics to extract")
-        # TODO: Switch hard coded values for dynamically sourced from val dataset.
-        options = [
-                "StockholdersEquity",
-                "NetIncomeLoss",
-                "CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents",
-                "OperatingIncomeLoss",
-                "EarningsPerShareBasic",
-                "WeightedAverageNumberOfSharesOutstandingBasic",
-                "IncomeTaxExpenseBenefit",
-                "EarningsPerShareDiluted",
-                "Assets",
-                "NetCashProvidedByUsedInOperatingActivities"
-        ]
-        financial_elections = st.multiselect("Financial Variables", options)
-        
-        for f in financial_elections:
+        fin_metric_elections = st.multiselect("Financial Variables", fin_metrics)
+        if not fin_metric_elections:
+            st.warning("You must select at least 1 financial metric")
+        for f in fin_metric_elections:
             accumulator.log("financial-metric", f, "financial_metrics")
+        
+        st.caption("Select A Single Year")
+        fin_metric_yr_election = st.multiselect("Years", fin_metric_yrs)
+        if not fin_metric_yr_election:
+            st.warning("You must select at least 1 year")
+        for f in fin_metric_yr_election:
+            accumulator.log("financial-metric-year", f, "financial_metrics")
 
     st.write("")
     st.write("")
