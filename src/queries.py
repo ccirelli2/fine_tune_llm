@@ -688,3 +688,5 @@ def insert_into_trial_extraction_table(client, values):
         print(f"\tInsertion command generated error => {e}")
         error = e
     return status, error
+
+
