@@ -102,7 +102,10 @@ print("Extracting Trial Parameters")
 print("======================================================================")
 
 # Traial Name
-trial_name = trial_params[trial_params['name'] == 'trial_name']['value'].values.tolist()[0]
+trial_name = trial_params[trial_params['name'] == 'trial_name']['value'].values.tolist()
+print(trial_name)
+if isinstance(trial_name, list):
+    trial_name = trial_name[0]
 
 # Get Company CIK's
 cik_param = trial_params[trial_params['name'] == 'cik']['value'].values.tolist()

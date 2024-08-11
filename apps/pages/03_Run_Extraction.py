@@ -60,7 +60,7 @@ st.write("")
 st.subheader("Existing Experiments")
 
 if not exp_status:
-    st.write("Query failed with error => {}".format(error))
+    st.write("Query failed with error => {}".format(exp_error))
 else:
     # Select An Experiment
     st.dataframe(exp_df, use_container_width=True)
@@ -89,28 +89,23 @@ else:
             st.write("")
             st.write("")
 
-        # Get Extractions
-        if trial_id:
-            st.subheader("Trial Extractions")
-            extractions = queries.ExtractTrialData(client=client).fetch_data(
-                "trial_extractions", "dc7c-e32ce2ef"
-            )
-            extractions = extractions[extractions['trial_id'] == trial_id]
+            # Validate if Extraction Already Run
+            extraction_exists = ""
+            if extraction_exists:
+                st.warning("Extraction already exists.  Please proceed to inspection")
+            else:
 
-            st.dataframe(extractions, use_container_width=True)
-            st.write("")
-            st.write("")
-        
-        # Select Trial ID 
-        st.subheader("Extraction Drilldown")
-        call_ids = extractions['call_id'].values.tolist()
-        call_id = st.selectbox("Select Call ID", call_ids)
-        
-        if call_id:
-            call_df = extractions[extractions['call_id'] == call_id].transpose()
-            st.table(call_df)
-            
-
+                # Run Extraction
+                st.subheader("Run Extraction")
+                st.caption("Trial ID => {}".format(trial_id))
+                if st.button("Execute"):
+                    st.write("Executing Extraction Script for Trial => {}".format(trial_id))
+                    flag = "--trial_id"                                                        
+                    value = trial_id
+                    path = "~/repositories/fine_tune_llm/transforms/extraction/run_extractions.py"
+                    command = "poetry run python {} --trial_id {}".format(path, trial_id)   
+                    os.system(command)
+                    st.write("Script Finished")   
 
 
 

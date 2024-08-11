@@ -1,0 +1,174 @@
+0000000000-24-002652.txt : 20240418
+0000000000-24-002652.hdr.sgml : 20240418
+20240311153606
+ACCESSION NUMBER:		0000000000-24-002652
+CONFORMED SUBMISSION TYPE:	UPLOAD
+PUBLIC DOCUMENT COUNT:		2
+FILED AS OF DATE:		20240311
+
+FILED FOR:		
+
+	COMPANY DATA:	
+		COMPANY CONFORMED NAME:			1 800 FLOWERS COM INC
+		CENTRAL INDEX KEY:			0001084869
+		STANDARD INDUSTRIAL CLASSIFICATION:	RETAIL-RETAIL STORES, NEC [5990]
+		ORGANIZATION NAME:           	07 Trade & Services
+		IRS NUMBER:				113117311
+		STATE OF INCORPORATION:			DE
+		FISCAL YEAR END:			0630
+
+	FILING VALUES:
+		FORM TYPE:		UPLOAD
+		SEC FILE NUMBER:	000-26841
+
+	BUSINESS ADDRESS:	
+		STREET 1:		TWO JERICHO PLAZA
+		STREET 2:		SUITE 200
+		CITY:			JERICHO
+		STATE:			NY
+		:			11753
+		BUSINESS PHONE:		5162376000
+
+	MAIL ADDRESS:	
+		STREET 1:		TWO JERICHO PLAZA
+		STREET 2:		SUITE 200
+		CITY:			JERICHO
+		STATE:			NY
+		:			11753
+PUBLIC REFERENCE ACCESSION NUMBER:		0001437749-23-025967
+LETTER
+1
+filename1.pdf
+begin 644 filename1
+M)5!$1BTQ+C4*)>+CS],*,2 P(&]B:@H\/"]#;VQO
+7!E+UA/8FIE8W0O5VED=&@@,30R."],96YG=&@@,S8U+T)I='-097)#
+M;VUP;VYE;G0@.#X^
+GI]?5504-$1$1$1$1$+N;M[>WIZ>GAX6&_WS<"Q:]?O^[O
+M[^.KQW.(\K]__VZJBLJ1,EY>7M0Q1$1$1$1$1&3"Q\<'QA6_?__&K *98K_?
+MQY;8?A/O#TPX@I>7%X21/%;\C7_3)..&IR8B(B(B(B(B_S1O;V^/CX_5*"(^
+MQY;GY^?M2@6B1/]YSL>!EY<7O%&R ?O]_N'A(;9??E8B(B(B(B(B\H^#5P@N
+M(=@\/#P\;+%YB +89F1$B_P<-7Q\?-S?WZ=72)2,HZ2;2=4TL.*H-<>^T8#'
+MQ\=T5&''V*A'B8B(B(B(B,C_A]?75T)NHCQ@X;#=3>/CXR-V2>&"9"+H%?%W
+M.8@2J68\/S_'O_O]'AT#[2)VP
+!?#0T2=<91L)!J("H:(B(B(B(C(#^;]
+M_?WY^3G5@/O[^SY")I$HTG B"@\=-V(OZOG]^_=R$$.B
+MGI[8]_'QD:](J)HJ1]0PE% :$0/CD"_I(!$1$1$1$1'Y0WQ\?*1[R*]?O_#=
+M2-6"H!-1($->D/LC_DW]H:^0;Z,\3B($QXB-B ^Q$5L+CI@UH&/4.MD2Q:))
+M%(Y*>G4BJN444GA1P1 1$1$1$1'Y ;#DQVB!+![5T +) N.*:@(1GY>B/P2]
+M]47:9CP^/J8Z42N/FM-X(ZTILL(:^"+M-U(M09T@7FAC&8)9"#$Z5#!$1$1$
+M1$1$_EUBR1\+_[2UZ(-%O+^_IQD#7T7Y3/-!F=0??O_^W>Q>_4K2CJ*6B?HS
+MWB9*17R;TD3U#4%4P>XB;3 R: :6&+4\T3!2P6A"@(J(B(B(B(C(WP_!,%GX
+M-ZI%>HN0G!0)@BWO[^\I%V29S%O:6#ADN,[8Z_[
+TEXT-EXTRACT
+2
+filename2.txt
+United States securities and exchange commission logo
+
+
+
+
+
+                            March 11, 2024
+
+       William Shea
+       Senior Vice President, Treasurer and Chief Financial Officer
+       1-800-FLOWERS.COM, Inc.
+       Two Jericho Plaza, Suite 200
+       Jericho, NY 11753
+
+                                                        Re: 1-800-FLOWERS.COM,
+Inc.
+                                                            Form 10-K for
+Fiscal Year Ended July 2, 2023
+                                                            Item 2.02 Form 8-K
+Filed August 31, 2023
+                                                            File No. 000-26841
+
+       Dear William Shea:
+
+                                                        We have reviewed your
+filings and have the following comment(s).
+
+              Please respond to this letter within ten business days by
+providing the requested
+       information or advise us as soon as possible when you will respond. If
+you do not believe a
+       comment applies to your facts and circumstances, please tell us why in
+your response.
+
+                                                        After reviewing your
+response to this letter, we may have additional comments.
+
+       Form 10-K for Fiscal Year Ended July 2, 2023
+
+       Item 7. Management's Discussion and Analysis of Financial Condition and
+Results of Operations
+       Fiscal 2023 Results, page 22
+
+   1.                                                   You present and discuss
+non-GAAP measures in various places without presenting and
+                                                        discussing the
+comparable GAAP measures for the same periods with equal or greater
+                                                        prominence. For
+example, adjusted EBITDA is presented and discussed in two places on
+                                                        page 22 of your Form
+10-K without presenting and discussing net income (loss) for the
+                                                        same periods. In
+addition, the headline earnings section of your Item 2.02 Form 8-K filed
+                                                        August 31, 2023
+presents adjusted net income, adjusted net income per share, adjusted
+                                                        EBITDA and free cash
+flow without presenting net income (loss) or net cash provided by
+                                                        operating activities
+for the same periods. Free cash flow is then presented again in the
+                                                        Fiscal Year 2023
+Highlights without net cash provided by operating activities being
+                                                        presented. Also, no
+reconciliation from net cash provided by operating activities to free
+                                                        cash flow is included
+in the Form 8-K. Please revise your disclosures accordingly. Refer
+                                                        to Question 102.10(a)
+of our Non-GAAP Financial Measures Compliance and Disclosure
+                                                        Interpretations and
+Item 10(e)(1)(i) of Regulation S-K. In your Annual Report to
+ William Shea
+1-800-FLOWERS.COM, Inc.
+March 11, 2024
+Page 2
+         Shareholders, please also present net cash provided by operating
+activities, since free cash
+         flow is presented in the letter to shareholders, and reconcile from
+net cash provided by
+         operating activities to free cash flow. Refer to Rule 100(a) of
+Regulation G.
+2.       You present and discuss several pro forma measures throughout your
+filing, which do not
+         appear to be pro forma measures, as contemplated in Article 11 of
+Regulation S-X. Please
+         retitle these measures to better reflect what they actually represent
+and do not refer to
+         them as being pro forma measures. If any of these measures are
+non-GAAP measures,
+         also provide the disclosures required by Item 10(e) of Regulation S-K.
+Refer to Question
+         100.05 of our Non-GAAP Financial Measures Compliance and Disclosure
+Interpretations.
+        We remind you that the company and its management are responsible for
+the accuracy
+and adequacy of their disclosures, notwithstanding any review, comments, action
+or absence of
+action by the staff.
+
+       Please contact Keira Nakada at 202-551-3659 or Rufus Decker at
+202-551-3769, if you
+have any questions.
+
+
+
+FirstName LastNameWilliam Shea                                 Sincerely,
+Comapany Name1-800-FLOWERS.COM, Inc.
+                                                               Division of
+Corporation Finance
+March 11, 2024 Page 2                                          Office of Trade
+& Services
+FirstName LastName

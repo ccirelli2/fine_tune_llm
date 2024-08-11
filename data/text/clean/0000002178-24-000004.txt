@@ -1,0 +1,1458 @@
+0000002178-24-000004.txt : 20240221
+0000002178-24-000004.hdr.sgml : 20240221
+20240221161254
+ACCESSION NUMBER:		0000002178-24-000004
+CONFORMED SUBMISSION TYPE:	8-K
+PUBLIC DOCUMENT COUNT:		16
+CONFORMED PERIOD OF REPORT:	20240221
+ITEM INFORMATION:		Regulation FD Disclosure
+ITEM INFORMATION:		Financial Statements and Exhibits
+FILED AS OF DATE:		20240221
+DATE AS OF CHANGE:		20240221
+
+FILER:
+
+	COMPANY DATA:	
+		COMPANY CONFORMED NAME:			ADAMS RESOURCES & ENERGY, INC.
+		CENTRAL INDEX KEY:			0000002178
+		STANDARD INDUSTRIAL CLASSIFICATION:	WHOLESALE-PETROLEUM & PETROLEUM PRODUCTS (NO BULK STATIONS) [5172]
+		ORGANIZATION NAME:           	07 Trade & Services
+		IRS NUMBER:				741753147
+		STATE OF INCORPORATION:			DE
+		FISCAL YEAR END:			1231
+
+	FILING VALUES:
+		FORM TYPE:		8-K
+		SEC ACT:		1934 Act
+		SEC FILE NUMBER:	001-07908
+		FILM NUMBER:		24659581
+
+	BUSINESS ADDRESS:	
+		STREET 1:		17 S. BRIAR HOLLOW LN.
+		CITY:			HOUSTON
+		STATE:			TX
+		:			77027
+		BUSINESS PHONE:		713-881-3600
+
+	MAIL ADDRESS:	
+		STREET 1:		P O BOX 844
+		CITY:			HOUSTON
+		STATE:			TX
+		:			77001
+
+	FORMER COMPANY:	
+		FORMER CONFORMED NAME:	ADAMS RESOURCES & ENERGY INC
+		DATE OF NAME CHANGE:	19920703
+
+	FORMER COMPANY:	
+		FORMER CONFORMED NAME:	ADA RESOURCES INC
+		DATE OF NAME CHANGE:	19790620
+8-K
+1
+ae-20240221.htm
+8-K
+ae-20240221
+0000002178
+FALSE
+0000002178
+2024-02-21
+2024-02-21
+UNITED STATES
+SECURITIES AND EXCHANGE COMMISSION
+Washington, D.C.  20549
+FORM
+8-K
+CURRENT REPORT
+Pursuant to Section 13 OR 15(d)
+of The Securities Exchange Act of 1934
+Date of Report (Date of earliest event reported):
+February 21, 2024
+ADAMS RESOURCES & ENERGY, INC.
+(Exact name of registrant as specified in its charter)
+Registrant’s telephone number, including area code:
+(
+713
+)
+881-3600
+Check the appropriate box below if the Form 8-K filing is intended to simultaneously satisfy the filing obligation of the registrant under any of the following provisions:
+Securities registered pursuant to Section 12(b) of the Act:
+1
+Item 7.01    Regulation FD Disclosure.
+On February 21, 2024, Adams Resources & Energy, Inc., a Delaware corporation, issued a press release announcing a cash dividend of $0.24 per common share payable on March 22, 2024 to shareholders of record as of the close of business on March 9, 2024.  A copy of the press release is attached to this Current Report on Form 8-K as Exhibit 99.1 and is hereby incorporated herein by reference.  The information set forth in this Item 7.01 is deemed to be furnished and shall not be deemed to be “filed” for the purposes of Section 18 of the Securities Exchange Act of 1934, as amended.
+Item 9.01    Financial Statements and Exhibits.
+(d) Exhibits.
+2
+SIGNATURES
+Pursuant to the requirements of the Securities Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned hereunto duly authorized.
+3
+EX-99.1
+2
+a4q2023ex991_dividenddecla.htm
+EX-99.1
+Document
+Exhibit 99.1
+FOR IMMEDIATE RELEASE
+ADAMS RESOURCES & ENERGY, INC. ANNOUNCES
+QUARTERLY CASH DIVIDEND
+Houston, Texas (Wednesday, February 21, 2024)
+-- Adams Resources & Energy, Inc. (NYSE AMERICAN: AE) (“Adams” or the “Company”) today announced that its Board of Directors declared a quarterly cash dividend in the amount of $0.24 per common share for the fourth quarter of 2023, payable on March 22, 2024 to shareholders of record as of close of business on March 8, 2024.
+Kevin J. Roycraft, Adams’ Chief Executive Officer and President, commented, “We are pleased to announce yet another regular cash dividend for the advantage of our shareholders. Over 25  years, we have reliably paid dividends, thanks to our steadfast commitment to maintaining the stability of our business and fortifying our corporate financial standing.”
+Adams Resources & Energy, Inc.
+is engaged in crude oil marketing, transportation, terminalling and storage, tank truck transportation of liquid chemicals and dry bulk, interstate bulk transportation logistics of crude oil, condensate, fuels, oils and other petroleum products and recycling and repurposing of off-specification fuels, lubricants, crude oil and other chemicals through its subsidiaries, GulfMark Energy, Inc., Service Transport Company, Victoria Express Pipeline, LLC, GulfMark Terminals, LLC, Firebird Bulk Carriers, Inc. and Phoenix Oil, Inc.  For more information, visit
+www.adamsresources.com
+.
+Cautionary Statement Regarding Forward-Looking Statements
+This news release contains forward-looking statements. Forward-looking statements relate to future events and anticipated results of operations, business strategies, and other aspects of our operations or operating results. In many cases you can identify forward-looking statements by terminology such as “anticipate,” “intend,” “plan,” “project,” “estimate,” “continue,” “potential,” “should,” “could,” “may,” “will,” “objective,” “guidance,” “outlook,” “effort,” “expect,” “believe,” “predict,” “budget,” “projection,” “goal,” “forecast,” “target” or similar words. Statements may be forward looking even in the absence of these particular words. Where, in any forward-looking statement, the Company expresses an expectation or belief as to future results, such expectation or belief is expressed in good faith and believed to have a reasonable basis. Forward-looking statements are subject to risks and uncertainties that could cause actual results to differ materially from those expressed or implied in the forward-looking statements, and any other risk factors included in Adams’ reports filed with the Securities and Exchange Commission.  However, there can be no assurance that such expectation or belief will result or be achieved. Unless legally required, Adams undertakes no obligation to update publicly any forward-looking statements, whether as a result of new information, future events or otherwise.
+Company Contact
+Tracy E. Ohmart
+EVP, Chief Financial Officer
+tohmart@adamsresources.com
+(713) 881-3609
+Investor Relations Contact
+John Beisler or Steven Hooser
+Three Part Advisors
+(817) 310-8776
+EX-101.SCH
+3
+ae-20240221.xsd
+XBRL TAXONOMY EXTENSION SCHEMA DOCUMENT
+0000001 - Document - Cover Page
+link:presentationLink
+link:calculationLink
+link:definitionLink
+EX-101.LAB
+4
+ae-20240221_lab.xml
+XBRL TAXONOMY EXTENSION LABEL LINKBASE DOCUMENT
+Security Exchange Name
+Security Exchange Name
+Title of 12(b) Security
+Title of 12(b) Security
+Written Communications
+Written Communications
+Local Phone Number
+Local Phone Number
+Trading Symbol
+Trading Symbol
+Entity Incorporation, State or Country Code
+Entity Incorporation, State or Country Code
+Entity Address, State or Province
+Entity Address, State or Province
+Pre-commencement Issuer Tender Offer
+Pre-commencement Issuer Tender Offer
+Document Period End Date
+Document Period End Date
+Cover page.
+Cover [Abstract]
+Entity Emerging Growth Company
+Entity Emerging Growth Company
+Pre-commencement Tender Offer
+Pre-commencement Tender Offer
+Soliciting Material
+Soliciting Material
+City Area Code
+City Area Code
+Entity Address, Postal Zip Code
+Entity Address, Postal Zip Code
+Document Type
+Document Type
+Amendment Flag
+Amendment Flag
+Entity Central Index Key
+Entity Central Index Key
+Entity File Number
+Entity File Number
+Entity Address, City or Town
+Entity Address, City or Town
+Entity Tax Identification Number
+Entity Tax Identification Number
+Entity Address, Address Line One
+Entity Address, Address Line One
+Entity Address, Address Line Two
+Entity Address, Address Line Two
+Entity Registrant Name
+Entity Registrant Name
+EX-101.PRE
+5
+ae-20240221_pre.xml
+XBRL TAXONOMY EXTENSION PRESENTATION LINKBASE DOCUMENT
+GRAPHIC
+6
+adamslogoa03a.jpg
+begin 644 adamslogoa03a.jpg
+M_]C_X  02D9)1@ ! 0$ 8 !@  #_VP!#  H'!PD'!@H)" D+"PH,#QD0#PX.
+M#QX6%Q(9)" F)2,@(R(H+3DP*"HV*R(C,D0R-CL]0$! )C!&2T4^2CD_0#W_
+MVP!# 0L+"P\-#QT0$!T]*2,I/3T]/3T]/3T]/3T]/3T]/3T]/3T]/3T]/3T]
+M/3T]/3T]/3T]/3T]/3T]/3T]/3T]/3W_P  1" "* 4T# 2(  A$! Q$!_\0
+M'P   04! 0$! 0$           $" P0%!@<("0H+_\0 M1   @$# P($ P4%
+M! 0   %] 0(#  01!1(A,4$&$U%A!R)Q%#*!D:$((T*QP152T? D,V)R@@D*
+M%A<8&1HE)B
+7J#A(6&AXB)BI*3E)66EYB9FJ*CI*6FIZBIJK*SM+6VM[BYNL+#Q,7&
+MQ\C)RM+3U-76U]C9VN'BX^3EYN?HZ>KQ\O/T]?;W^/GZ_\0 'P$  P$! 0$!
+M 0$! 0        $" P0%!@<("0H+_\0 M1$  @$"! 0#! <%! 0  0)W  $"
+M Q$$!2$Q!A)!40=A<1,B,H$(%$*1H;'!"2,S4O 58G+1"A8D-.$E\1<8&1HF
+M)R@I*C4V-S@Y.D-$149'2$E*4U155E=865IC9&5F9VAI:G-T=79W>'EZ@H.$
+MA8:'B(F*DI.4E9:7F)F:HJ.DI::GJ*FJLK.TM;:WN+FZPL/$Q<;'R,G*TM/4
+MU=;7V-G:XN/DY>;GZ.GJ\O/T]?;W^/GZ_]H # ,!  (1 Q$ /P#V:BBBD 44
+M44 %%%% !1110 4444 %%%% !1110 4444 %%%% !1110 4444 %%%% !111
+M0 4444 %%%% !1110 4444 %%%)0 M%)FEH **** "BBB@ HHHH **** "J&
+MLZK'HVFRWDJEE3^$'DU?KAOB7>A+&VM >97WL/85=*//-(F
+'[.8G),84_4<5SXBE&"3B:TIN3LR;6]631=,DO
+M)(VD5" 54X/-
+0JM2479
+M'HW_  LZT_Y\9_\ OH5)%\3-/=L26MP@]1@UYMBC%;_5J?8S]M(]BT_Q=I&H
+ML%BNE1ST60;36R&!&0
+QK&>%_E+C7_F/
+M7
+D:=+>2@LL8SM!Y/M7*_
+M\+.M/^?&?_OH5)\2+T1:3!:@\S29(]A7FN![UV4*,91O(YZE1QE9'HW_  LZ
+MT/\ RXS_ /?0I1\3;0L ;&8 GD[AQ7G.*3'7FMOJU/L1[:1[W#*LT22)RK ,
+M*?6-X3N_MGANSDSDA-I^HXK9KSI*S:.I.ZN4-8U1-(TR6\D0NL>/E!Y-
+5XILCG +%3^(KV L%4G. *Y*]-0
+ME9&]*3DM1L]Q';1-+,ZHBC)9C@"N0U+XCV<#M'8V[W!'&\G:O_UZYKQEXDDU
+MB_:W@
+X:7JUKJ]J+BSDWIG!XP0:NUQWPV _L.?_KL
+M?Y5V->?4BHR<4=4'>*8M%%%04%%%% !1124 (37E'CZ\^U^)713E;= GX]37
+MJD\@BA>1C@(I)/TKPZ^N6O+^>X8Y,CEOUKJPL;R;,*[TL0=%I3&R*C,.'&13
+M3TK9UJR^R:9H[8_UEN6/YUW-V:1SI7,>O2_AO=^;HTMN3S#*3^!KS3TKKOAQ
+M>>3KLUL3Q-'D#W%98B-Z;+I.TCK/'G_(J7/U7^=>2CI7K7CS_D5+GZK_ #KR
+M4=*C"_ 57^(*T8?#^HW.FB^@MVD@YY4Y/'M6=7JW@(9\*P_[[?SK2M4=.-T1
+M3AS.QY3C&0>M XKJ?'VD)I^L)/"NV.Y!8@= W>N6JX24HIHF2Y78Z?P+KC:=
+MJRV
+?:?$/E*
+*K9KKIQ
+MY8I&$G=MBM&R(K$8I-P'L17:CFO+?AY>?9_$#0$_+/&1^(YKU)>E>?B(VFSKI.\3@_B=/^YL
+M(/5V?\AC^M>?UV/Q)FWZO;19X2+/YFN.KLH*U-'/5=YL**.><#I1[UL9GK'@
+M6Y\_PM!DY,99#^!KS;7;G[9KU[/G(:4X^G2NK\#ZA]G\-:J"<>1EQ^(_QKA=
+MQ8[CU)R:YZ4+5),UG*\4@HH]2!P.M%=!D7M#E\C7;*3LLRY_.O5?%=\;'PY=
+MS*<,4VJ?<\5Y!;OY=S$^<;7!_6O4O&R-<>#Y63G&QS],URUU><;F])^ZSRA>
+ME+[4#VI#748'0Z#X-O=
+/J/J*V/!/
+MBR"Q@73K\[$!_=R]AGL:]!RDR @AT8=N017'4K5(3UV.B%.,H^9R7PV/_$CG
+M_P"NQ_E78U1T[28-+\\6PVI,_F;!T4^U7JY:DE*3DC:*LK"T445!04444 %%
+M%(: ,+QG>_8?#5TZG#./+7\:\@KO_B9?82SL@>&)D8?H*\_'2O1PT;0OW.2L
+M[R% +,%'4D 5W?CVR^SZ'I1 P(1Y9_*N2T.W^UZY9PXR&F7(]AS7HOQ!@\WP
+MPS=XI%;^E%65JD4$(^Y)GE@Y&:T?#MY]A\06
+>56'_AH5;XP->EK?FR^&B2Y^8P>6OXG%>9]JZWQ#
+M
+9Q7F*F[)LY(#]:/;UXI:M:3;_ &K5[2#&0\J@
+MCVS6K=E
+K^.X!)X5FQ_RR96'X&O**QP\KP-
+M:RM(O:)=_8-;L[C/"RC/T/%>W*00".AKP(DC!':O;M#O!>Z+:7&>7C&?K66+
+MCLRZ#W1YGX[F\[Q7.,Y$:JOZ5SU:/B*;[1XDOY/64C\N*SJZ::M%(QD[R9>T
+MJW%RUVN,XMG8?A@U0ZBNC\$V_P!IU>XC(R#:R#'U%<\ZF-V0]5)!H3]YH36B
+M9IZ5J'V;2M5AS@SQ*/\ QZLKM2CCIWHJDK7!LT;&S\W1]2N/^>80?F:SJZO3
+MK/9\.]3N"!^\D[ @5RG:IA*[8Y*R0C<#WKVJUCCU3P[#')RD]N ?Q%>*M7
+ML?A*42^%[%L](]OY<5ABMDS6ANT>5:QI4^BZC):3J>#\C=F7L:I5[/KFA6NN
+MVODW"8
+AE$9KH?#
+M7BVYT25896,MF3RA/*>XKGZ*UE%25F9IM.Z/=;2[BO;:.>W%(,JPJ>N!^&
+MVI.PN;!VRJ8DC![>HKOJ\NI#DERG;"7,KBT445!04444 %(W2EJ"\G%K9S3M
+M]V-"Q_ 4(#R?QK>_;?$]Q@Y2+$8_#K6#3YIFN+B69CDNY8_C3*]>*Y4D<$G=
+MW);6ZFLKA)[9S'*GW6':KEUXAU6^MW@NKR22)^JG'-9I)!HR*;BGJ%V*.E(:
+M4'BBF([**\^T_"^>,G+02!/PSD5Q@K6TZ\V^']5M"?OA)!^!Q62*SA'EOZE2
+M=["UZAX*O(+/PA')<2I&BLQ)8X[UY?2EV*A2[;1T&>**M/VBL.$^5W-GQ5K@
+MUW5S+'D01C9'GN/6L6D Q2YJXQ459$MW=R2V@:ZN8K>,$O(X4 >];/C&=7UH
+M6T9S':1+"/J!S6GX&T0^8^LW2[88%)CW?Q''6N4NYS=7D\[')D=F_,UFGS3]
+M"FK1]2*GV]Q+:7"SV[E)4.58=C3*0G%:D&I<^)-6O+=X+B]>2)QAE('-9E)G
+MBES222V&VWN%>G?#^^$OAN2-CS;.P^@ZUYB.:Z7PAJ7V2#5HBV ]L6'U'_ZZ
+MRKQYH%TI6D<]
+32UL9G8_#5-VL73>D/]:YW7K?[)KU[
+M#C 65L?2NI^&2?Z5?/Z(H_6LGQ[;>1XIF(Z2HK_T_I7/&7[YHU:_=IG.TA.#
+MGTI:DMX#<7<,*C)D<+^9KH,CT5[/R/A@T1')@WGZDYKS6O9=>@$?A6[A P$M
+MR!CV%>-BN;#.Z;\S:LK6$/:O0=&U>73_ (>_:8 "]O+MP>XSR/UKSX\UU.FS
+M;OA[JD>?N3+^N*TK1NEZD4W9L[_1/$%GK=JLEO(/, ^>,\,IJY?6\%S9RQ72
+MJ82IW;NF*\/AFDMW$D+M&X[J<&K=QK>IW4'E3WT[QG^$MQ6#PNMXLU5?35%2
+M=42YE6(YC5R%/MGBF48Q29KL.
+0
+NV%>9B)7J,[*2M$6BBBL30**** "N;\=7WV/PS,H.&G(C'X]:Z
+M.J]W8VUZBK=0)*H.0'&0#50:4DV*2NK'A.1CK2Y&>M>TC1-&(_X\K7_OD4HT
+M+26^[8VQ'L@KM^M+L<_L'W,3X?Z?%_PCHEFB1FED9LLH/'2NG-G;?\^\/_?
+MIUO;Q6T2Q01K'&O15& *E(S7'.;E)LWC&RL>*^([<6GB&]B  42D@>QYK,S]
+M*]ON-&T^YF,L]G#)(W5F7)-,_P"$?TK_ *!]O_WP*ZHXI)6L8N@V]SQ0.5!"
+MG&X8/TI,_2O;/^$?TK_H'V__ 'P*/^$?TK_H'V__ 'P*?UN/87L'W/$\CU%*
+M?PKVO_A']*_Z!]O_ -\"G)H>FQ_
+A1PQQ#$:*@]%&*?6<\5)[:%QHI;G.>+K
+MB/2O"D\<($891$BCC&:\EW* .:]VN[*WO8]EU$DJ YVL,\U5_P"$?TK_ *!]
+MO_WP*5&NJ:LT$Z;DSQ/->E_#W3XCH+SRQ(QEE.-R@\#BN@_L#2A_S#[?_O@5
+M9A^R62K;P^5$/X4! _2G5Q'/'E2"%+E=V/\ L=M_S[P_]\"O'O%-L+/Q->Q@
+M +OW*!V!KV
+M.AG:%F*-C
+M>I4^X->R_P!BZ-_SY6O_ 'R*7^Q-&_Y\K7_OD5T_6EV,O8/N>+9'M1D8ZU[9
+M_P (_I7_ $#[?_O@4?\ "/Z5_P! ^W_[X%+ZW'L'L'W.2^&2?N]0;W4 U7^)
+MMOMO;*X& &0H?
+0.];?@^V%YXHM%ZJA,A_"O4?^$?TK_H'V_P#WP*EM])L;27S+
+M>TAB?&-R+@UI+%)II(S5!IWN1ZX-^A7PZ9A8?I7B0(VCFO>GC61"CJ"I&"#W
+MJA_PC^E?] ^W_P"^!6=&LJ:::+J4W-GBF1ZBMS29"WAK68%!8XC< <]Z]0_X
+M1[2O^@?;_P#? J2#3;&Q+&"WAAWC#;5 S6DL2I+8A46NIX>/0TN17LMSH&CW
+MQ_?6D#,>Z@ _I5(^ ]")S]F20U:Q4>J)]A(\GKI?#/@VYU>59[U&ALU.>1
+MAI/85Z#9^&-)L'#0640<=&8;C^M:JC'3M43Q5U:)<:%M9#+>&.W@2*% L: !
+M5'85+24M<;-PHHHH **** "FN,K2U!?7"VMC-._ C0M^0H0'G'V:+4OB&UK"
+M"+5)/F16.#@<_K4L\SV'Q!CM](D<1%U62)6)7_:XK)TJTO+JPU75K662*6+D
+M,AP6R
+N*6?6+*VM8[B6X18I/N-G.[Z5Y]HD=[JVGW[QV[S7E^Q1KB082-
+M._/]!5[Q-I4^BZ;I-Q:'SDTX_.#S@]
+JVE^[K:S
+MI(4&6 _A^M0-XATU9_):\B#[MO7C/IGI7&ZWJ\":']MTS,<^K,%D XV[1@BG
+M^*K>+2?!EA81JOF2,&8]R<9)_.A45=7Z@ZC.SN];T^Q?9
+XCC>;_5JQY:N O(/[3\3Z-8.H+0P(9CCGIDYJR)5U_XC(4^:WLAQ
+MZ?+_ /7H]BOP#VC.Q?7-/2X\AKN'S
+_2X>
+MT9WMEK-EJ$CQVERDCIRRCJ/PIEUK^G6
+M)4HM
+TOH+^+S;6598\XW*>,UP6KE_#'BJWOF7S
+MK*2)82W7@#!'UKM='L[>QT]([,YA8F13_O'/]:B<%&*:ZE1DV[%NZD,-M+*!
+MDHA;'T%>76-TFH:;J+2J]QJMS*%@ R67W'H!723:O<>(/$\NC6\[6]I"#YKI
+MP[XZC/I6!HMS%X>UK5+"Z9XPP*HZ_?R.F#[UM2ARQ??
+M.Y.Z98U#GWQ5B159"'&5(Y!K#\,V%_;VHGU*]N)Y9!D1R-D(.WXU=UZ]%AH=
+MY<9P4C./KT%<[7O61LG[MS@-"M(M6\;3@*?L<;.WEY.W X%='<:'8W.I6UYI
+MYV):W&+C:Y"X S6%X+T+^T=)OKDS7$3L=B-$^TG S_.NKT2.+1=#AM+I@)Q$
+MTLBMU/J3715=I:/;0Q@KK4OQZ[ITDC)'>PLRJ6.ULX [T^PU>RU02&QN$F$9
+MPVWM7G7AR%+@:OJMPB_98]S%,<.>H'TJ31+N31O">I:H@V2W,@CB]O>I=!:I
+M/4:JOJ=[=:]IUI/Y,]W&DG (ST^OI2RZ[IT,BQ/>0B0D +NR:X33-*NM5T)+
+M.&!U-W)YMU=RC&1V"^M)?62ZIXYAL+?B.V14=QP<
+QC>UP]H^QWT&M6
+M-SYYBNHF$!Q(<\+4$7B72IGV)>Q;L9&XX!^A-
+EV&F0;K6U0>9)L(4>HH5*#UOH-SDM#MAKNG-=);K>0M,YPJ
+M!LDFI+;5+6[NI;>"='FA/[Q >5KB_&=I#I&J:1>VT2QJC!"%&.A_PK;T&SMW
+M\0:GJ-LNV)RL8/9FZL?SJ'3CR\PU)WL=-6-XJ:"/P_=R7"A@J';G^]VK8!KC
+M/B5>^5H\-JI^:>3)'L*FDKS2*F[193\!6\-OIT^J:A(%^?8CR/PN.O6NL;Q#
+MIBVS7!O8?)5MI?/&?2N;O532/AM'%(@WR1@8(_B;FL&>U73_  )%)/&&GNGQ
+M""/N+UR/
+OT]:X34GFM]-T;P]"Q0W"J\Q!Y.X]*ZT^%;/\ M6SO%=T-H@1(U.%X
+M[UFZ<8[LM2;V-\=*6F@\4M8&@M%%% !1110 AK(\1:=>ZIIKVEG)%&)>)&?/
+M3VK8HIQ=G<35U8YGPWX
+MZ@UO]EDMKM @CE)^7 QFNEHH=5MW&H)(XR;P(?["M;:&=3=6\ADW-]UB>H^G
+M%7?^$;N-3U6"]UAHMEL (K>/)7/J2:Z>DH=63%R1.0?PE?'Q1<:A'>)'!/D-
+M@?.%/4#T^M1Z;X*N[#4[J9;N-8)3E54'<>X!/I79TM/VTM@]G$YOPKX:ET+[
+M7)
+)#J^D3PK(_WUE!QTQ77T4O:ROS#Y%:QS5]X6DU
+M+1IX+JY+WDS!S+_"&'0 >E1Z3H.K1PV]OJ5W$;:UY2.$$%R.FX^@KJ:2CVLK
+M6#D6YQT_AG5;O2GTV>2V:%Y3()226C!.< 5U5I;"TM(H$^[$H4$^U3T4I3
+IZ_45%J?@S5=4E%_-=VZWX(PL:X7 ]_6N
+MZHJE7DB?9Q,71++5XOWFL7:2.%VK'$,*/<^IJ/Q1I%_K5D+.UEACA8YD+YR<
+M=JWZ2HYWS
+1RW=W'Y2
+MOSA%[UUE%5[5[BY$
+(=8BTW3)62XL_P!Y(6.$
+M'I]33-(\0:MIFN1Z5K21E7&?-&!@>N?2NDNO#MK
+28%"ISA>[
+M?2G>(M*^R>#OLMI<>1]G ;.<&3';ZDUJZ-X
+[>Y3\.1W*:#9B\+&?RQNW=?QK"\1>%=4U[48Y
+MVN+=8H>(TYZ9[UV0&**A5'&7,AN*:LSF/$'AV_UW3K.V,T$7E',F,X/;BF^(
+M_"MQJJ:?'9RQQI:C&UQQCC_"NJI*:JR5K= <$SCM6\&7,TMI>6-T/MD'+-+T
+M8YSG_P"M6@=%U*YLKE[N]7[=+%Y:&/(2,>W^-=%28H]K*P
+
+7
+R1.htm
+IDEA: XBRL DOCUMENT
+v3.24.0.1
+
+9
+Financial_Report.xlsx
+IDEA: XBRL DOCUMENT
+begin 644 Financial_Report.xlsx
+M4$L#!!0    ( )F!55@'04UB@0   +$    0    9&]C4')O<',O87!P+GAM
+M;$V./0L",1!$_\IQO;=!P4)B0-!2L+(/>QLOD&1#LD)^OCG!CVX>;QA&WPIG
+M*N*I#BV&5(_C(I(/ !47BK9.7:=N')=HI6-Y #OGD
+K7A.YNJQ<&4GPZ4A!0W_
+J=0U[R;UEA_6\#MI7E!+ P04
+M    " "9@558AO@C>>X    K @  $0   &1O8U!R;W!S+V-O
+&ULS9+/
+M2@,Q$(=?17+?G4U:!,,VEXHG!<&"XBTDTS:X^4,RLMNW=W=MMX@^@,?,_/+-
+M-S"M2=+$C,\Y)LSDL-P,O@M%FK1A1Z(D 8HYHM>E'A-A;.YC]IK&9SY TN9#
+M'Q!$T]R"1])6DX8)6*6%R%1KC309-<5\QENSX--G[F:8-8 =>@Q4@-<
+U"G*M_8N<.L'-R*&Y)]7U?]ZLY-^[ X>WI\65>MW*A
+MD X&QU_%23HEW+#+Y-?5]G[WP)1HQ+IJ1"7X3G#)A5S?O4^N/_RNPCY:MW?_
+MV/@BJ%KX=1?J"U!+ P04    " "9@558F5R<(Q &  "<)P  $P   'AL+W1H
+M96UE+W1H96UE,2YX;6SM6EMSVC@4?N^OT'AG]FT+QC:!MK03
+621A'^_1S80RY8-[9)-NIL\!"SI^\Y%1^?H.'GS[BYBZ(:(E/)X
+M8-DOV]:[MR_>X%
+#BVR]*+
+M41B1%G\@M
+MNN01.+5)#3(3/PB=AIAJ4!P"I DQEJ&&^+3&K!'@$WVWO@C(WXV(]ZMOFCU7
+MH5A)VH3X$$8:XIQSYG/1;/L'I4;1]E6\W*.76!4!EQC?-*HU+,76>)7 \:V<
+M/!T3$LV4"P9!AI
+@S
+M&L%&KQMUAVC2/'K^!?F<-0H
+ACA*FNVB<5@$_9Y>PTG!Z(++9OVX?H;5,VPLCO='U!=*Y \FIS_I,C0'
+MHYI9";V$5FJ?JH
+,@H%\;D>/N5Z> HWEL:\4*Z">P'_T=HWPJOX@L Y
+M?RY]SZ7ON?0]H=*W-R-]9\'3BUO>1FY;Q/NN,=K7-"XH8U=RS
+TS0LS0[=R2^JVE+ZU)CA*
+M]+',<$X>RPP[9SR2';9WH!TU^_9==N0CI3!3ET.X&D*^ VVZG=PZ.)Z8D;D*
+MTU*0;\/YZ<5X&N(YV02Y?9A7;>?8T='[Y\%1L*/O/)8=QXCRHB'NH8:8S\-#
+MAWE[7YAGE<90-!1M;*PD+$:W8+C7\2P4X&1@+: '@Z]1 O)256 Q6\8#*Y"B
+M?$R,1>APYY=<7^/1DN/;IF6U;J\I=QEM(E(YPFF8$V>KRMYEL<%5'<]56_*P
+MOFH]M!5.S_Y9K
+F4Q9Z;RWRT,"2Q;B%D2XDU=[=7GFYRN>B)V^I=W
+MP6#R_7#)1P_E.^=?]%U#KG[VW>/Z;I,[2$R<><41 71% B.5' 86%S+D4.Z2
+MD 83
+>LX=SFWJXPD6L_UC6'ODRWSEPVSK> U[F
+M$RQ#I'[!?8J*@!&K8KZZKT_Y)9P[M'OQ@2";_-;;I/;=X Q\U*M:I60K$3]+
+M!WP?D@9CC%OT-%^/%&*MIK&MQMHQ#'F 6/,,H68XWX=%FAHSU8NL.8T*;T'5
+M0.4_V]0-:/8--!R1!5XQF;8VH^1."CS<_N\-L,+$CN'MB[\!4$L#!!0    (
+M )F!55B5_^"N:00  "@1   8    >&PO=V]R:W-H965T
+&UL
+MG9AM<]HX$,>_BL9WT[F;28)E2$Q28(80TC#- X-I>[V;>R%L 9K8DBO+(7S[
+M6QEBT]8L]/(B^&G__*Q=_5>BLU+Z.5MR;LAK$LNLZRR-2:\:C2Q<\H1E9RKE
+M$N[,E4Z8@5.]:&2IYBPJ@I*XX;GN12-A0CJ]3G%MK'L=E9M82#[6),N3A.GU
+M-8_5JNM0Y^W"1"R6QEYH]#HI6_" FT_I6,-9HU2)1,)E)I0DFL^[3I]>77OG
+M-J!XXK/@JVSGF-A7F2GU;$]&4==Q+1&/>6BL!(./%S[@<6R5@./;5M0IO],&
+M[AZ_J=\6+P\O,V,9'ZCXBXC,LNNT'1+Q.
+KS;.M
+MED/"/#,JV08#02+DYI.];@=B)Z!)]P1XVP"OX-Y\44%YPPSK=;1:$6V?!C5[
+M4+QJ$0UP0MJL!$;#70%QIC=0+UR3,22@TS"@9Z\VPFWL]2;6VQ-[RV=GQ*,G
+MQ'.]UO?A#< H6;R2Q2OTFBC+/_U99C1DZ]\ZHHU"JU[!EO!5EK*0=QVHT8SK
+M%^[TWOU&+]SW"%^SY&MBZKT;%>90D(9,UVGM<.'A[=./"$2KA&@=!S'F6JB(
+M#&5$(/.U/+A2F;Y#^3LOT
+L21]3X:/P\F'KR=D]#@X0V O2MB+8V!',E0Z59I9CS@A@8&A)$J3
+M@
+_&2*$?DGH'T-X*V).'O-DQG4="*Y!3_U+MXW M$N8]C$P
+M4_9*1A&4GYB+L!@S! U7]%NGU#]OTI:/X%V6>)?'X/6C"*9]=O)V0.[A.?(D
+M:U.(*U*?!-#%EN1:"Z;)G8JA@9%[]J/6=[C4K6S7_?_ TY6J=6-<,L@%U"YU
+M70QPIR_07P(
+_R/:6&6&Q>1OD>YUD@.*ON]ZV RA5>.@N-\7&>S#TFT_"B[@
+MTR8&4K4)BOO[O0IA3,9+)3%C.R#2;M/3Y@5>[%4OH+A??]'"&"YA8)(DEUMG
+MRVJI<*$YBS/4("KSI[AS!RH6H3!"+L@#E#>84%S+@ZL
+O0JK_=P8YX*
+M RU
+YE!OZ]KE+:YDZQ-:;F!4^'Q"?G?/J$M2Z$XO+,Y1ULKV
+M/=RGIYI%MN:"=3)3M15W0*"/+7V\G:T [L=O@T2&K^&2R07?NY8\(/3X-1CV
+M'X83C*JR=^\H>Q\F7"_L*'T !5@B0%I2)NL3B@L>+++*W3W
+BA
+OLGOOP'(>)F543,S;F"UJ>7"!O8/4V-GWVM\0
+M'IA-2T9B/@
+
+10
+Show.js
+IDEA: XBRL DOCUMENT
+// Edgar(tm) Renderer was created by staff of the U.S. Securities and Exchange Commission.  Data and content created by government employees within the scope of their employment are not subject to domestic copyright protection. 17 U.S.C. 105.
+var Show={};Show.LastAR=null,Show.showAR=function(a,r,w){if(Show.LastAR)Show.hideAR();var e=a;while(e&&e.nodeName!='TABLE')e=e.nextSibling;if(!e||e.nodeName!='TABLE'){var ref=((window)?w.document:document).getElementById(r);if(ref){e=ref.cloneNode(!0);
+e.removeAttribute('id');a.parentNode.appendChild(e)}}
+if(e)e.style.display='block';Show.LastAR=e};Show.hideAR=function(){Show.LastAR.style.display='none'};Show.toggleNext=function(a){var e=a;while(e.nodeName!='DIV')e=e.nextSibling;if(!e.style){}else if(!e.style.display){}else{var d,p_;if(e.style.display=='none'){d='block';p='-'}else{d='none';p='+'}
+e.style.display=d;if(a.textContent){a.textContent=p+a.textContent.substring(1)}else{a.innerText=p+a.innerText.substring(1)}}}
+
+11
+report.css
+IDEA: XBRL DOCUMENT
+/* Updated 2009-11-04 */
+/* v2.2.0.24 */
+
+/* DefRef Styles */
+..report table.authRefData{
+	background-color: #def;
+	border: 2px solid #2F4497;
+	font-size: 1em;
+	position: absolute;
+}
+
+..report table.authRefData a {
+	display: block;
+	font-weight: bold;
+}
+
+..report table.authRefData p {
+	margin-top: 0px;
+}
+
+..report table.authRefData .hide {
+	background-color: #2F4497;
+	padding: 1px 3px 0px 0px;
+	text-align: right;
+}
+
+..report table.authRefData .hide a:hover {
+	background-color: #2F4497;
+}
+
+..report table.authRefData .body {
+	height: 150px;
+	overflow: auto;
+	width: 400px;
+}
+
+..report table.authRefData table{
+	font-size: 1em;
+}
+
+/* Report Styles */
+..pl a, .pl a:visited {
+	color: black;
+	text-decoration: none;
+}
+
+/* table */
+..report {
+	background-color: white;
+	border: 2px solid #acf;
+	clear: both;
+	color: black;
+	font: normal 8pt Helvetica, Arial, san-serif;
+	margin-bottom: 2em;
+}
+
+..report hr {
+	border: 1px solid #acf;
+}
+
+/* Top labels */
+..report th {
+	background-color: #acf;
+	color: black;
+	font-weight: bold;
+	text-align: center;
+}
+
+..report th.void	{
+	background-color: transparent;
+	color: #000000;
+	font: bold 10pt Helvetica, Arial, san-serif;
+	text-align: left;
+}
+
+..report .pl {
+	text-align: left;
+	vertical-align: top;
+	white-space: normal;
+	width: 200px;
+	white-space: normal; /* word-wrap: break-word; */
+}
+
+..report td.pl a.a {
+	cursor: pointer;
+	display: block;
+	width: 200px;
+	overflow: hidden;
+}
+
+..report td.pl div.a {
+	width: 200px;
+}
+
+..report td.pl a:hover {
+	background-color: #ffc;
+}
+
+/* Header rows... */
+..report tr.rh {
+	background-color: #acf;
+	color: black;
+	font-weight: bold;
+}
+
+/* Calendars... */
+..report .rc {
+	background-color: #f0f0f0;
+}
+
+/* Even rows... */
+..report .re, .report .reu {
+	background-color: #def;
+}
+
+..report .reu td {
+	border-bottom: 1px solid black;
+}
+
+/* Odd rows... */
+..report .ro, .report .rou {
+	background-color: white;
+}
+
+..report .rou td {
+	border-bottom: 1px solid black;
+}
+
+..report .rou table td, .report .reu table td {
+	border-bottom: 0px solid black;
+}
+
+/* styles for footnote marker */
+..report .fn {
+	white-space: nowrap;
+}
+
+/* styles for numeric types */
+..report .num, .report .nump {
+	text-align: right;
+	white-space: nowrap;
+}
+
+..report .nump {
+	padding-left: 2em;
+}
+
+..report .nump {
+	padding: 0px 0.4em 0px 2em;
+}
+
+/* styles for text types */
+..report .text {
+	text-align: left;
+	white-space: normal;
+}
+
+..report .text .big {
+	margin-bottom: 1em;
+	width: 17em;
+}
+
+..report .text .more {
+	display: none;
+}
+
+..report .text .note {
+	font-style: italic;
+	font-weight: bold;
+}
+
+..report .text .small {
+	width: 10em;
+}
+
+..report sup {
+	font-style: italic;
+}
+
+..report .outerFootnotes {
+	font-size: 1em;
+}
+
+13
+FilingSummary.xml
+IDEA: XBRL DOCUMENT
+3.24.0.1
+html
+1
+23
+1
+false
+0
+0
+false
+0
+false
+false
+R1.htm
+0000001 - Document - Cover Page
+Sheet
+http://www.adamsresources.com/role/CoverPage
+Cover Page
+Cover
+1
+false
+false
+All Reports
+Book
+All Reports
+ae-20240221.htm
+ae-20240221.xsd
+ae-20240221_lab.xml
+ae-20240221_pre.xml
+http://xbrl.sec.gov/dei/2023
+true
+false
+JSON
+15
+MetaLinks.json
+IDEA: XBRL DOCUMENT
+{
+ "version": "2.2",
+ "instance": {
+  "ae-20240221.htm": {
+   "nsprefix": "ae",
+   "nsuri": "http://www.adamsresources.com/20240221",
+   "dts": {
+    "inline": {
+     "local": [
+      "ae-20240221.htm"
+     ]
+    },
+    "schema": {
+     "local": [
+      "ae-20240221.xsd"
+     ],
+     "remote": [
+      "http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd",
+      "http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd",
+      "http://www.xbrl.org/2003/xl-2003-12-31.xsd",
+      "http://www.xbrl.org/2003/xlink-2003-12-31.xsd",
+      "http://www.xbrl.org/2005/xbrldt-2005.xsd",
+      "http://www.xbrl.org/lrr/role/negated-2009-12-16.xsd",
+      "http://www.xbrl.org/lrr/role/net-2009-12-16.xsd",
+      "https://www.xbrl.org/dtr/type/2022-03-31/types.xsd",
+      "https://xbrl.sec.gov/dei/2023/dei-2023.xsd"
+     ]
+    },
+    "labelLink": {
+     "local": [
+      "ae-20240221_lab.xml"
+     ]
+    },
+    "presentationLink": {
+     "local": [
+      "ae-20240221_pre.xml"
+     ]
+    }
+   },
+   "keyStandard": 23,
+   "keyCustom": 0,
+   "axisStandard": 0,
+   "axisCustom": 0,
+   "memberStandard": 0,
+   "memberCustom": 0,
+   "hidden": {
+    "total": 2,
+    "http://xbrl.sec.gov/dei/2023": 2
+   },
+   "contextCount": 1,
+   "entityCount": 1,
+   "segmentCount": 0,
+   "elementCount": 24,
+   "unitCount": 0,
+   "baseTaxonomies": {
+    "http://xbrl.sec.gov/dei/2023": 23
+   },
+   "report": {
+    "R1": {
+     "role": "http://www.adamsresources.com/role/CoverPage",
+     "longName": "0000001 - Document - Cover Page",
+     "shortName": "Cover Page",
+     "isDefault": "true",
+     "groupType": "document",
+     "subGroupType": "",
+     "menuCat": "Cover",
+     "order": "1",
+     "firstAnchor": {
+      "contextRef": "c-1",
+      "name": "dei:DocumentType",
+      "unitRef": null,
+      "xsiNil": "false",
+      "lang": "en-US",
+      "decimals": null,
+      "ancestors": [
+       "span",
+       "div",
+       "body",
+       "html"
+      ],
+      "reportCount": 1,
+      "baseRef": "ae-20240221.htm",
+      "first": true,
+      "unique": true
+     },
+     "uniqueAnchor": {
+      "contextRef": "c-1",
+      "name": "dei:DocumentType",
+      "unitRef": null,
+      "xsiNil": "false",
+      "lang": "en-US",
+      "decimals": null,
+      "ancestors": [
+       "span",
+       "div",
+       "body",
+       "html"
+      ],
+      "reportCount": 1,
+      "baseRef": "ae-20240221.htm",
+      "first": true,
+      "unique": true
+     }
+    }
+   },
+   "tag": {
+    "dei_AmendmentFlag": {
+     "xbrltype": "booleanItemType",
+     "nsuri": "http://xbrl.sec.gov/dei/2023",
+     "localname": "AmendmentFlag",
+     "presentation": [
+      "http://www.adamsresources.com/role/CoverPage"
+     ],
+     "lang": {
+      "en-us": {
+       "role": {
+        "terseLabel": "Amendment Flag",
+        "label": "Amendment Flag",
+        "documentation": "Boolean flag that is true when the XBRL content amends previously-filed or accepted submission."
+       }
+      }
+     },
+     "auth_ref": []
+    },
+    "dei_CityAreaCode": {
+     "xbrltype": "normalizedStringItemType",
+     "nsuri": "http://xbrl.sec.gov/dei/2023",
+     "localname": "CityAreaCode",
+     "presentation": [
+      "http://www.adamsresources.com/role/CoverPage"
+     ],
+     "lang": {
+      "en-us": {
+       "role": {
+        "terseLabel": "City Area Code",
+        "label": "City Area Code",
+        "documentation": "Area code of city"
+       }
+      }
+     },
+     "auth_ref": []
+    },
+    "dei_CoverAbstract": {
+     "xbrltype": "stringItemType",
+     "nsuri": "http://xbrl.sec.gov/dei/2023",
+     "localname": "CoverAbstract",
+     "lang": {
+      "en-us": {
+       "role": {
+        "terseLabel": "Cover page.",
+        "label": "Cover [Abstract]",
+        "documentation": "Cover page."
+       }
+      }
+     },
+     "auth_ref": []
+    },
+    "dei_DocumentPeriodEndDate": {
+     "xbrltype": "dateItemType",
+     "nsuri": "http://xbrl.sec.gov/dei/2023",
+     "localname": "DocumentPeriodEndDate",
+     "presentation": [
+      "http://www.adamsresources.com/role/CoverPage"
+     ],
+     "lang": {
+      "en-us": {
+       "role": {
+        "terseLabel": "Document Period End Date",
+        "label": "Document Period End Date",
+        "documentation": "For the EDGAR submission types of Form 8-K: the date of the report, the date of the earliest event reported; for the EDGAR submission types of Form N-1A: the filing date; for all other submission types: the end of the reporting or transition period.  The format of the date is YYYY-MM-DD."
+       }
+      }
+     },
+     "auth_ref": []
+    },
+    "dei_DocumentType": {
+     "xbrltype": "submissionTypeItemType",
+     "nsuri": "http://xbrl.sec.gov/dei/2023",
+     "localname": "DocumentType",
+     "presentation": [
+      "http://www.adamsresources.com/role/CoverPage"
+     ],
+     "lang": {
+      "en-us": {
+       "role": {
+        "terseLabel": "Document Type",
+        "label": "Document Type",
+        "documentation": "The type of document being provided (such as 10-K, 10-Q, 485BPOS, etc). The document type is limited to the same value as the supporting SEC submission type, or the word 'Other'."
+       }
+      }
+     },
+     "auth_ref": []
+    },
+    "dei_EntityAddressAddressLine1": {
+     "xbrltype": "normalizedStringItemType",
+     "nsuri": "http://xbrl.sec.gov/dei/2023",
+     "localname": "EntityAddressAddressLine1",
+     "presentation": [
+      "http://www.adamsresources.com/role/CoverPage"
+     ],
+     "lang": {
+      "en-us": {
+       "role": {
+        "terseLabel": "Entity Address, Address Line One",
+        "label": "Entity Address, Address Line One",
+        "documentation": "Address Line 1 such as Attn, Building Name, Street Name"
+       }
+      }
+     },
+     "auth_ref": []
+    },
+    "dei_EntityAddressAddressLine2": {
+     "xbrltype": "normalizedStringItemType",
+     "nsuri": "http://xbrl.sec.gov/dei/2023",
+     "localname": "EntityAddressAddressLine2",
+     "presentation": [
+      "http://www.adamsresources.com/role/CoverPage"
+     ],
+     "lang": {
+      "en-us": {
+       "role": {
+        "terseLabel": "Entity Address, Address Line Two",
+        "label": "Entity Address, Address Line Two",
+        "documentation": "Address Line 2 such as Street or Suite number"
+       }
+      }
+     },
+     "auth_ref": []
+    },
+    "dei_EntityAddressCityOrTown": {
+     "xbrltype": "normalizedStringItemType",
+     "nsuri": "http://xbrl.sec.gov/dei/2023",
+     "localname": "EntityAddressCityOrTown",
+     "presentation": [
+      "http://www.adamsresources.com/role/CoverPage"
+     ],
+     "lang": {
+      "en-us": {
+       "role": {
+        "terseLabel": "Entity Address, City or Town",
+        "label": "Entity Address, City or Town",
+        "documentation": "Name of the City or Town"
+       }
+      }
+     },
+     "auth_ref": []
+    },
+    "dei_EntityAddressPostalZipCode": {
+     "xbrltype": "normalizedStringItemType",
+     "nsuri": "http://xbrl.sec.gov/dei/2023",
+     "localname": "EntityAddressPostalZipCode",
+     "presentation": [
+      "http://www.adamsresources.com/role/CoverPage"
+     ],
+     "lang": {
+      "en-us": {
+       "role": {
+        "terseLabel": "Entity Address, Postal Zip Code",
+        "label": "Entity Address, Postal Zip Code",
+        "documentation": "Code for the postal or zip code"
+       }
+      }
+     },
+     "auth_ref": []
+    },
+    "dei_EntityAddressStateOrProvince": {
+     "xbrltype": "stateOrProvinceItemType",
+     "nsuri": "http://xbrl.sec.gov/dei/2023",
+     "localname": "EntityAddressStateOrProvince",
+     "presentation": [
+      "http://www.adamsresources.com/role/CoverPage"
+     ],
+     "lang": {
+      "en-us": {
+       "role": {
+        "terseLabel": "Entity Address, State or Province",
+        "label": "Entity Address, State or Province",
+        "documentation": "Name of the state or province."
+       }
+      }
+     },
+     "auth_ref": []
+    },
+    "dei_EntityCentralIndexKey": {
+     "xbrltype": "centralIndexKeyItemType",
+     "nsuri": "http://xbrl.sec.gov/dei/2023",
+     "localname": "EntityCentralIndexKey",
+     "presentation": [
+      "http://www.adamsresources.com/role/CoverPage"
+     ],
+     "lang": {
+      "en-us": {
+       "role": {
+        "terseLabel": "Entity Central Index Key",
+        "label": "Entity Central Index Key",
+        "documentation": "A unique 10-digit SEC-issued value to identify entities that have filed disclosures with the SEC. It is commonly abbreviated as CIK."
+       }
+      }
+     },
+     "auth_ref": [
+      "r1"
+     ]
+    },
+    "dei_EntityEmergingGrowthCompany": {
+     "xbrltype": "booleanItemType",
+     "nsuri": "http://xbrl.sec.gov/dei/2023",
+     "localname": "EntityEmergingGrowthCompany",
+     "presentation": [
+      "http://www.adamsresources.com/role/CoverPage"
+     ],
+     "lang": {
+      "en-us": {
+       "role": {
+        "terseLabel": "Entity Emerging Growth Company",
+        "label": "Entity Emerging Growth Company",
+        "documentation": "Indicate if registrant meets the emerging growth company criteria."
+       }
+      }
+     },
+     "auth_ref": [
+      "r1"
+     ]
+    },
+    "dei_EntityFileNumber": {
+     "xbrltype": "fileNumberItemType",
+     "nsuri": "http://xbrl.sec.gov/dei/2023",
+     "localname": "EntityFileNumber",
+     "presentation": [
+      "http://www.adamsresources.com/role/CoverPage"
+     ],
+     "lang": {
+      "en-us": {
+       "role": {
+        "terseLabel": "Entity File Number",
+        "label": "Entity File Number",
+        "documentation": "Commission file number. The field allows up to 17 characters. The prefix may contain 1-3 digits, the sequence number may contain 1-8 digits, the optional suffix may contain 1-4 characters, and the fields are separated with a hyphen."
+       }
+      }
+     },
+     "auth_ref": []
+    },
+    "dei_EntityIncorporationStateCountryCode": {
+     "xbrltype": "edgarStateCountryItemType",
+     "nsuri": "http://xbrl.sec.gov/dei/2023",
+     "localname": "EntityIncorporationStateCountryCode",
+     "presentation": [
+      "http://www.adamsresources.com/role/CoverPage"
+     ],
+     "lang": {
+      "en-us": {
+       "role": {
+        "terseLabel": "Entity Incorporation, State or Country Code",
+        "label": "Entity Incorporation, State or Country Code",
+        "documentation": "Two-character EDGAR code representing the state or country of incorporation."
+       }
+      }
+     },
+     "auth_ref": []
+    },
+    "dei_EntityRegistrantName": {
+     "xbrltype": "normalizedStringItemType",
+     "nsuri": "http://xbrl.sec.gov/dei/2023",
+     "localname": "EntityRegistrantName",
+     "presentation": [
+      "http://www.adamsresources.com/role/CoverPage"
+     ],
+     "lang": {
+      "en-us": {
+       "role": {
+        "terseLabel": "Entity Registrant Name",
+        "label": "Entity Registrant Name",
+        "documentation": "The exact name of the entity filing the report as specified in its charter, which is required by forms filed with the SEC."
+       }
+      }
+     },
+     "auth_ref": [
+      "r1"
+     ]
+    },
+    "dei_EntityTaxIdentificationNumber": {
+     "xbrltype": "employerIdItemType",
+     "nsuri": "http://xbrl.sec.gov/dei/2023",
+     "localname": "EntityTaxIdentificationNumber",
+     "presentation": [
+      "http://www.adamsresources.com/role/CoverPage"
+     ],
+     "lang": {
+      "en-us": {
+       "role": {
+        "terseLabel": "Entity Tax Identification Number",
+        "label": "Entity Tax Identification Number",
+        "documentation": "The Tax Identification Number (TIN), also known as an Employer Identification Number (EIN), is a unique 9-digit value assigned by the IRS."
+       }
+      }
+     },
+     "auth_ref": [
+      "r1"
+     ]
+    },
+    "dei_LocalPhoneNumber": {
+     "xbrltype": "normalizedStringItemType",
+     "nsuri": "http://xbrl.sec.gov/dei/2023",
+     "localname": "LocalPhoneNumber",
+     "presentation": [
+      "http://www.adamsresources.com/role/CoverPage"
+     ],
+     "lang": {
+      "en-us": {
+       "role": {
+        "terseLabel": "Local Phone Number",
+        "label": "Local Phone Number",
+        "documentation": "Local phone number for entity."
+       }
+      }
+     },
+     "auth_ref": []
+    },
+    "dei_PreCommencementIssuerTenderOffer": {
+     "xbrltype": "booleanItemType",
+     "nsuri": "http://xbrl.sec.gov/dei/2023",
+     "localname": "PreCommencementIssuerTenderOffer",
+     "presentation": [
+      "http://www.adamsresources.com/role/CoverPage"
+     ],
+     "lang": {
+      "en-us": {
+       "role": {
+        "terseLabel": "Pre-commencement Issuer Tender Offer",
+        "label": "Pre-commencement Issuer Tender Offer",
+        "documentation": "Boolean flag that is true when the Form 8-K filing is intended to satisfy the filing obligation of the registrant as pre-commencement communications pursuant to Rule 13e-4(c) under the Exchange Act."
+       }
+      }
+     },
+     "auth_ref": [
+      "r3"
+     ]
+    },
+    "dei_PreCommencementTenderOffer": {
+     "xbrltype": "booleanItemType",
+     "nsuri": "http://xbrl.sec.gov/dei/2023",
+     "localname": "PreCommencementTenderOffer",
+     "presentation": [
+      "http://www.adamsresources.com/role/CoverPage"
+     ],
+     "lang": {
+      "en-us": {
+       "role": {
+        "terseLabel": "Pre-commencement Tender Offer",
+        "label": "Pre-commencement Tender Offer",
+        "documentation": "Boolean flag that is true when the Form 8-K filing is intended to satisfy the filing obligation of the registrant as pre-commencement communications pursuant to Rule 14d-2(b) under the Exchange Act."
+       }
+      }
+     },
+     "auth_ref": [
+      "r4"
+     ]
+    },
+    "dei_Security12bTitle": {
+     "xbrltype": "securityTitleItemType",
+     "nsuri": "http://xbrl.sec.gov/dei/2023",
+     "localname": "Security12bTitle",
+     "presentation": [
+      "http://www.adamsresources.com/role/CoverPage"
+     ],
+     "lang": {
+      "en-us": {
+       "role": {
+        "terseLabel": "Title of 12(b) Security",
+        "label": "Title of 12(b) Security",
+        "documentation": "Title of a 12(b) registered security."
+       }
+      }
+     },
+     "auth_ref": [
+      "r0"
+     ]
+    },
+    "dei_SecurityExchangeName": {
+     "xbrltype": "edgarExchangeCodeItemType",
+     "nsuri": "http://xbrl.sec.gov/dei/2023",
+     "localname": "SecurityExchangeName",
+     "presentation": [
+      "http://www.adamsresources.com/role/CoverPage"
+     ],
+     "lang": {
+      "en-us": {
+       "role": {
+        "terseLabel": "Security Exchange Name",
+        "label": "Security Exchange Name",
+        "documentation": "Name of the Exchange on which a security is registered."
+       }
+      }
+     },
+     "auth_ref": [
+      "r2"
+     ]
+    },
+    "dei_SolicitingMaterial": {
+     "xbrltype": "booleanItemType",
+     "nsuri": "http://xbrl.sec.gov/dei/2023",
+     "localname": "SolicitingMaterial",
+     "presentation": [
+      "http://www.adamsresources.com/role/CoverPage"
+     ],
+     "lang": {
+      "en-us": {
+       "role": {
+        "terseLabel": "Soliciting Material",
+        "label": "Soliciting Material",
+        "documentation": "Boolean flag that is true when the Form 8-K filing is intended to satisfy the filing obligation of the registrant as soliciting material pursuant to Rule 14a-12 under the Exchange Act."
+       }
+      }
+     },
+     "auth_ref": [
+      "r5"
+     ]
+    },
+    "dei_TradingSymbol": {
+     "xbrltype": "tradingSymbolItemType",
+     "nsuri": "http://xbrl.sec.gov/dei/2023",
+     "localname": "TradingSymbol",
+     "presentation": [
+      "http://www.adamsresources.com/role/CoverPage"
+     ],
+     "lang": {
+      "en-us": {
+       "role": {
+        "terseLabel": "Trading Symbol",
+        "label": "Trading Symbol",
+        "documentation": "Trading symbol of an instrument as listed on an exchange."
+       }
+      }
+     },
+     "auth_ref": []
+    },
+    "dei_WrittenCommunications": {
+     "xbrltype": "booleanItemType",
+     "nsuri": "http://xbrl.sec.gov/dei/2023",
+     "localname": "WrittenCommunications",
+     "presentation": [
+      "http://www.adamsresources.com/role/CoverPage"
+     ],
+     "lang": {
+      "en-us": {
+       "role": {
+        "terseLabel": "Written Communications",
+        "label": "Written Communications",
+        "documentation": "Boolean flag that is true when the Form 8-K filing is intended to satisfy the filing obligation of the registrant as written communications pursuant to Rule 425 under the Securities Act."
+       }
+      }
+     },
+     "auth_ref": [
+      "r6"
+     ]
+    }
+   }
+  }
+ },
+ "std_ref": {
+  "r0": {
+   "role": "http://www.xbrl.org/2003/role/presentationRef",
+   "Publisher": "SEC",
+   "Name": "Exchange Act",
+   "Number": "240",
+   "Section": "12",
+   "Subsection": "b"
+  },
+  "r1": {
+   "role": "http://www.xbrl.org/2003/role/presentationRef",
+   "Publisher": "SEC",
+   "Name": "Exchange Act",
+   "Number": "240",
+   "Section": "12",
+   "Subsection": "b-2"
+  },
+  "r2": {
+   "role": "http://www.xbrl.org/2003/role/presentationRef",
+   "Publisher": "SEC",
+   "Name": "Exchange Act",
+   "Number": "240",
+   "Section": "12",
+   "Subsection": "d1-1"
+  },
+  "r3": {
+   "role": "http://www.xbrl.org/2003/role/presentationRef",
+   "Publisher": "SEC",
+   "Name": "Exchange Act",
+   "Number": "240",
+   "Section": "13e",
+   "Subsection": "4c"
+  },
+  "r4": {
+   "role": "http://www.xbrl.org/2003/role/presentationRef",
+   "Publisher": "SEC",
+   "Name": "Exchange Act",
+   "Number": "240",
+   "Section": "14d",
+   "Subsection": "2b"
+  },
+  "r5": {
+   "role": "http://www.xbrl.org/2003/role/presentationRef",
+   "Publisher": "SEC",
+   "Name": "Exchange Act",
+   "Section": "14a",
+   "Number": "240",
+   "Subsection": "12"
+  },
+  "r6": {
+   "role": "http://www.xbrl.org/2003/role/presentationRef",
+   "Publisher": "SEC",
+   "Name": "Securities Act",
+   "Number": "230",
+   "Section": "425"
+  }
+ }
+}
+
+16
+0000002178-24-000004-xbrl.zip
+IDEA: XBRL DOCUMENT
+begin 644 0000002178-24-000004-xbrl.zip
+M4$L#!!0    ( )F!55A+RBEYBP@  )D=   >    831Q,C R,V5X.3DQ7V1I
+M=FED96YD9&5C;&$N:'1MS5E=4QLY%GW?7W&7[&:2*MNQ#00"A"K'.!-F V2!
+M))6G+;E;[5:L;O5(:DS/K]]SU6T[8"?#3K&!/*3<^KBZG^<>B8/49_KP()4B
+M/OS;P=_;;3HR49G)W%-DI? RIM*I?$*?8^FFU&XWJX:FJ*R:I)[ZW?X6?39V
+MJJY$/>^5U_)P+N?@1?U]\"(<
+%L*\7(LMGK)5O]53_ZGMX&M6%[O<;[2\O5&IO)V*OG\O9U^X?=G*O;I7J_;
+M_>=&6'=XD)C
+W]
+A4SNC<9"+_I>5$[MI.6I74"YWZ0T(GJ!<^9XV^D*-5+N?Z
+M]_JL].@Z56/EZ=6K3N^FQO>BZ\ JH?^RAL&M;\_.Z?CD9'1T/+@
+$+'(G#83([J;HO.UF&R0L]'Z\=J Q7E;Q?5^)NP$41X;
+M[TVVMPT=KZ3U*A*Z<4'P1CW=Q+__LEM
+?3SER;L$_^?:T-N?_^
+M.#B_')V__T+#P<4[.CK^='PT.CU:$__O%-YZ2[Z6SJNDNB=3>G
+D[/GC[9[?>[^T%$
+M^-W;)V/)IY*:J:')"I%7S>1S\@;&D\AS4^81 -^GPI/RCMX886,R"1TI*R-O
+MK*-81EI8+!+T.SR%--051<*EA "K6.8QJ3P<)C*(\[S[']T.6D0A+44FRTQ.
+M+H4(2AJM$ACIT[DXW@#/;[:H$)48:TG8<")LE%*_7P<%"M
+4L5N+Z#SNQ%V?&?^25_#M;QWTFRJR(O$M6D2YM[-/
+MPU3)A$;7,BJ]NI)TEB0J@D<%@O+!2L?AP1X. @-(W)HGQ&=$"P$IM!2.XV\6
+MR4"5]/@PB).%CR
+$N%\4%_YP% PEPF%0U7.%(6U<%Z,
+ME5:^FFNQ2 %1Z\I1X\4\AY0IC 7)H43E(H\0(1:0QUC0F=?.X\Z4]1!W!_SX
+M^<"F',E\@@0)$!'9,D:J*(T0VJGT<#EB;B$?(?'"*T9HX &8GM":(\8!!'!;
+M2, ,D@/+RVAZ:Q/'7:O?2R13E,J,^4(=^QBP/B[UM(73(1=Q1MQYX+8 4!.%
+MD$4UE,S5Y+K)D9H.VUJ4E%(C1S%>"Z\+I)#>&BW+C IKXC+R]22PJ8H6)EA9
+ME$B[0*HY1Y.D[0H9*=1J?7XC6Y=CBZ'
+6R^: *R;%LT?OW
+MPV\D7C:A<
+CHR ^11
+M.2HS:X)^I1R(\)_D9Y+<
+BP:BI+]R:SJ@FLN(/>YG(!:< D@!V;XV7YOS)2_%VO< QH4Y.PI
+MCT.B.\3E,@6VY7+FN)MQ#V6LX*[DN.,$\W1CGEN8UUF8OCK'
+T."2TI>H
+M$'D5QKF0  DJ4D6XFR,A2^T#4AD0K)"Y*+I%TW.>V]LD@,$2.@0#3K,+;7"Y
+MDXEB\P5]&N$=5"M .@\\#\VD,B5^Y13H!)S_ QMI7#48CHA,*J 3*)AP<]ZQ
+MM*0U[[;-#$-T'M\>+;3(5\:L^0IC;@]+Y$6V1C '1N7ERGAA/%LC].T)EYI2
+MKV@2K1O,<(6X-313>D6B&;/"(&BW)R9H6F A*^.F].S:%1,3IC,KH]?%&G>,
+M@>%R]41 ?*S6K"[CB5P9;3S-&'U;<;/J-^@FD2\K4CRN]=)_
+N+>L?.8>.+>?I1?/TXE)87#+&3C)-12;C$X57"'XC*+\1^!D9+[GI$Z?P
+M=W.U%>0U?9!DW?TD5QS5+FW8!1@E^S+A-%Z69U,JK3K#UV]@_M.(#0QH8@P8
+MJ5"X^W!I-B$*]#LP8P&IP@$Y^1(T%D[]*8P:/[
+.9)@:ZR2!"C!Y<-H"6Z>6)-A)]^JEB; ,I454'IQ
+MY?L^$+0:Y*H:!&+M8'M]IU1YI,%O@I@;%QI0)60X0%1IS,[84WS,!2XX5@5K
+M6.KH.L)581*"ERGGX'5PBW=F!F_:$%9XA@$+N93C:N-<:;G,:E?\(&!
+\LB9FPO
+M2HQ&NOIQ6O)-*94-:H>4J-5)N-_
+7DZBB48?.4MP0_8/J,OKT
+MH=4\K[Q=O!0TSRL/JI@WP3E/G[S
+5!5'NVT]M\3KN[O?;FR^ZK1Y!F
+MZTOP.+^2_*J *XEN2/"M:GQTE?&;27-Z(Y73_%QJ09D")7IGT)\?-ATO4RLE
+M?4!&H@_B'H_N_K YN-O;>4Z;O6Y[=V?GY??_MO(X6MV+^D^C+\*?9/\+4$L#
+M!!0    ( )F!55@BC]@5( \   UO   /    864M,C R-# R,C$N:'1M[1UM
+M<]HX\WM_A8;>TZ8SL<'FG23<<(3VF+9)!M*YN^?+C;!%T-78/DDD\/SZ9U>V
+M>0DFA80$DJ8SG6)+7NVN5ONFE7K\ZWCHD6LF) _\D_>6F7M/F.\$+O>O3MXW
+MNLUV^_VO]3?' P7=H*LO:WRL#,F
+]QG?_[6
+M^9)5@OJR'X@A50 Z:^>LHI&K&'DK$\,9]X3'%Z#@&S,05] YEP=84E'?89G9
+MN.F][QK4SADYV[#L&9!5(UKY.4!)=Y?-,-1]$T*A :'GI\3(15)N\@DA5O;/
+MKU^ZSH -J7&+I+0OK&JUFATCNQ/0@-/W.]B$S3TJIVP:+_5?@(RMNFO-HS#%
+M&>8;W[J9^O& 4;=^/&2*$OS48/^.^/5)IAGXBOG*N)R$,((3/9UD%!NKK$8R
+M6W_SYLVQXLIC=
+C@/\:CY3/UCXTNWM31@=I%"P?I,P)IC,F5:<+IJ4DL/
+MH$3T]-443,9)1O)AZ.&TZW<#@1C/S8 YEB[,CAYM-D0\H@Q&0C_I15B+B=:8
+M(]')>Z;9FCQQ%Y_[G FB,6*I*J#9_KS([ML?UY-7B]!#8$[@)D^P3H0ZI8K5
+MD1Y
+O$@>KRH>8:VF8M0
+M5\ @Y28CQ\TF-&67WU
+W_)A[!VS]@-Z01#ZK\_E&"$P$0*WH\Z2OX_5K-*P%O]>!,+ L#1
+M$Q&3:=G(TF]G[
+E>-BY;W451V$-LNZWFMT[[LMWJDL;9*6G]V?R]
+*A>K&>*
+B94GYQUB%0_<#WN/?] GEP.&J(\$5QP M\;. %PI
+M1AJ.(M!L5?.%ESI[Z.,@C1T6!D*1@^294?!RF%2$70-Z1.AFYGZHW4,#7&C7
+MJ14Y5(O>KPMOC"& &.!GADLGQ@2&-I@_=89!\;">&%$Q(;9U2-!3>_X*I+*6
+M MDTBNFP*RXQD%5GT))P$**)QFGC:Q?T4/?\6Z<)%O<='89'I'76ZGSZZY"T
+MSYKF@UGZU()[T!I36)[( I17,26=4$EDR!R,&%S"?<*5)+"@07S%9MKH6?C&
+M>
+:R_Q,^(
+ME9E]\P-R]UG&;=\)!.A;G8GJ*E"1S6#D*S%I!NZB_L1L&@:UBH4BN$8X,\59
+M .7./'I#!;M[<6>5^SH)2Y/PD7L,.O< X9BAQ4S=,LK5W'(>Z)6=/V3G)1VW
+MXSR.H^5ZD;>E3+U<,*QR,6\5RFOP]_[*(^+:2E9OE9?5'UDRS
+TAJ$73)AXX?(,
+MWAB?MV ?7IH0HVD@D?YZ(&W/3(H7-3@Y"\P/JV1YHVSITSK:E9)I6^5-_>QR
+MV:Q42UMQCJVJ6
+SD2#=<53,KXGR\ STJ
+MC*1"X[FE0;3O<2XN('S@>GMYS>C"RF7JEVQ,Y6,XPT^I\A]73"\"X)_W7QY&
+MH5O,.PN\W7+.7NWH/LPEV%\5L,(YBIF%>9Q0@!CRD'J$C9DS4OP:TSM@
+"*6!4,$H2(O+:H0DQ.YB6^A@?5V")J !:"]H#QNTAY6_
+MK3L^;& !O@0@_!?(IL4HW,IGZI6*9>1+RV9L23PVE9U_P'#Q_F1'LM(<,.<[
+M@?B:T!"L&:@9C+E[P9CT&+H(O*\;/X+U(Q7C,^ES#V6&2Q @Q4#47=S?DGPX
+M\A1X$V"%O0F1X ?+_D1_&7\0](#8R#T.(I!SF>D1P!&$^I.DK:_]$_P.+2S'
+ML%C6-F/FT_K.U:I9P6QSNN^\RA&VS5)E.RGJ:LG,[2:OO*;0_@&P$;Y\F-I?
+M?RW_(;@" <6\RLB/(S.Y[,;U@L#K49 V!3(_7>^%3/W=VVJY4#BZTQ79NI7=
+M=O1J%M?B:LPK(&:>622
+QBO%;5XLXP;@@?0(S1_-@A=CYG0L>5
+M=OGG$<%NX'$'&.1??06E"IK56U?^BC^7_,T8188QIY:%SRI0L/%S\K=0CC"5
+MO@+H.]WS50!K%X*A_L,R55UQA/9:G/?[Z-FL)XBEGTL0@6&&,\>Q'VI$J^ :
+M]D'OPWIB&?5]%
+=XMGGAF% V<]\8S[/BB@WFTP,^>1
+M1-$%$Q"?A&F%>'K1QM$&<.(9!Q>K0@*[8A;R=V?3-X@Z*IM!6HF4;1:JQ3U#
+MJI W[5S^D8*GG>9LT]7()9XCBHH9G0%Q/"KE!NIR6OW_(E@AJ,Z!=2?#7N =
+MR$WV+5\4(\[B>D$M$BRQ$: I;P8
+1(2 6YIMYH=2G:@^7PYYN$>%%':WHZ
+M ]5,O9%R
+]@;YFN=KRU1<(E 1PAZD-JKLB5"&[4 .._$+=-
+MJ"0NZ\,0NK _RM7FBDE\
+!ID QH)Q]-P?6W'BW>O&XZ8^=\#7]LON[;_?8*Q
+)6'.)\V;9L2:-=-/MK5>^BG]#';ICC/8CR/*FW:[OW*.
+M5>M>24:[?X<&Q7J(5'7,ES:K!Z!LF<<_@]@=U'#S;@IWQ@A.7"E=&
+MF^'NJI16_H!.4UKSNMDD4R'=W-E]H:[7\[PYX0=%)?/7881!)'\UP3R*U6)+
+M%V3,L-;
+RQZ>TBY>GM(@,Q6P97S.@)1K\;
+MM _TU:AW0R<29^YQKB")!<1 UR("-E]+9N";'1W6;RLV)&4S9Q'XTV%7(R^J
+MXOEX2DZY=+Q C@0SMU4%M2\E=.= X.W3U8>DX=*A!";$M]HDQX5],"F30W1\
+M
+XXI4JZ8%)+L( B(=!@9W=BX&H.$[B&+@]?22
+M)< %[R+@_O0B,B*90J,*=A3ZZM%GDLHQ' )+KS'K,=(?"9]+Q!2'!=YXGC;=
+MT+30#\LE;1 K[C%7_[:.M.'6U(\ 0
+<+=4=0, !5R >$_Z!7@-:PQ/&EW2A4E^GB[/E%E'T4QE.Z,
+MN0)]&";I[&)GC"&(&P!F&&C0,&141)'**L@]YE!,).*U3'AA,E'T2N+A+,*&
+M/>9BV@_3AE,8B'S4T8WO$S/7V#3=KT126E"1ZJKMPN6TMY%=PJ-CNT\O[<&A
+M]JA L_WIK''YK;/>/:R+&[3/-I
+@(8CN>>NQ ?7ZF%-!0-ILQQTPVS+RX1L-CH[4(!! G+N<
+MTELI3&F,?O(*V5)YXPK9HEDJ;JG\HFH6RYN5M:X$919+VT&J  'G=LX$[F0;
+M
+[4-_(KX;C?>]WJ%I'O3>*]M;?LYF"%W
+M78_MB*:42W>W3=_N)NRWR2-,UTZS@%F9)>02XHL):9GD? #.A;K/=3)/JA!6
+MUA*GE!,3_+>\Y[/PW"9@3WFL(=:X@M&<=9(9 \[Z
+N2<$U*326E6:E&U5UVI]FQPX$*M@,]LTZ;^O[8!2>ED;
+M:0_+2\PYW_>=FP^
+.Z<+B>3DT\8
+MWWZY6J%SGG<-,(7.!! %!=I2M4%J ^@7%W?TGJ#+FJB2BP;CI:6=\?9!T&JC
+M4.B'\0 ;O"+SYV4(,)WAM(Q\'(=I@N=E,L.Q/X])DA!"9NO/59;,9V5(BBD.
+MHRG!<1$"7L=IA(MI KF?%$&4QE9T)S.9;Z A2)?&9+:3"V>C5)MYWG:[=;>1
+MRT7EA;X?>+??5C\MU.FQ-65W(_1N+>H!'WG&O282!CB!$9@4I)$").]$#M+-
+M>>.9DOTP#!Q$E!)TW2FXT+TYAY)TM5HX'?O3D9J6% K=^!I,:T> )VY%1 7J
+M.VE MB3_>.CE!"'3%=JT7"C$7A7HVQ*D:>KM3)T.VG=QQ7.B[.5XLRT6C\T1
+M!R&. G
+J)]YSP3*J34/Q@
+M2WM^/N:>W$/^0LQ)G7?U\;Q#6F_2>N/0SW[7O/&R[9^?+*0U[+=\.7D$4$L#
+M!!0    ( )F!55A"_:NUN@H  #]B   3    864M,C R-# R,C%?;&%B+GAM
+M;-6=76_;.!:&[_LKM-F;76 8DQ0ID47;03?3#HK-M$&38@:[6!C\4B*,+06R
+MTB3_?BG93JQ8LD7)5C4WK6O3A^]YX^>01Y33-S\_S&?>=Y,MXC1Y>X).X8EG
+M$I7J.+E^>_+MZB-@)S^_>_7JS=\ ^.-?7\^]7U)U-S=)[IUE1N1&>_=Q?N/E
+M-\;[/
+YAB,EZV/K5[#5D$3:&!H!'
+M/@0$\Q"P* P @8R(,!1"!/*GZ]
+
+17
+ae-20240221_htm.xml
+IDEA: XBRL DOCUMENT
+0000002178
+2024-02-21
+2024-02-21
+0000002178
+false
+8-K
+2024-02-21
+ADAMS RESOURCES & ENERGY, INC.
+DE
+1-7908
+74-1753147
+17 South Briar Hollow Lane
+Suite 100
+Houston
+TX
+77027
+713
+881-3600
+false
+false
+false
+false
+Common Stock, $0.10 par value
+AE
+NYSEAMER
+false

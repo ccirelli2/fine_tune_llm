@@ -1,0 +1,122 @@
+0000002178-24-000007.txt : 20240304
+0000002178-24-000007.hdr.sgml : 20240304
+20240304164649
+ACCESSION NUMBER:		0000002178-24-000007
+CONFORMED SUBMISSION TYPE:	4
+PUBLIC DOCUMENT COUNT:		1
+CONFORMED PERIOD OF REPORT:	20240301
+FILED AS OF DATE:		20240304
+DATE AS OF CHANGE:		20240304
+
+REPORTING-OWNER:	
+
+	OWNER DATA:	
+		COMPANY CONFORMED NAME:			Brasseux Murray E
+		CENTRAL INDEX KEY:			0001637261
+		ORGANIZATION NAME:           	
+
+	FILING VALUES:
+		FORM TYPE:		4
+		SEC ACT:		1934 Act
+		SEC FILE NUMBER:	001-07908
+		FILM NUMBER:		24715467
+
+	MAIL ADDRESS:	
+		STREET 1:		17 SOUTH BRIAR HOLLOW LANE
+		CITY:			HOUSTON
+		STATE:			TX
+		:			77027
+
+ISSUER:		
+
+	COMPANY DATA:	
+		COMPANY CONFORMED NAME:			ADAMS RESOURCES & ENERGY, INC.
+		CENTRAL INDEX KEY:			0000002178
+		STANDARD INDUSTRIAL CLASSIFICATION:	WHOLESALE-PETROLEUM & PETROLEUM PRODUCTS (NO BULK STATIONS) [5172]
+		ORGANIZATION NAME:           	07 Trade & Services
+		IRS NUMBER:				741753147
+		STATE OF INCORPORATION:			DE
+		FISCAL YEAR END:			1231
+
+	BUSINESS ADDRESS:	
+		STREET 1:		17 S. BRIAR HOLLOW LN.
+		CITY:			HOUSTON
+		STATE:			TX
+		:			77027
+		BUSINESS PHONE:		713-881-3600
+
+	MAIL ADDRESS:	
+		STREET 1:		P O BOX 844
+		CITY:			HOUSTON
+		STATE:			TX
+		:			77001
+
+	FORMER COMPANY:	
+		FORMER CONFORMED NAME:	ADAMS RESOURCES & ENERGY INC
+		DATE OF NAME CHANGE:	19920703
+
+	FORMER COMPANY:	
+		FORMER CONFORMED NAME:	ADA RESOURCES INC
+		DATE OF NAME CHANGE:	19790620
+4
+1
+wk-form4_1709588384.xml
+FORM 4
+X0508
+4
+2024-03-01
+0
+0000002178
+ADAMS RESOURCES & ENERGY, INC.
+AE
+0001637261
+Brasseux Murray E
+17 SOUTH BRIAR HOLLOW LANE
+SUITE 100
+HOUSTON
+TX
+77027
+1
+0
+0
+0
+0
+Common stock
+2024-03-01
+4
+M
+0
+366
+0
+A
+4146
+D
+Restricted stock units
+2024-03-01
+4
+M
+0
+366
+0
+D
+Common stock
+366
+0
+D
+Restricted stock units
+2024-03-01
+4
+A
+0
+817
+0
+A
+Common stock
+817
+817
+D
+The reporting person previously received a grant of 366 restricted stock units of Adams Resources & Energy, Inc. (AE) on March 1, 2023 and vesting on March 1, 2024.  Each restricted stock unit represents a contingent right to receive one share of AE common stock upon vesting.
+The reporting person received a grant of 817 restricted stock units of Adams Resources & Energy, Inc. (AE) on March 1, 2024 and vesting on March 1, 2025.  Each restricted stock unit represents a contingent right to receive one share of AE common stock upon vesting.
+The restricted stock units will vest (i.e., the restrictions will lapse) on March 1, 2025, provided the reporting person remains in continuing active service on the vesting date (subject to accelerated vesting in some circumstances).
+/s/  Murray E. Brasseux
+2024-03-04

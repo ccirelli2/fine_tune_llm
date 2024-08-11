@@ -1,4 +1,5 @@
 import os
+import subprocess
 import streamlit as st
 import pandas as pd
 from datetime import datetime
@@ -247,6 +248,7 @@ if exp_name_elected:
 # Create Trial
 ###############################################################################
     st.header("Proceed to Create Trial")
+    st.caption("Trial ID => {}".format(trial_id))
 
 
     tab_create, tab_accounting = st.tabs(['create trial', 'inspect selections'])
@@ -297,7 +299,6 @@ if exp_name_elected:
                 else:
                     st.write("\t\tTrial created successfully")
 
-
                 # Write to Trial Parameters table
                 st.write("Writing trial parameters to trial_parameters mysql table")
                 status, error = queries.insert_into_trial_parameters_table(
@@ -309,6 +310,25 @@ if exp_name_elected:
                 else:
                     st.write("Writing successfull")
 
-                
+    st.write("")
+    st.write("")
+    st.header("Run Trial Extraction")
+    exec_trial_id = st.multiselect(
+            "Trial IDS", trial_df['trial_id'].values.tolist() + [trial_id],
+            default=trial_id)
+    if not exec_trial_id:
+        st.warning("Please choose a trial id")
+
+    if st.button("Run Extraction"):
+        
+        # Execute Script
+        st.write("Executing Extraction Script for Trial => {}".format(trial_id))
+        flag = "--trial_id"
+        value = exec_trial_id
+        path = "~/repositories/fine_tune_llm/transforms/extraction/run_extractions.py"
+        command = "poetry run python {} --trial_id {}".format(path, trial_id)
+        os.system(command) 
+        st.write("Script Finished")
+
 
 
