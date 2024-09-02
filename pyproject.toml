@@ -45,6 +45,7 @@ llama-index-llms-ollama = "^0.2.2"
 llama-index = "^0.10.61"
 tomlkit = "^0.13.0"
 black = "^24.8.0"
+aiomysql = "^0.2.0"
 
 [build-system]
 requires = ["poetry-core"]

@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 from src import queries, utils, connections, transforms
 
 # Directories
+load_dotenv()
 DIR_ROOT = os.getenv("DIR_ROOT")                                                   
 DIR_CONFIG = os.getenv("DIR_CONFIG")                                               
 DIR_DATA = os.getenv("DIR_DATA")   
@@ -25,7 +26,10 @@ USER = CONFIG_CONN['MYSQL']['USER']
 PASSWORD = os.getenv('MYSQL_PASSWORD')                                     
 PORT = CONFIG_CONN['MYSQL']['PORT']                                             
 DATABASE = CONFIG_CONN['MYSQL']['DATABASE']                                     
-                                                                                
+                                                
+# Other Globals
+TABLE_NAME = "filing_index"
+
 # Establish Connection to MySql                                                 
 client = connections.MysqlClient().get_client(                                  
     host=HOST,                                                                  
@@ -34,6 +38,13 @@ client = connections.MysqlClient().get_client(
     port=PORT,                                                                  
     database=DATABASE                                                           
 )  
+
+# Check If Index Table Contains Data
+test_df, test_status, test_error = queries.query_get_all_filing_index(client)
+if test_df.shape[0]:
+    queries.delete_all_from_table(TABLE_NAME, client)
+else:
+    print("Filing index table empty.  Proceeding with insertions")
 
 # Load Files
 patterns = {
@@ -45,7 +56,7 @@ patterns = {
         "IRS_NUMBER": "IRS NUMBER:.*\n",
 }
 
-# Create Index Table From Filings
+# Create Index Filing Pandas Dataframe
 indexer = transforms.FilingIndex(
     directory=DIR_TEXT_RAW,
     patterns=patterns
@@ -71,6 +82,5 @@ for i in filings_df.iterrows():
     
     # Make Insertion
     queries.insert_into_filing_index_table(client, values)
-
 
 

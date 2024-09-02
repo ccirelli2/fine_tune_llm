@@ -36,6 +36,22 @@ class LoadConfig:
         return self
 
 
+def check_database_exists(cursor: CMySQLCursor, db_name: str) -> bool:
+    """
+    """
+    exists = False
+    query = """
+            SELECT COUNT(*)
+            FROM INFORMATION_SCHEMA.SCHEMATA
+            WHERE SCHEMA_NAME = '{}';
+        """.format(db_name)
+    cursor.execute(query)
+    response = cursor.fetchall()
+    print("Response => {}".format(response))
+    if response[0][0] > 0:
+        exists = True
+    return exists
+
 def check_table_exists(cursor: CMySQLCursor, table: str, database: str) -> bool:             
     """                                                                            
     Check if table exists in database.                                             

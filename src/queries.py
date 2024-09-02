@@ -3,6 +3,12 @@ Project service queries (ex: mysql, chromadb
 """
 import pandas as pd
 
+def create_edgar_database():
+    sql = """
+    CREATE DATABASE edgar;
+    """
+    return sql
+
 def command_create_mysql_filings_index_table():
     sql = """
         CREATE TABLE filing_index (
@@ -49,7 +55,7 @@ def command_create_mysql_chunk_table():
     
     CREATE TABLE filing_chunks (
         id              varchar(250) NOT NULL,
-        text            LONGTEXT,
+        chunk           LONGTEXT,
         character_count varchar(250),
         token_count     varchar(250),
         foreign_id      varchar(250) NOT NULL,
@@ -199,14 +205,14 @@ def command_create_mysql_trials_table():
     """
     sql = """
     CREATE TABLE trials (
-        trial_id                  varchar(250),,
+        trial_id            varchar(250),
         name                varchar(250),
         description         LONGTEXT,
         outcome             LONGTEXT,
         author              LONGTEXT,
         created             TIMESTAMP,
         experiment_id       varchar(250),
-    PRIMARY KEY (id)
+    PRIMARY KEY (trial_id)
     );
     """
     return sql
@@ -261,7 +267,7 @@ def command_create_mysql_models_table():
         version_no      varchar(250),
         description     varchar(250),
         source          varchar(250),
-        created         varchar(250),
+        created         TIMESTAMP,
     PRIMARY KEY (id)
     );
     """
@@ -441,7 +447,21 @@ def insert_into_validation_tag(client, values: tuple):
     
     return None
 
+def query_get_all_filing_index(client):
+    sql = """
+    SELECT & FROM filing_index;
+    """
+    df = pd.DataFrame({})
+    status = False
+    error = "None"
 
+    try:
+        df = pd.read_sql(sql, client) 
+        status = True
+    except Exception as e:
+        df = pd.DataFrame({})
+        error = e
+    return df, status, error
 
 def get_filing_index_join_chunks():
     """
@@ -653,6 +673,41 @@ class ExtractTrialData:
         return self.data
 
 
+def insert_into_models_table(client, values):
+    """
+    """
+    status = False
+    error = "None"
+
+    sql = """
+        INSERT INTO models (
+            id,
+            name,
+            checkpoint,
+            version_no,
+            description,
+            source,
+            created
+            )
+        VALUES (
+            %s, %s, %s, %s, %s, %s, %s,
+        );
+    """
+    print("Inserting row => {}".format(values))
+    try:
+        print("\tExecuting insertion to table => models")
+        cursor = client.cursor()
+        cursor.execute(sql, values)
+        client.commit()
+        print("\tSuccess")
+        status = True
+        
+    except Exception as e:
+        print(f"\tInsertion command generated error => {e}")
+        error = e
+    return status, error
+
+
 def insert_into_trial_extraction_table(client, values):
     """
     """
@@ -692,5 +747,19 @@ def insert_into_trial_extraction_table(client, values):
         print(f"\tInsertion command generated error => {e}")
         error = e
     return status, error
+
+
+def delete_all_from_table(table: str, client):
+    sql = "DELETE FROM {};".format(table)
+    try:
+        print("Deleting all records from {}".format(table))
+        cursor = client.cursor()
+        cursor.execute(sql)
+        client.commit()
+        print("\tSuccess")
+    except Exception as e:
+        print("Delete failed with error => {}".format(e))
+
+    return None
 
 

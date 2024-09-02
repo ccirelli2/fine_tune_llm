@@ -33,7 +33,11 @@ USER = CONFIG_CONN['MYSQL']['USER']
 PASSWORD = os.getenv("MYSQL_PASSWORD")                                     
 PORT = CONFIG_CONN['MYSQL']['PORT']                                             
 DATABASE = CONFIG_CONN['MYSQL']['DATABASE']                                     
-                                                                                
+ASYNCH_IO_CONFIG_CONN = {key.lower(): value for key, value in CONFIG_CONN['MYSQL'].items()}
+del ASYNCH_IO_CONFIG_CONN['database']
+ASYNCH_IO_CONFIG_CONN['db'] = DATABASE
+ASYNCH_IO_CONFIG_CONN['password'] = PASSWORD
+
 # Establish Connection to MySql                                                 
 client = connections.MysqlClient().get_client(                                  
     host=HOST,                                                                  
@@ -74,7 +78,7 @@ splitter = RecursiveCharacterTextSplitter(
 )
 
 async def get_db_connection():
-    return await aiomysql.connect(**DATABASE_CONFIG)
+    return await aiomysql.connect(**ASYNCH_IO_CONFIG_CONN)
 
 async def process_file(file_name, connection):
     path = os.path.join(DIR_TEXT_CLEAN, file_name)
@@ -120,7 +124,7 @@ async def main():
             await cursor.execute(query)
             rows = await cursor.fetchall()
 
-        # TODO: We should just have pandas read the sql.
+        # Create DataFrame from query results
         filing_df = pd.DataFrame(rows, columns=[desc[0] for desc in cursor.description])
 
         # Get All Files in Directory
@@ -132,8 +136,15 @@ async def main():
         print(f"Total filings found => {len(filing_common)}")
         print(f"Total filings not in database => {len(filing_diff)}")
 
+        # Limit the number of concurrent tasks
+        semaphore = asyncio.Semaphore(10)  # Limit to 10 concurrent tasks
+
+        async def sem_task(file_name):
+            async with semaphore:
+                await process_file(file_name, connection)
+
         # Process Files
-        tasks = [process_file(file_name, connection) for file_name in filing_common]
+        tasks = [sem_task(file_name) for file_name in filing_common]
         await asyncio.gather(*tasks)
 
     finally:

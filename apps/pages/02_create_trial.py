@@ -91,7 +91,7 @@ st.write("")
 # Current Experiments
 st.header("Existing Experiments")
 if not exp_status:
-    st.write("Query failed with error => {}".format(error))
+    st.write("Query failed with error => {}".format(exp_error))
 else:
     st.markdown(
         "<small>Query successfull.</small>",
@@ -104,7 +104,7 @@ st.write("")
 # Current Trials
 st.header("Existing Trials")
 if not trial_status:
-    st.write("Query failed with error => {}".format(error))
+    st.write("Query failed with error => {}".format(trial_error))
 else:
     st.markdown(
         "<small>Query successfull.</small>",

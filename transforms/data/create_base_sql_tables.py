@@ -31,13 +31,14 @@ client = connections.MysqlClient().get_client(
     database=DATABASE
 )
 
-
 # Get Cursor
 cursor = client.cursor()
 
 # Define Tables to Create
 tables_2_create = {
     "filing_index": queries.command_create_mysql_filings_index_table(),
+    "rag_queries": queries.command_create_mysql_rag_queries_table(),
+    "rag_prompt": queries.command_create_mysql_rag_prompt_table(),
     "filing_chunks": queries.command_create_mysql_chunk_table(),
     "validation_num": queries.command_create_mysql_validation_num_table(),
     "validation_pre": queries.command_create_mysql_validation_pre_table(),
@@ -48,17 +49,21 @@ tables_2_create = {
     "trial_parameters": queries.command_create_mysql_trial_parameters_table(),
     "trial_extraction": queries.command_create_mysql_trial_extraction_table(),
     "trial_results": queries.command_create_mysql_trial_results_table(),
+    "models": queries.command_create_mysql_models_table()
 }
 
-# Create Tables
+
 for table_name in tables_2_create:
 
     # Check if Table Exists
     table_exists = utils.check_table_exists(cursor, table_name, DATABASE)
     
     if not table_exists:
-        print(f"\tCreating table => {table_name}")
-        sql = tables_2_create[table_name]
-        cursor.execute(sql)
-        client.commit()
-        print("\tSuccess\n")
+        try:
+            print(f"\tCreating table => {table_name}")
+            sql = tables_2_create[table_name]
+            cursor.execute(sql)
+            client.commit()
+            print("\tSuccess\n")
+        except Exception as e:
+            print(e)
